@@ -8,15 +8,15 @@ Libra Core is the official name for the open-source implementation of the Libra 
 
 ### Discover Core Contributor
 
-<BucketsContainer>
+<BucketsWrapper>
   <ColorBucket 
-    color="purple-dark"
+    color="purpleDark"
     icon="img/four-squares-temp.png"
     to="#"
     title="Send a test transaction"
   />
   <ColorBucket 
-    color="purple-light"
+    color="purpleLight"
     icon="img/four-squares-temp.png"
     to="#"
     title="Run a client"
@@ -27,14 +27,14 @@ Libra Core is the official name for the open-source implementation of the Libra 
     to="#"
     title="Query the Libra blockchain"
   />
-</BucketsContainer>
+</BucketsWrapper>
 
 ### Learn
 
-<BucketsContainer>
+<BucketsWrapper>
   <PrimaryIconBucket 
     description="I want to understand nodes"
-    icon="img/node.svg" 
+    icon="img/docs/node.svg" 
     title="Nodes" 
     to="#"
   />
@@ -46,15 +46,15 @@ Libra Core is the official name for the open-source implementation of the Libra 
   />
   <PrimaryIconBucket 
     description="What does a Libra account look like?"
-    icon="img/wallet-app-md.svg" 
+    icon="img/wallet-app.svg" 
     title="Accounts" 
     to="#"
   />
-</BucketsContainer>
+</BucketsWrapper>
 
 ### Develop
 
-<BucketsContainer>
+<BucketsWrapper>
   <LeftIconBucket
     icon="img/four-squares-temp.png"
     title="Read me the core specifications"
@@ -66,11 +66,11 @@ Libra Core is the official name for the open-source implementation of the Libra 
     to="#"
   />
   <LeftIconBucket
-    icon="img/core-contributors-md.svg"
+    icon="img/core-contributors.svg"
     title="Show me the developer APIs"
     to="#"
   />
-</BucketsContainer>
+</BucketsWrapper>
 
 
 * This software is the first implementation of the Libra protocol and the Move language.

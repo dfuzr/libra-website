@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 
 import s from './styles.module.css';
 
-const Container = ({children, className, hasShadow, hasRoundedCorners, to}) => (
+const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to}) => (
   <a 
     className={classnames(s.root, className, {
-      [s['has-shadow']]: hasShadow,
-      [s['has-rounded-corners']]: hasRoundedCorners,
+      [s.hasShadow]: hasShadow,
+      [s.hasRoundedCorners]: hasRoundedCorners,
     })} 
     href={to}
     target="_blank"
@@ -17,16 +17,16 @@ const Container = ({children, className, hasShadow, hasRoundedCorners, to}) => (
   </a>
 );
 
-Container.propTypes = {
+BaseContainer.propTypes = {
   className: PropTypes.string,
   hasShadow: PropTypes.bool,
   hasRoundedCorners: PropTypes.bool,
   to: PropTypes.string,
 };
 
-Container.defaultProps = {
+BaseContainer.defaultProps = {
   hasRoundedCorners: true,
   hasShadow: true,
 };
 
-export default Container;
+export default BaseContainer;

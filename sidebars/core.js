@@ -5,7 +5,7 @@ const Sidebar = [
   {
     extra: {
       classNames: ['label'],
-      icon: 'img/core-contributors-sm.svg',
+      icon: 'img/core-contributors.svg',
       noLink: true,
     },
     id: 'core/overview', 

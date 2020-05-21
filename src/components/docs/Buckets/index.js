@@ -1,11 +1,11 @@
-import BucketsContainer from './BucketsContainer';
+import BucketsWrapper from './BucketsWrapper';
 import ColorBucket from './ColorBucket';
 import LeftIconBucket from './LeftIconBucket';
 import PrimaryIconBucket from './PrimaryIconBucket';
 import TagBucket from './TagBucket';
 
 export default {
-  BucketsContainer,
+  BucketsWrapper,
   ColorBucket,
   LeftIconBucket,
   PrimaryIconBucket,

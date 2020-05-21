@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import Bucket from '../Bucket';
+import BaseContainer from '../BaseContainer';
 
-import s from './styles.module.css';
+import styles from './styles.module.css';
 
 const TagBucket = ({ icon, tags, title, to }) => (
-  <Bucket className={s.root} to={to}>
+  <BaseContainer className={styles.root} to={to}>
     <img className={s.image} src={useBaseUrl(icon)} />
-    <div className={s.textContainer}>
-      <h4 className={s.title}>{title}</h4>
+    <div className={styles.textContainer}>
+      <span className={styles.title}>{title}</span>
       <div>
         {tags.map(tag =>
-          <span className={s.tag}>{tag}</span>
+          <span className={styles.tag}>{tag}</span>
         )}
       </div>
     </div>
-  </Bucket>
+  </BaseContainer>
 );
 
 TagBucket.propTypes = {

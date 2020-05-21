@@ -2,10 +2,10 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-const BucketsContainer = ({children}) => (
+const BucketsWrapper = ({children}) => (
   <div className={styles.root}>
     {children}
   </div>
 );
 
-export default BucketsContainer;
+export default BucketsWrapper;

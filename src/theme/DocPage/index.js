@@ -16,7 +16,7 @@ import ThemeComponents from '@theme/MDXComponents';
 import NotFound from '@theme/NotFound';
 import {matchPath} from '@docusaurus/router';
 
-import DocComponents from 'Components/docs';
+import DocComponents from 'components/docs';
 
 import styles from './styles.module.css';
 

@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import Bucket from '../Bucket';
+import BaseContainer from '../BaseContainer';
 
-import s from './styles.module.css';
+import styles from './styles.module.css';
 
 const PrimaryIconBucket = ({ description, icon, title, to }) => (
-  <Bucket className={s.root} to={to}>
-    <div className={s.circleOverlay} />
-    <div className={s.contents}>
+  <BaseContainer className={styles.root} to={to}>
+    <div className={styles.circleOverlay} />
+    <div className={styles.contents}>
       <img className={s.image} src={useBaseUrl(icon)} />
-      <div className={s.textContainer}>
-        <h4 className={s.title}>{title}</h4>
-        <p className={s.description}>{description}</p>
+      <div className={styles.textContainer}>
+        <span className={styles.title}>{title}</span>
+        <p className={styles.description}>{description}</p>
       </div>
     </div>
-  </Bucket>
+  </BaseContainer>
 );
 
 PrimaryIconBucket.propTypes = {
