@@ -28,7 +28,7 @@
 }
 
 .root:hover .circleOverlay {
-  background-color: #8ECFBA;
+  background-color: var(--overlay-card-hover);
 }
 
 .root .image {

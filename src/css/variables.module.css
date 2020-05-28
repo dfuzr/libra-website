@@ -13,6 +13,7 @@ html[data-theme='dark'] {
   --doc-title: white;
   --nav-page-indicator-primary: white;
   --nav-page-indicator-secondary: var(--dark-mode-gray-1);
+  --overlay-card-hover: #30384A;
   --nav-primary-text-color: white;
   --primary-gray: var(--dark-mode-gray-2);
   --right-sidebar-top-bar-hover: var(--accent-highlight);
