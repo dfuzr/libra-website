@@ -4,20 +4,22 @@ import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import BaseContainer from '../BaseContainer';
+import WithBackgroundImage from 'components/WithBackgroundImage';
 
 import styles from './styles.module.css';
 
-const TagCard = ({ icon, tags, title, to }) => (
+const TagCard = ({ icon, iconDark, tags, title, to }) => (
   <BaseContainer className={styles.root} to={to}>
-    <div
+    <WithBackgroundImage
       className={styles.image}
-      style={{ backgroundImage: `url('${useBaseUrl(icon)}')` }}
+      imageLight={useBaseUrl(icon)}
+      imageDark={useBaseUrl(iconDark)}
     />
     <div className={styles.textContainer}>
       <span className={styles.title}>{title}</span>
       <div>
         {tags.map(tag =>
-          <span className={styles.tag}>{tag}</span>
+          <span className={styles.tag} key={tag}>{tag}</span>
         )}
       </div>
     </div>
@@ -26,6 +28,7 @@ const TagCard = ({ icon, tags, title, to }) => (
 
 TagCard.propTypes = {
   icon: PropTypes.string.isRequired,
+  iconDark: PropTypes.string,
   tags: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };

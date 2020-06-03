@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from 'libra-docusaurus-nav';
+import {Nav} from 'libra-docusaurus';
 
 const Navbar = () => {
   return <Nav siteTitle="Libra Docs" siteID="developers" />

@@ -54,6 +54,13 @@ main article h6 {
 
 @font-face {
   font-family: 'NB International Pro';
+  font-weight: 500;
+  src: local('NBInternationalPro-Bold'), local('NBInternationalBoldWebfont'),
+    url('/fonts/nb_international_pro_bold.otf');
+}
+
+@font-face {
+  font-family: 'NB International Pro';
   font-weight: 400;
   font-style: normal;
   font-display: auto;
