@@ -28,17 +28,38 @@ main > .container.padding-vert--lg  {
   padding-top: 0 !important;
 }
 
-main article {
-  margin-top: 20px;
+article header h1 {
+  margin-bottom: 11px;
 }
 
-main article h1,
-main article h2,
-main article h3,
-main article h4,
-main article h5,
-main article h6 {
-  color: var(--doc-title);
+article h1 {
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: -.2px;
+}
+
+.markdown > h2 {
+  margin-top: 37px;
+  margin-bottom: 25px;
+}
+
+.markdown > h2 {
+  font-size: 18px;
+}
+
+article h1,
+.markdown > h3,
+.markdown > h4,
+.markdown > h5,
+.markdown > h6 {
+  font-weight: normal;
+}
+
+.markdown > p {
+  color: var(--doc-secondary-color);
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 11px 0;
 }
 
 .prism-code > * {
@@ -50,7 +71,73 @@ main article h6 {
   word-break: break-all;
 }
 
+/* Code Snippet  */
+.snippet-container {
+  position: relative;
+}
+
+.snippet-container .tabs, .snippet-header {
+  background-color: var(--snippet-header-background);
+  border-top-left-radius: var(--ifm-global-radius);
+  border-top-right-radius: var(--ifm-global-radius);
+  height: 36px;
+}
+
+.single-wrapper {
+  height: 100%;
+}
+
+.snippet-container .tab-item {
+  border: 0px !important;
+  font-size: 12px;
+  outline: none;
+  padding: 8px;
+}
+
+.snippet-container .tab-item:first-child {
+  padding-left: 15px;
+}
+
+.snippet-container .tabs > .tab-item:hover {
+  /*background-color: inherit;
+  color: var(--accent-highlight);*/
+}
+
+.snippet-container div {
+  position: initial;
+}
+
+.snippet-container div[role="tabpanel"] {
+  margin: 0 !important;
+}
+
+.snippet-container button {
+  --icon-size: 12px;
+  background-color: transparent;
+  background-image: var(--snippet-copy-url);
+  background-position: 99% 2px;
+  background-repeat: no-repeat;
+  background-size: var(--icon-size);
+  color: var(--snippet-copy-color);
+  font-size: 10px;
+  opacity: 1 !important;
+  padding: 3px calc(var(--icon-size) + 9px) 3px 0;
+  visibility: visible !important;
+  top: 9px;
+}
+
 /* Fonts */
+
+@font-face {
+  font-family: 'NB International Pro Bold';
+  src: url('/fonts/nb_international_pro_bold.otf');
+}
+
+@font-face {
+  font-family: 'NB International Pro';
+  font-weight: 500;
+  src: url('/fonts/nb_international_pro_bold.otf');
+}
 
 @font-face {
   font-family: 'NB International Pro';

@@ -4,9 +4,91 @@ title: Libra Core Overview
 sidebar_label: Core Contributors
 ---
 
-### Excerpt Demo
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<Excerpt image="img/white-paper-screenshot.png">
+```jsx
+import React, { useState } from "react";
+   
+function Example() {
+  const [count, setCount] = useState(0);
+   
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+end
+
+<div className="snippet-container">
+  <Tabs
+    defaultValue="js"
+    values={[
+      { label: 'curl', value: 'js', },
+    ]
+  }>
+  <TabItem value="js">
+
+  ```js
+  function helloWorld() {
+    console.log('Hello, world!');
+  }
+  ```
+
+  </TabItem>
+</Tabs>
+</div>
+
+
+<div className="snippet-container">
+  <Tabs
+    defaultValue="js"
+    values={[
+      { label: 'curl', value: 'js', },
+      { label: 'Ruby', value: 'py', },
+      { label: 'Python', value: 'java', },
+    ]
+  }>
+  <TabItem value="js">
+
+  ```js
+  function helloWorld() {
+    console.log('Hello, world!');
+  }
+  ```
+
+  </TabItem>
+  <TabItem value="py">
+
+  ```py
+  def hello_world():
+    print 'Hello, world!'
+  ```
+
+  </TabItem>
+  <TabItem value="java">
+
+  ```java
+  class HelloWorld {
+    public static void main(String args[]) {
+      System.out.println("Hello, World");
+    }
+  }
+  ```
+
+  </TabItem>
+  </Tabs>
+</div>
+ -->
+### Excerpt Demo 
+
+<Excerpt image="img/white-paper-excerpt.svg">
   The world truly needs a reliable digital currency and infrastructure that together can deliver on the promise of “the internet of money.” Securing your financial assets on your mobile device should be simple and intuitive. Moving money around globally should be as easy and cost-effective as — and even more safe and secure than — sending a text message or sharing a photo, no matter where you live, what you do, or how much you earn.  
   <a href='#'>— Libra White Paper</a>
 </Excerpt>
@@ -58,7 +140,8 @@ Libra Core is the official name for the open-source implementation of the Libra 
 <CardsWrapper>
   <ColorCard 
     color="purpleDark"
-    icon="img/four-squares-temp.png"
+    icon="img/transaction.svg"
+    iconDark="img/transaction-dark.svg"
     to="#"
     title="Send a test transaction"
   />
@@ -81,7 +164,8 @@ Libra Core is the official name for the open-source implementation of the Libra 
 <CardsWrapper>
   <OverlayCard 
     description="I want to understand nodes"
-    icon="img/docs/node.svg" 
+    icon="img/node-operators.svg" 
+    iconDark="img/node-operators-dark.svg" 
     title="Nodes" 
     to="#"
   />
@@ -94,6 +178,7 @@ Libra Core is the official name for the open-source implementation of the Libra 
   <OverlayCard 
     description="What does a Libra account look like?"
     icon="img/wallet-app.svg" 
+    iconDark="img/wallet-app-dark.svg" 
     title="Accounts" 
     to="#"
   />
@@ -114,6 +199,7 @@ Libra Core is the official name for the open-source implementation of the Libra 
   />
   <SimpleCard
     icon="img/core-contributors.svg"
+    iconDark="img/core-contributors-dark.svg"
     title="Show me the developer APIs"
     to="#"
   />

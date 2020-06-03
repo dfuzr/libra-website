@@ -27,10 +27,10 @@ const WithBackgroundImage = ({
 };
 
 WithBackgroundImage.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   imageDark: PropTypes.string,
-  imageLight: PropTypes.string.isRequired,
-  tag: PropTypes.oneOf(PropTypes.element, PropTypes.string).isRequired,
+  imageLight: PropTypes.string,
+  tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
 WithBackgroundImage.defaultProps = {

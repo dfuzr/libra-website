@@ -4,6 +4,6 @@ import Excerpt from './Excerpt';
 
 export default {
   ...Cards,
-  code: Code,
+  codee: Code,
   Excerpt,
 };

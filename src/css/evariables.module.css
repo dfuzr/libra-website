@@ -1,0 +1,66 @@
+html[data-theme='dark'] {
+  /* Global Colors */
+  --accent-highlight: white;
+  --default-background-color: var(--dark-mode-black-darkest);
+  --default-border-color: var(--dark-mode-black-lighter);
+  --doc-component-background: var(--dark-mode-black-lighter);
+  --primary-gray: var(--dark-mode-gray-2);
+  /* Component specific colors */
+  --ifm-tabs-color-active: white;
+  --ifm-tabs-color: var(--primary-gray);
+  --snippet-copy-color: white;
+  --snippet-copy-url: url('/img/copy-dark.svg');
+  --snippet-header-background: #50576B;
+}
+
+:root {
+  /* Sizing */
+  --body-horizontal-padding: 20px;
+  --body-padding-top: 50px;
+  --cumulative-desktop-body-padding: calc(
+    var(--total-nav-height) +
+    var(--body-padding-top)
+  );
+  /* Global Colors */
+  --accent-highlight: var(--brand-color);
+  --brand-color: #42318c;
+  --dark-mode-black-lighter: #3C4357;
+  --dark-mode-black-darker: #131313;
+  --dark-mode-black-darkest: #191F36;
+  --dark-mode-gray-1: #969CA5;
+  --dark-mode-gray-2: #A3ACB9;
+  --dark-mode-gray-3: #A9A9A9;
+  --dark-mode-white-ghost: #FAFAFA;
+  --default-background-color: white;
+  --default-border-color: #E5E5E5;
+  --doc-component-background: white;
+  --nav-height-mobile: 60px;
+  --primary-gray: #757575;
+  /* Component specific colors */
+  --snippet-header-background: #E3E8EE;
+  --snippet-copy-color: #6B7689;
+  --snippet-copy-url: url('/img/copy.svg');
+  --scrollbar-width: 10px; /* TODO: Look into accounting varying browser widths of scrollbar */
+};
+
+/* Breakpoints */
+@value small-mobile-breakpoint-size: 320;
+@value small-mobile-breakpoint-query: (min-width: calc(small-mobile-breakpoint-size * 1px));
+
+@value mobile-breakpoint-size: 420;
+@value mobile-breakpoint-query: (min-width: calc(mobile-breakpoint-size * 1px));
+
+@value small-tablet-breakpoint-size: 580;
+@value small-tablet-breakpoint-query: (min-width: calc(small-tablet-breakpoint-size * 1px));
+
+@value medium-tablet-breakpoint-size: 768;
+@value medium-tablet-breakpoint-query: (min-width: calc(medium-tablet-breakpoint-size * 1px));
+
+@value large-tablet-breakpoint-size: 1024;
+@value large-tablet-breakpoint-query: (min-width: calc(large-tablet-breakpoint-size * 1px));
+
+@value desktop-breakpoint-size: 1280;
+@value desktop-breakpoint-query: (min-width: calc(desktop-breakpoint-size * 1px));
+
+@value large-desktop-breakpoint-size: 1400;
+@value large-desktop-breakpoint-query: (min-width: calc(large-desktop-breakpoint-size * 1px));

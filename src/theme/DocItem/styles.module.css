@@ -1,10 +1,6 @@
-@value desktop-breakpoint-query from '~CSS/variables.module.css';
-@value larget-tablet-breakpoint-size from '~CSS/variables.module.css';
-
-.docTitle {
-  font-size: 3rem;
-  margin-bottom: 3rem;
-}
+@value large-desktop-breakpoint-query from '~libra-docusaurus/variables.module.css';
+@value desktop-breakpoint-query from '~libra-docusaurus/variables.module.css';
+@value larget-tablet-breakpoint-size from '~libra-docusaurus/variables.module.css';
 
 .docItemContainer {
   margin: 0 auto;
@@ -12,12 +8,13 @@
 }
 
 .docItemWrapper {
+  color: var(--doc-primary);
   display: flex;
   padding: 0;
 }
 
 .docItemWrapper article {
-  padding: 0 20px;
+  padding: 30px 20px 0 20px;
 }
 
 .docLastUpdatedAt {
@@ -33,6 +30,21 @@
 
 @media desktop-breakpoint-query {
   .docItemWrapper article {
-    padding: 0 60px;
+    padding: 30px 20px 0 30px;
   }
+}
+
+@media large-desktop-breakpoint-query {
+  .docItemWrapper article {
+    padding: 52px 32px 0 57px;
+  }
+}
+
+html[data-theme='dark'] {
+  --doc-primary: white;
+  --doc-secondary-color: var(--dark-mode-gray-2)
+}
+
+:root {
+  --doc-primary: #15112C;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {RightSidebar} from 'libra-docusaurus';
 
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -6,7 +7,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
-import RightSidebar from './RightSidebar';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';

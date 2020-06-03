@@ -1,3 +1,6 @@
+const darkCodeTheme = require("prism-react-renderer/themes/paleNight");
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+
 module.exports = {
   title: 'My Site',
   tagline: 'The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.',
@@ -10,6 +13,11 @@ module.exports = {
     algolia: {
       apiKey: 'eb29b473d27eae9cc46c84eb3a2e4063',
       indexName: 'libra-website',
+    },
+    prism: {
+      darkTheme: darkCodeTheme,
+      theme: lightCodeTheme,
+      enableLineNumbers: true,
     },
     sidebarCollapsible: false,
     navbar: {
