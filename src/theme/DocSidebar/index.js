@@ -5,7 +5,6 @@ import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useLogo from '@theme/hooks/useLogo';
 import Link from '@docusaurus/Link';
 import SearchBar from '@theme/SearchBar';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
 import WithBackgroundImage from 'components/WithBackgroundImage';
