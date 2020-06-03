@@ -1,13 +1,13 @@
 .root {
-  --icon-size: 15px;
+  --icon-size: 14px;
   --icon-spacing: 5.5px;
   border-bottom: 1px solid var(--default-border-color);
   color: var(--sidebar-gray);
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
-  justify-content: space-between;
-  padding: 20px var(--right-sidebar-horizontal-padding);
+  justify-content: flex-start;
+  padding: 18px var(--right-sidebar-horizontal-padding);
   padding-right: calc(
     var(--right-sidebar-horizontal-padding) +
     var(--scrollbar-width)
@@ -31,7 +31,7 @@
 .backgroundIcon {
   background-repeat: no-repeat;
   background-size: var(--icon-size) var(--icon-size);
-  background-position: 0 3.25px;
+  background-position: 0 4.25px;
   padding-left: calc( var(--icon-size) + var(--icon-spacing) );
 }
 
@@ -43,9 +43,17 @@
   align-items: center;
   cursor: pointer;
   display: flex;
+  margin-left: 23px;
 }
 
 .toggle > span {
   margin-left: var(--icon-spacing);
 }
 
+html[data-theme='dark'] {
+  --right-sidebar-top-bar-hover: var(--accent-highlight);
+}
+
+:root {
+  --right-sidebar-top-bar-hover: #354052;
+}

@@ -1,34 +1,13 @@
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.toggle {
-  align-items: center;
-  display: flex;
-  height: 5px;
-  justify-content: center;
-  position: relative;
-  width: 5px;
-}
-.toggle::before {
-  position: absolute;
-}
-.moon::before {
-  content: '\1F31C';
-}
-.sun::before {
-  content: '\1F31E';
-}
-
-/**
  * styles for React Toggle
  * copied over because we want to allow user to swizzle it and modify the css
  * and also to make sure its compatible with our dark mode
  * https://github.com/aaronshaf/react-toggle/blob/master/style.css
  */
+.toggle {
+  position: relative;
+}
+
 :global(.react-toggle) {
   touch-action: pan-x;
 
@@ -37,6 +16,7 @@
   cursor: pointer;
   background-color: transparent;
   border: 0;
+  margin-top: -1px;
   padding: 0;
 
   -webkit-touch-callout: none;
@@ -66,11 +46,11 @@
 }
 
 :global(.react-toggle-track) {
-  width: 17px;
-  height: 12px;
+  width: 15px;
+  height: 10px;
   padding: 0;
   border-radius: 30px;
-  background-color: #4d4d4d;
+  background-color: #7F8FA4;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -124,10 +104,11 @@
 :global(.react-toggle-thumb) {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 10px;
-  height: 10px;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 2px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: var(--toggle-indicator-background);
 
@@ -144,4 +125,14 @@
 :global(.react-toggle--checked .react-toggle-thumb) {
   left: 5.5px;
   border-color: #19ab27;
+}
+
+html[data-theme='dark'] {
+  --toggle-background: var(--dark-mode-gray-1);
+  --toggle-indicator-background: var(--default-background-color);
+}
+
+:root {
+  --toggle-background: #4d4d4d;
+  --toggle-indicator-background: #fafafa;
 }

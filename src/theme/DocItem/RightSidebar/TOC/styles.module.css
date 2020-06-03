@@ -24,3 +24,12 @@
 .category {
   padding: 0;
 }
+
+html[data-theme='dark'] {
+  --toc-color: #A3ACB9;
+}
+
+:root {
+  --toc-color: black;
+};
+
