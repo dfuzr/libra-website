@@ -50,6 +50,14 @@ main article h6 {
   word-break: break-all;
 }
 
+.tabs {
+  flex-wrap: wrap;
+}
+
+.tabs li {
+  outline: none;
+}
+
 /* Fonts */
 
 @font-face {
