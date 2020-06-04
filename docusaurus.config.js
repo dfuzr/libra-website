@@ -1,3 +1,6 @@
+ const plugin = require('libra-docusaurus');
+ console.log('the plugin', plugin);
+
 module.exports = {
   title: 'My Site',
   tagline: 'The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.',

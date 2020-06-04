@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 import BaseContainer from '../BaseContainer';
 import WithBackgroundImage from 'components/WithBackgroundImage';
 
@@ -14,8 +12,8 @@ const OverlayCard = ({ description, icon, iconDark, title, to }) => (
     <div className={styles.contents}>
       <WithBackgroundImage
         className={styles.image}
-        imageLight={useBaseUrl(icon)}
-        imageDark={useBaseUrl(iconDark)}
+        imageLight={icon}
+        imageDark={iconDark}
       />
       <div className={styles.textContainer}>
         <span className={styles.title}>{title}</span>

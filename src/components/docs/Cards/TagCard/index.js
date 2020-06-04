@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 import BaseContainer from '../BaseContainer';
 import WithBackgroundImage from 'components/WithBackgroundImage';
 
@@ -12,8 +10,8 @@ const TagCard = ({ icon, iconDark, tags, title, to }) => (
   <BaseContainer className={styles.root} to={to}>
     <WithBackgroundImage
       className={styles.image}
-      imageLight={useBaseUrl(icon)}
-      imageDark={useBaseUrl(iconDark)}
+      imageLight={icon}
+      imageDark={iconDark}
     />
     <div className={styles.textContainer}>
       <span className={styles.title}>{title}</span>

@@ -1,4 +1,4 @@
-@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+@value large-tablet-breakpoint-query from '~CSS/src/variables.module.css';
 
 .docPage {
   color: var(--doc-primary);
