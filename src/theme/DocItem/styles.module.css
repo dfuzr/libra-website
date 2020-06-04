@@ -1,5 +1,5 @@
-@value desktop-breakpoint-query from '~CSS/src/variables.module.css';
-@value larget-tablet-breakpoint-size from '~CSS/src/variables.module.css';
+@value desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value larget-tablet-breakpoint-size from '~libra-docusaurus/src/variables.module.css';
 
 .docTitle {
   font-size: 3rem;
