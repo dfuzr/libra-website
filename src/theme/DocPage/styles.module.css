@@ -1,5 +1,5 @@
-@value large-tablet-breakpoint-query from '~libra-docusaurus/variables.module.css';
-@value large-tablet-breakpoint-size from '~libra-docusaurus/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value large-tablet-breakpoint-size from '~libra-docusaurus/src/variables.module.css';
 
 .docPage {
   display: flex;
