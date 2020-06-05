@@ -12,20 +12,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import renderRoutes from '@docusaurus/renderRoutes';
 import Layout from '@theme/Layout';
 import DocSidebar from '@theme/DocSidebar';
-import ThemeComponents from '@theme/MDXComponents';
+import MDXComponents from '@theme/MDXComponents';
 import NotFound from '@theme/NotFound';
 import {matchPath} from '@docusaurus/router';
 
-import DocComponents from 'components/docs';
-
 import styles from './styles.module.css';
-
-/*
- * This removes the need to manually import our DocComponents
- * in each doc file. 
- * For more info check out https://mdxjs.com/blog/shortcodes
- */
-const MDXComponents = Object.assign(ThemeComponents, DocComponents);
 
 function DocPage(props) {
   const {route: baseRoute, docsMetadata, location} = props;

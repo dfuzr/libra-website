@@ -1,12 +1,14 @@
 import React from 'react';
 
+ import {RightSidebar} from 'libra-docusaurus';
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
-import {RightSidebar} from 'libra-docusaurus';
+console.log('this is actually happening tho right');
+// import RightSidebar from './RightSidebar';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -83,14 +85,13 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
-              <div className="padding-vert--lg">
-              </div>
+              <div className="padding-vert--lg" />
             </div>
           </div>
-          <RightSidebar
-            editUrl={editUrl}
-            headings={DocContent.rightToc} 
-          />
+        <RightSidebar
+          editUrl={editUrl}
+          headings={DocContent.rightToc} 
+        />
       </div>
     </>
   );

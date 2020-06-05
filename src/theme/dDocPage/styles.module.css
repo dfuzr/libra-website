@@ -1,17 +1,19 @@
 @value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
 
-.docPage {
+/*.docPage {*/
+.main-wrapper > div { /* .docPage */
   color: var(--doc-primary);
   display: flex;
 }
 
-.docSidebarContainer {
+/*.docSidebarContainer {*/
+.main-wrapper > div > div:first-child { /* .docSidebarContainer */
   box-sizing: border-box;
   width: 300px;
   position: relative;
 }
 
-.docMainContainer {
+main { /* main  */
   flex: 1;
   flex-grow: 1;
 }

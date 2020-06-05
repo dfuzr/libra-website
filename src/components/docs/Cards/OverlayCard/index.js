@@ -8,6 +8,7 @@ import styles from './styles.module.css';
 
 const OverlayCard = ({ description, icon, iconDark, title, to }) => (
   <BaseContainer className={styles.root} to={to}>
+    {console.log('the dark', iconDark)}
     <div className={styles.circleOverlay} />
     <div className={styles.contents}>
       <WithBackgroundImage

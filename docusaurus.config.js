@@ -1,5 +1,5 @@
- const plugin = require('libra-docusaurus');
- console.log('the plugin', plugin);
+const darkCodeTheme = require("prism-react-renderer/themes/palenight");
+const lightCodeTheme = require("prism-react-renderer/themes/github");
 
 module.exports = {
   title: 'My Site',
@@ -7,34 +7,22 @@ module.exports = {
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Libra', // Usually your GitHub org/user name.
+  projectName: 'Libra', // Usually your repo name.
   themeConfig: {
     algolia: {
       apiKey: 'eb29b473d27eae9cc46c84eb3a2e4063',
       indexName: 'libra-website',
     },
+    prism: {
+      darkTheme: darkCodeTheme,
+      theme: lightCodeTheme,
+      enableLineNumbers: true,
+    },
     sidebarCollapsible: false,
+    siteID: 'developers',
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
-      links: [
-        {
-          to: 'docs/doc1',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      title: 'Libra Docs',
     },
     footer: {
       style: 'dark',
