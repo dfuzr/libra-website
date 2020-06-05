@@ -119,13 +119,15 @@ Libra Core is the official name for the open-source implementation of the Libra 
   />
   <ColorCard 
     color="purpleLight"
-    icon="img/four-squares-temp.png"
+    icon="img/docs/move-program.svg" 
+    iconDark="img/docs/move-program-dark.svg"
     to="#"
     title="Run a client"
   />
   <ColorCard 
     color="aqua"
-    icon="img/four-squares-temp.png"
+    icon="img/docs/try-a-wallet.svg" 
+    iconDark="img/docs/try-a-wallet-dark.svg"
     to="#"
     title="Query the Libra blockchain"
   />
@@ -160,18 +162,20 @@ Libra Core is the official name for the open-source implementation of the Libra 
 
 <CardsWrapper>
   <SimpleCard
-    icon="img/four-squares-temp.png"
-    title="Read me the core specifications"
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Read the core specifications"
     to="#"
   />
   <SimpleCard
-    icon="img/four-squares-temp.png"
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
     title="Using the client SDK"
     to="#"
   />
   <SimpleCard
-    icon="img/core-contributors.svg"
-    iconDark="img/core-contributors-dark.svg"
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
     title="Show me the developer APIs"
     to="#"
   />
