@@ -112,7 +112,8 @@ Libra Core is the official name for the open-source implementation of the Libra 
 <CardsWrapper>
   <ColorCard 
     color="purpleDark"
-    icon="img/four-squares-temp.png"
+    icon="img/transaction.svg"
+    iconDark="img/transaction-dark.svg"
     to="#"
     title="Send a test transaction"
   />
@@ -135,7 +136,8 @@ Libra Core is the official name for the open-source implementation of the Libra 
 <CardsWrapper>
   <OverlayCard 
     description="I want to understand nodes"
-    icon="img/docs/node.svg" 
+    icon="img/node-operators.svg" 
+    iconDark="img/node-operators-dark.svg" 
     title="Nodes" 
     to="#"
   />
@@ -148,6 +150,7 @@ Libra Core is the official name for the open-source implementation of the Libra 
   <OverlayCard 
     description="What does a Libra account look like?"
     icon="img/wallet-app.svg" 
+    iconDark="img/wallet-app-dark.svg" 
     title="Accounts" 
     to="#"
   />
@@ -168,6 +171,7 @@ Libra Core is the official name for the open-source implementation of the Libra 
   />
   <SimpleCard
     icon="img/core-contributors.svg"
+    iconDark="img/core-contributors-dark.svg"
     title="Show me the developer APIs"
     to="#"
   />
