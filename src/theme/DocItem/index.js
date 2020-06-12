@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import DocPaginator from '@theme/DocPaginator';
 import Head from '@docusaurus/Head';
@@ -13,6 +13,11 @@ import ArrowRight from 'img/shared/arrow-right.svg';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
+
+const OVERFLOW_CONTAINER_CLASS = 'nav-pusher';
+
+const scrollToTop = () => 
+  document.querySelector(`.${OVERFLOW_CONTAINER_CLASS}`).scrollTo(0, 0);
 
 const Pagination = ({metadata}) => {
   const previousLink = metadata;
@@ -70,6 +75,8 @@ function DocItem(props) {
     metaImageUrl = metaImage;
   }
 
+  useEffect(scrollToTop, []);
+
   return (
     <>
       <Head>
@@ -113,6 +120,9 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
+              <span className={styles.community}>
+                <a href="https://community.libra.org/">Ask the community</a> for support
+              </span>
               <Pagination metadata={metadata} />
             </div>
           </div>
