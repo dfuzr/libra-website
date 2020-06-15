@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
+import Pagination from './Pagination';
 import {RightSidebar} from 'libra-docusaurus';
 
 import classnames from 'classnames';
@@ -83,7 +84,7 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
-              <div className="padding-vert--lg" />
+              <Pagination metadata={metadata} />
             </div>
           </div>
         <RightSidebar

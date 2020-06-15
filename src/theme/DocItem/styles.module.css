@@ -4,15 +4,6 @@
 
 .docItemContainer {
   margin: 0 auto;
-}
-
-.docItemWrapper {
-  color: var(--doc-primary);
-  display: flex;
-  padding: 0;
-}
-
-.docItemWrapper article {
   padding: 
     var(--doc-padding-top) 
     var(--doc-padding-right) 
@@ -20,8 +11,10 @@
     var(--doc-padding-left);
 }
 
-.docLastUpdatedAt {
-  font-weight: bold;
+.docItemWrapper {
+  color: var(--doc-primary);
+  display: flex;
+  padding: 0;
 }
 
 @media only screen and (max-width: calc(large-tablet-breakpoint-size * 1px)) {
@@ -31,11 +24,11 @@
   }
 }
 
-html[data-theme='dark'] {
-  --doc-primary: white;
-  --doc-secondary-color: var(--dark-mode-gray-2)
+html {
+  --doc-primary: #15112C;
 }
 
-:root {
-  --doc-primary: #15112C;
+html[data-theme='dark'] {
+  --doc-primary: white;
+  --doc-secondary-color: var(--gray-2);
 }
