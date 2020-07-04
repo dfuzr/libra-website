@@ -4,9 +4,10 @@ const Sidebar = [
   backToHome,
   {
     extra: {
-      classNames: ['spacer'],
+      classNames: ['categoryLabel', 'spacer-md'],
       icon: 'img/wallet-app.svg',
       iconDark: 'img/wallet-app-dark.svg',
+      iconClasses: ['iconLeft'],
       noLink: true,
     },
     id: 'wallet-app/overview', 
@@ -14,7 +15,7 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: ['categoryIndex'],
+      classNames: ['categoryIndex', 'normalWeight'],
     },
     href: '/docs/wallet-app/overview',
     label: 'Overview',

@@ -4,9 +4,10 @@ const Sidebar = [
   backToHome,
   {
     extra: {
-      classNames: ['spacer'],
+      classNames: ['categoryLabel', 'spacer-md'],
       icon: 'img/merchant-solutions.svg',
       iconDark: 'img/merchant-solutions-dark.svg',
+      iconClasses: ['iconLeft'],
       noLink: true,
     },
     id: 'merchant/overview', 
@@ -14,7 +15,7 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: ['categoryIndex'],
+      classNames: ['categoryIndex', 'normalWeight'],
     },
     href: '/docs/merchant/overview',
     label: 'Overview',

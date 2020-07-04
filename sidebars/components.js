@@ -1,6 +1,6 @@
 const backToHome = {
   extra: {
-    classNames: ['backToHome', 'iconSmall'],
+    classNames: ['backToHome', 'iconSm'],
     icon: 'img/shared/arrow-left.svg',
   },
   href: '/docs/welcome-to-libra-v2',
@@ -22,6 +22,7 @@ const getReference = (theme = 'primary') => {
   return {
     extra: {
       classNames: classNames,
+      containerClassNames: ['reference'],
     },
     label: 'Reference',
     type: 'category',

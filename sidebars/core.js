@@ -4,7 +4,7 @@ const Sidebar = [
    backToHome,
   {
     extra: {
-      classNames: ['spacer'],
+      classNames: ['categoryLabel', 'iconLeft', 'iconXL', 'spacer-md'],
       icon: 'img/core-contributors.svg',
       iconDark: 'img/core-contributors-dark.svg',
       noLink: true,
@@ -14,7 +14,7 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: ['categoryIndex'],
+      classNames: ['categoryIndex', 'normalWeight'],
     },
     href: '/docs/core/overview-v2',
     label: 'Overview',
@@ -24,6 +24,7 @@ const Sidebar = [
     extra: {
       icon: 'img/concepts.svg',
       iconDark: 'img/concepts-dark.svg',
+      iconClasses: ['iconLeft', 'iconXL'],
       theme: 'secondary',
     },
     label: 'Concepts',
@@ -41,6 +42,7 @@ const Sidebar = [
     extra: {
       icon: 'img/tutorials.svg',
       iconDark: 'img/tutorials-dark.svg',
+      iconClasses: ['iconLeft', 'iconXL'],
       theme: 'secondary',
     },
     label: 'Tutorials',
@@ -54,9 +56,9 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: [],
       icon: 'img/develop.svg',
       iconDark: 'img/develop-dark.svg',
+      iconClasses: ['iconLeft', 'iconXL'],
       theme: 'secondary',
     },
     label: 'Develop',
