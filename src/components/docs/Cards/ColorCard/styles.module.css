@@ -122,6 +122,7 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   }
 
   .overlay {
+    border-radius: var(--snippet-border-radius);
     display: none;
   }
 
