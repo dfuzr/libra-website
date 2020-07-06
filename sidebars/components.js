@@ -1,7 +1,9 @@
 const backToHome = {
   extra: {
-    classNames: ['backToHome', 'iconSm'],
+    classNames: ['backToHome', 'iconXS'],
     icon: 'img/shared/arrow-left.svg',
+    iconHover: 'img/shared/arrow-left-hover.svg',
+    iconDarkHover: 'img/shared/arrow-left-dark-hover.svg',
   },
   href: '/docs/welcome-to-libra-v2',
   label: 'Home',

@@ -4,13 +4,13 @@ const Sidebar = [
   backToHome,
   {
     extra: {
-      classNames: ['categoryLabel', 'spacer-md'],
+      classNames: ['categoryLabel', 'spacerMD'],
       icon: 'img/merchant-solutions.svg',
       iconDark: 'img/merchant-solutions-dark.svg',
       iconClasses: ['iconLeft'],
       noLink: true,
     },
-    id: 'merchant/overview', 
+    id: 'merchant/overview',
     type: 'doc',
   },
   {

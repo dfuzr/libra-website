@@ -4,7 +4,7 @@ const Sidebar = [
    backToHome,
   {
     extra: {
-      classNames: ['categoryLabel', 'iconLeft', 'iconXL', 'spacer-md'],
+      classNames: ['categoryLabel', 'iconLeft', 'iconXL', 'spacerMD'],
       icon: 'img/core-contributors.svg',
       iconDark: 'img/core-contributors-dark.svg',
       noLink: true,
