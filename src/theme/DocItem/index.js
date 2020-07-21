@@ -6,6 +6,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
+import {OVERFLOW_CONTAINER_CLASS} from '@theme/Layout';
+
 import Pagination from './Pagination';
 import {RightSidebar} from 'libra-docusaurus-components';
 

@@ -23,8 +23,6 @@ const Sidebar = [
   {
     extra: {
       iconClasses: ['listTitle'],
-      icon: 'img/concepts.svg',
-      iconDark: 'img/concepts-dark.svg',
     },
     label: 'Concepts',
     type: 'category',
@@ -37,8 +35,6 @@ const Sidebar = [
   {
     extra: {
       iconClasses: ['listTitle'],
-      icon: 'img/tutorials.svg',
-      iconDark: 'img/tutorials-dark.svg',
     },
     label: 'Tutorials',
     type: 'category',
@@ -52,8 +48,6 @@ const Sidebar = [
   {
     extra: {
       iconClasses: ['listTitle'],
-      icon: 'img/develop.svg',
-      iconDark: 'img/develop-dark.svg',
     },
     label: 'Develop',
     type: 'category',

@@ -6,7 +6,7 @@ sidebar_label: Wallet / App
 
 Digital wallets provide an important function for users interacting and transacting on the Libra network. In this section, you will learn about the [Libra Reference Wallet](/reference-wallet), find technical and conceptual documentation, and information for integrating services with the Libra network.
 
-For developers with existing digital wallets or familiarity building digital financial products, we will publish an integration guide to help you prepare for [mainnet](link).
+For developers with existing digital wallets or familiarity building digital financial products, we will publish an integration guide to help you prepare for [mainnet](reference/glossary.md#mainnet).
 
 ## Discover Wallet / App
 

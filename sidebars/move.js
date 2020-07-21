@@ -1,4 +1,4 @@
-const {backToHome} = require('./components');
+const {backToHome, getReference} = require('./components');
 
 const Sidebar = [
   backToHome,
@@ -21,6 +21,7 @@ const Sidebar = [
     label: 'Overview',
     type: 'link',
   },
+  getReference(),
 ];
 
 module.exports = Sidebar;
