@@ -29,7 +29,7 @@ const Sidebar = [
     items: [
       'wallet-app/intro-to-lrw',
       'wallet-app/wallet-arch',
-      'wallet-app/liquidity',
+      'wallet-app/libra-c-source',
     ]
   },
   {
@@ -61,15 +61,11 @@ const Sidebar = [
       'wallet-app/storage-mod',
       'wallet-app/service-api',
       'wallet-app/pubsub',
-      'wallet-app/liquidity-mod',
+      'wallet-app/inventory-mod',
       'wallet-app/admin-mod',
       'wallet-app/localizn',
-      'wallet-app/public-demo-wallet',
-      {
-        type: 'link',
-        href: 'https://demo-wallet.libra.org/api/apidocs',
-        label: 'Backend Swagger API',
-      },
+      'wallet-app/demo-wallet',
+      // 'wallet-app/demo-wallet-swagger-api',
     ]
   },
   getReference(),
