@@ -18,7 +18,7 @@ When a wallet application submits a transaction to the Libra Blockchain, the val
 
 To retrieve information on the current state of the Libra Blockchain such as account balance, last transaction, and so on, a wallet application or client needs to send a read query to a full node. Anybody can run full nodes. Full nodes only validate transactions to synchronize to the Libra Blockchain. Full nodes rely on validator signatures to prove the correctness of their results to clients. They must also maintain historical information about the state of the blockchain.
 
-If you’re interested in running a full node, subscribe to the developer newsletter for future announcements.
+If you’re interested in running a full node, subscribe to the [developer newsletter](/newsletter_form) for future announcements.
 
 ## Reference
 

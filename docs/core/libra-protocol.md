@@ -8,7 +8,7 @@ The Libra Blockchain is a cryptographically authenticated distributed database b
 
 The Libra Blockchain is operated by a distributed network of [validator nodes](reference/glossary.md#validator-node), also known as validators. The validators collectively follow a [consensus protocol](reference/glossary.md#consensus-protocol) to agree on an ordering of finalized transactions in the blockchain.
 
-The Association has open-sourced an early preview of the Libra [testnet](https://developers.libra.org/docs/reference/glossary#testnet), with accompanying documentation. The testnet is still under development, but you can read, build, and provide feedback right away. In contrast to the forthcoming Libra mainnet, the testnet merely simulates a digital payment system and the coins on the testnet have *no real-world value*.
+The Association has open-sourced an early preview of the Libra [testnet](reference/glossary.md#testnet), with accompanying documentation. The testnet is still under development, but you can read, build, and provide feedback right away. In contrast to the forthcoming Libra mainnet, the testnet merely simulates a digital payment system and the coins on the testnet have *no real-world value*.
 
 The Libra testnet is a demonstration of an early prototype of the Libra Blockchain software — Libra Core.
 
@@ -95,7 +95,7 @@ A validator node contains the following logical components:
 
 **Client Service**
 
-The Client Service is the external interface of the validator node. When a client makes a request to the Libra node, it goes to the Client Service first. 
+The Client Service is the external interface of the validator node. When a client makes a request to the Libra node, it goes to the Client Service first.
 
 **Mempool**
 
@@ -128,7 +128,7 @@ For information on interactions of each validator component with other component
 
 ## Byzantine Fault Tolerance (BFT) consensus approach
 
-The Libra payment system uses a BFT [consensus protocol](/reference/glossary#consensus-protocol) to form agreement among [validator nodes](https://developers.libra.org/docs/reference/glossary#validator-node) on the ledger of finalized transactions and their execution. The LibraBFT [consensus protocol](/reference/glossary#consensus-protocol) provides fault tolerance of up to one-third of malicious validators.
+The Libra payment system uses a BFT [consensus protocol](reference/glossary.md#consensus-protocol) to form agreement among [validator nodes](reference/glossary.md#validator-node) on the ledger of finalized transactions and their execution. The LibraBFT [consensus protocol](reference/glossary.md#consensus-protocol) provides fault tolerance of up to one-third of malicious validators.
 
 Each validator node maintains the history of all the transactions on the blockchain. Internally, a validator node needs to keep the current state to execute transactions and to calculate the next state. You can learn more about the logical components of a validator node in [Life of a Transaction](life-of-a-transaction.md).
 
