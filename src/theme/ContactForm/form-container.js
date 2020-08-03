@@ -5,6 +5,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import DisableAdblock from './disable-adblock';
 import FieldSet from './fieldset';
 import FormHeader from './form-header';
+import utils from 'libra-docusaurus-components/src/utils';
+
+const {getCookie} = utils;
 
 import 'CSS/forms.css';
 
@@ -34,15 +37,23 @@ const getForm = (formId, fields) => {
 
 const FormContainer = ({ children, fields, formId, subtitle, title }) => {
   useEffect(() => {
-    const segmentScript = document.createElement('script');
-    segmentScript.async = true;
-    segmentScript.src = '/js/segmentForm.js';
-    document.body.appendChild(segmentScript);
+    /*
+     * In the edge case where a user has not yet accepted the cookie policy
+     * and does so while on this page. We need to have the segment form script
+     * even though it wouldn't have loaded on the initial load.
+     * When the cookie is accepted, window.loadSegment will load again, and if
+     * window.isFormPage is true, the form script will then be loaded.
+     */
+    window.isFormPage = true;
 
-    const formScript = document.createElement('script');
-    formScript.async = true;
-    formScript.src = '/js/forms.js';
-    document.body.appendChild(formScript);
+    const segmentPermissionCookie = getCookie(window.trackingCookieConsent);
+
+    if (segmentPermissionCookie !== 'true') {
+      alert('Please enable cookies to be able to use forms on this site');
+      return;
+    }
+
+    window.loadSegmentFormScript();
   }, []);
   const {siteConfig: {baseUrl}} = useDocusaurusContext();
 

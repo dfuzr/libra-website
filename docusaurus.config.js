@@ -56,5 +56,6 @@ module.exports = {
       productionKey: 'Llc3xSsbfceDLVBzwOJKoJSkSHMRoj8V',
       stagingKey: 'qPd2q0d8dRMVcZFIK6ocHjDX8QMT19UW',
     },
+    trackingCookieConsent: 'libra-docs-cookies-allowed',
   },
 };
