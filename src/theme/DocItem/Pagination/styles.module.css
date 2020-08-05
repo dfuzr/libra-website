@@ -14,6 +14,12 @@
   text-decoration: none;
 }
 
+.pagination > a:hover:not(.disabled) span,
+.pagination > a:hover:not(.disabled) use {
+  opacity: .875;
+  fill-opacity: .7;
+}
+
 .previous {
   padding-right: 20px;
 }
@@ -22,19 +28,15 @@
   margin-right: 10px;
 }
 
-.pagination span {
-  color: var(--pagination-enabled);
-}
-
+.pagination span,
 .pagination use {
+  color: var(--pagination-enabled);
   fill: var(--pagination-enabled);
 }
 
-.disabled span {
-  color: var(--pagination-disabled);
-}
-
+.disabled span,
 .disabled use {
+  color: var(--pagination-disabled);
   fill: var(--pagination-disabled);
 }
 
