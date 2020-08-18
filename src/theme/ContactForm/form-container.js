@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import DisableAdblock from './disable-adblock';
+import EnableCookies from './enable-cookies';
 import FieldSet from './fieldset';
 import FormHeader from './form-header';
 import utils from 'libra-docusaurus-components/src/utils';
@@ -36,6 +37,8 @@ const getForm = (formId, fields) => {
 
 
 const FormContainer = ({ children, fields, formId, subtitle, title }) => {
+  const [showCookieModal, setShowCookieModal] = useState(false);
+
   useEffect(() => {
     /*
      * In the edge case where a user has not yet accepted the cookie policy
@@ -49,7 +52,7 @@ const FormContainer = ({ children, fields, formId, subtitle, title }) => {
     const segmentPermissionCookie = getCookie(window.trackingCookieConsent);
 
     if (segmentPermissionCookie !== 'true') {
-      alert('Please enable cookies to be able to use forms on this site');
+      setShowCookieModal(true);
       return;
     }
 
@@ -69,6 +72,7 @@ const FormContainer = ({ children, fields, formId, subtitle, title }) => {
 
   return (
     <div className="mainContainer formPage">
+      {showCookieModal && <EnableCookies />}
       <DisableAdblock baseUrl={baseUrl} />
       <FormHeader title={title} subtitle={subtitle} />
       <div className="wrapper">

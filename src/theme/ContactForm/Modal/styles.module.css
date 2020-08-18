@@ -1,4 +1,4 @@
-.modal {
+:global(.modal) {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -14,7 +14,7 @@
   transition: opacity 0.5s, visibility 0.5s;
 }
 
-.disable-adblock {
+.outer {
   display: block;
   position: fixed;
   top: 25%;
@@ -33,34 +33,38 @@
   transition: all 0.2s;
 }
 
-.disable-adblock .inner {
+.outer .inner {
   padding: 2rem;
   text-align: center;
 }
 
-.disable-adblock h2 {
+.outer h2 {
   color: #000;
 }
 
-.disable-adblock p {
+.outer p {
   color: #8E9AA3;
 }
 
-.disable-adblock img {
+.outer img {
   padding-top: 1rem;
 }
 
 
-.modal.visible {
+:global(.modal.visible) {
   opacity: 1;
   visibility: visible;
   z-index: 9999;
   transition: opacity 0.5s, visibility 0.5s;
 }
 
-.modal.visible .disable-adblock {
+:global(.modal.visible) .outer {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.2s;
   transition: all 0.2s;
+}
+
+:global(.modal .buttonWrapper .button:not(:first-child)) {
+  margin-top: 15px;
 }
