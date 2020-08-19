@@ -6,6 +6,7 @@ import DisableAdblock from './disable-adblock';
 import EnableCookies from './enable-cookies';
 import FieldSet from './fieldset';
 import FormHeader from './form-header';
+import ResetCookie from './reset-cookie';
 import utils from 'libra-docusaurus-components/src/utils';
 
 const {getCookie} = utils;
@@ -37,7 +38,7 @@ const getForm = (formId, fields) => {
 
 
 const FormContainer = ({ children, fields, formId, subtitle, title }) => {
-  const [showCookieModal, setShowCookieModal] = useState(false);
+  const segmentPermissionCookie = getCookie(window.trackingCookieConsent);
 
   useEffect(() => {
     /*
@@ -49,10 +50,7 @@ const FormContainer = ({ children, fields, formId, subtitle, title }) => {
      */
     window.isFormPage = true;
 
-    const segmentPermissionCookie = getCookie(window.trackingCookieConsent);
-
     if (segmentPermissionCookie !== 'true') {
-      setShowCookieModal(true);
       return;
     }
 
@@ -72,7 +70,8 @@ const FormContainer = ({ children, fields, formId, subtitle, title }) => {
 
   return (
     <div className="mainContainer formPage">
-      {showCookieModal && <EnableCookies />}
+      {segmentPermissionCookie === undefined && <EnableCookies />}
+      {segmentPermissionCookie === 'false' && <ResetCookie />}
       <DisableAdblock baseUrl={baseUrl} />
       <FormHeader title={title} subtitle={subtitle} />
       <div className="wrapper">
