@@ -4,6 +4,7 @@ import Modal from './Modal';
 
 const resetCookie = () => {
   document.cookie = `${window.trackingCookieConsent}=; Max-Age=0`;
+  document.cookie = `${window.trackingCookieConsent}-legacy=; Max-Age=0`;
   location.reload();
 };
 

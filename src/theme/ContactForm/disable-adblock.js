@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
 import Modal from './Modal';
 
 const DisableAdblock = ({ baseUrl }) => {
   const [showModal, setShowModal] = useState(false);
 
   // used in segmentForm.js
-  window.toggleAdBlockModal = setShowModal;
+  if (ExecutionEnvironment.canUseDOM) {
+    window.toggleAdBlockModal = setShowModal;
+  }
 
   return (
     <Modal id="disable-ad-block" showModal={showModal && "visible"} setShowModal={setShowModal}>

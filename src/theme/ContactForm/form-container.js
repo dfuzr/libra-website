@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import DisableAdblock from './disable-adblock';
@@ -38,7 +39,9 @@ const getForm = (formId, fields) => {
 
 
 const FormContainer = ({ children, fields, formId, subtitle, title }) => {
-  const segmentPermissionCookie = getCookie(window.trackingCookieConsent);
+  const segmentPermissionCookie = ExecutionEnvironment.canUseDOM
+    ? getCookie(window.trackingCookieConsent)
+    : undefined;
 
   useEffect(() => {
     /*
