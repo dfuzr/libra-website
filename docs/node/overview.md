@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Overview
-sidebar_label: Node Operators
+sidebar_label: Full Node Basics
 ---
 
 A Libra node is a peer entity that participates in the Libra payment network and tracks the state of the Libra Blockchain. Any interaction between a client (such as a wallet application) and the Libra Blockchain happens via these nodes.

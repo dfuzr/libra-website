@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Overview
-sidebar_label: Merchant Solutions
+sidebar_label: Merchant Concepts
 ---
 
 We are developing a reference merchant project for developers. The project will demonstrate how your service can accept ≋Libra payments Libra online, in-app, and in-person.
@@ -10,7 +10,7 @@ In this section, you will find the upcoming Libra Reference Merchant project, re
 
 Merchant services providers who would like to enable Libra payments on their platforms will need:
   * To be a regulated Virtual Asset Service Provider (VASP). Review the requirements [here](https://libra.org/white-paper/#compliance-and-the-prevention-of-illicit-activity)
-  * To provide or partner with a custody service to securely hold assets. 
+  * To provide or partner with a custody service to securely hold assets.
   * To provide or partner  with a liquidity service to support the exchange of funds between fiat and supported Libra currencies.
 <br />
 

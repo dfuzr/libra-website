@@ -1,22 +1,23 @@
 const {backToHome, getReference} = require('./components');
 
 const Sidebar = [
-   backToHome,
+  backToHome,
   {
     extra: {
       classNames: ['categoryLabel'],
-      icon: 'img/wallet-app.svg',
-      iconDark: 'img/wallet-app-dark.svg',
+      icon: 'img/merchant-solutions.svg',
+      iconDark: 'img/merchant-solutions-dark.svg',
       iconClasses: ['iconLeft'],
+      noLink: true,
     },
-    id: 'wallet-app/overview',
+    id: 'merchant/overview',
     type: 'doc',
   },
   {
     extra: {
       classNames: ['categoryIndex'],
     },
-    href: '/docs/wallet-app/overview',
+    href: '/docs/merchant/overview',
     label: 'Overview',
     type: 'link',
   },
@@ -24,18 +25,19 @@ const Sidebar = [
     label: '',
     type: 'category',
     items: [
-      'wallet-app/wallet-guide',
+      'merchant/merchant-guide',
     ]
   },
-    {
-    label: 'Libra Reference Wallet',
+   {
+    label: 'Libra Reference Merchant',
     type: 'category',
     items: [
-      'wallet-app/intro-to-lrw',
-      'wallet-app/develop-reference-wallet'
+      'merchant/lrm-concepts',
+      'merchant/develop-lrm'
     ]
-  },
-    getReference(),
+   },
+ getReference(),
 ];
+
 
 module.exports = Sidebar;
