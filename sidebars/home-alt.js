@@ -1,7 +1,6 @@
 const {getReference} = require('./components');
 
 const Sidebar = [
-
   {
     type: 'doc',
     id: 'welcome-to-libra',
@@ -12,55 +11,157 @@ const Sidebar = [
     },
   },
   {
-    extra: {
-      icon: 'img/core-contributors.svg',
-      iconDark: 'img/core-contributors-dark.svg',
-      iconClasses: ['listTitle'],
-    },
-    label: 'Libra Core Protocol',
     type: 'category',
+    label: 'Concepts',
     items: [
-      'core/libra-protocol',
-      'core/accounts',
-      'core/transaction-types',
-      'core/gas',
-      'core/nodes',
-      'core/clients',
-      'core/events',
-    ]
-  },
-  {
-    extra: {
-      icon: 'img/wallet-app.svg',
-      iconDark: 'img/wallet-app-dark.svg',
-      iconClasses: ['listTitle'],
-    },
-    label: 'Wallets',
-    type: 'category',
-    items: [
-      'wallet-app/intro-to-lrw',
-      'wallet-app/develop-reference-wallet',
-    ]
-  },
-  {
-    extra: {
-      icon: 'img/merchant-solutions.svg',
-      iconDark: 'img/merchant-solutions-dark.svg',
-      iconClasses: ['listTitle'],
-    },
-    label: 'Merchants',
-    type: 'category',
-    items: [
-      'merchant/overview',
-      'merchant/architecture',
-    ]
+      {
+        type: 'ref',
+        id: 'core/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/core-contributors.svg',
+          iconDark: 'img/core-contributors-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
+        id: 'merchant/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/merchant-solutions.svg',
+          iconDark: 'img/merchant-solutions-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
+        id: 'wallet-app/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/wallet-app.svg',
+          iconDark: 'img/wallet-app-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
+        id: 'move/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/move.svg',
+          iconDark: 'img/move-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
+        id: 'node/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/node-operators.svg',
+          iconDark: 'img/node-operators-dark.svg',
+        },
+      }
+    ],
   },
   {
     type: 'category',
     label: 'Tutorials',
     items: [
-      {
+     {
         type: 'doc',
+        id: 'core/my-first-transaction',
+      },
+      {
+        type: 'ref',
+        id: 'core/my-first-client',
+      },
+      {
+        type: 'ref',
+        id: 'wallet-app/public-demo-wallet',
+      },
+      {
+        type: 'ref',
+        id: 'wallet-app/try-local-web-wallet',
+      },
+      {
+        type: 'ref',
+        id: 'wallet-app/try-local-mobile-wallet',
+      },
+      {
+        type: 'ref',
+        id: 'wallet-app/try-wallet-admin',
+      },
+            {
+        type: 'ref',
+        id: 'merchant/local-merchant-store',
+      },
+            {
+        type: 'ref',
+        id: 'merchant/try-demo-merchant',
+      },
+            {
+        type: 'ref',
+        id: 'core/run-local-network',
+      },
+    ]
+  },
+  {
+    type: 'category',
+    label: 'Develop',
+    items: [
+     {
+        type: 'ref',
+        id: 'core/contributing',
+      },
+      {
+        type: 'ref',
+        id: 'core/coding-guidelines',
+      },
+      {
+        type: 'ref',
+        id: 'core/libra-cli',
+      },
+    ]
+  },
+  {
+    label: 'SDKs',
+    type: 'category',
+    items: [
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-cplusplus',
+        label: 'C++',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-csharp',
+        label: 'C#',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-go',
+        label: 'Go',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-java',
+        label: 'Java',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-python',
+        label: 'Python',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-typescript',
+        label: 'TypeScript',
+      },
+    ]
+  },
+  getReference('primary'),
+];
+module.exports = Sidebar;
+      /*
+
         id: 'core/my-first-transaction',
         extra: {
           classNames: ['iconIndented'],
@@ -71,7 +172,7 @@ const Sidebar = [
       {
         type: 'doc',
         id: 'core/my-first-client',
-        extra: {
+        /*extra: {
           classNames: ['iconIndented'],
           icon: 'img/core-contributors.svg',
           iconDark: 'img/core-contributors-dark.svg',
@@ -80,7 +181,7 @@ const Sidebar = [
       {
         type: 'doc',
         id: 'wallet-app/public-demo-wallet',
-        extra: {
+        /*extra: {
           classNames: ['iconIndented'],
           icon: 'img/wallet-app.svg',
           iconDark: 'img/wallet-app-dark.svg',
@@ -106,15 +207,35 @@ const Sidebar = [
       },
       {
         type: 'doc',
-        id: 'merchant/try-local-merchant',
+        id: 'merchant/local-merchant-store',
         extra: {
           classNames: ['iconIndented'],
           icon: 'img/merchant-solutions.svg',
           iconDark: 'img/merchant-solutions-dark.svg',
         },
       },
-    ]
-  },
+      {
+        type: 'doc',
+        id: 'merchant/payment-mgmt',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/merchant-solutions.svg',
+          iconDark: 'img/merchant-solutions-dark.svg',
+        },
+      },
+      {
+        type: 'doc',
+        id: 'merchant/try-demo-merchant',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/merchant-solutions.svg',
+          iconDark: 'img/merchant-solutions-dark.svg',
+        },
+      },*/
+
+
+/*
+
   {
     extra: {
       icon: 'img/core-contributors.svg',
@@ -178,5 +299,4 @@ const Sidebar = [
   },
   getReference('primary'),
 ];
-
-module.exports = Sidebar;
+*/

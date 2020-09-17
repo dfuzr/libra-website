@@ -1,6 +1,6 @@
 ---
 id: overview
-sidebar_label: Libra Core
+sidebar_label: Learn Libra Core
 title: Overview
 ---
 

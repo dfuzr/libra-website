@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Overview
-sidebar_label: Wallet / App
+sidebar_label: Wallet Concepts
 ---
 
 Digital wallets provide an important function for users interacting and transacting on the Libra network. In this section, you will learn about the [Libra Reference Wallet](/reference-wallet), find technical and conceptual documentation, and information for integrating services with the Libra network.
@@ -88,4 +88,3 @@ For developers with existing digital wallets or familiarity building digital fin
   <MoveReference />
   <NodeReference />
 </CardsWrapper>
-

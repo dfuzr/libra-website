@@ -29,14 +29,14 @@ The [Libra Association](https://www.libra.org) manages the development roadmap f
     to="/docs/wallet-app/overview"
   />
   <OverlayCard
-    description="Learn about and experiment with the Move programming language"
+    description="Learn and experiment with the Move programming language"
     icon="img/move.svg"
     iconDark="img/move-dark.svg"
     title="Develop with Move"
     to="/docs/move/overview"
   />
   <OverlayCard
-    description="Accept payments and integrate with the network"
+    description="Accept payments and integrate with the LPN"
     icon="img/docs/merchant-solutions.svg"
     iconDark="img/docs/merchant-solutions-dark.svg"
     title="Accept Payments"

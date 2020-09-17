@@ -1,6 +1,7 @@
 ---
 id: life-of-a-transaction
 title: Life of a Transaction
+sidebar_label: Life of a Transaction
 ---
 
 _**Note to readers:** This information was published before the Association released White Paper v2.0, which includes a number of key updates to the Libra payment system. This information has not been modified to incorporate those updates and should be read in that context._
