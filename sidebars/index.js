@@ -1,9 +1,9 @@
-const Core = require('./core');
-const Home = require('./home');
-const MerchantSolutions = require('./merchant-solutions');
-const WalletApp = require('./wallet-app');
+const Core = require('./core-alt');
+const Home = require('./home-alt');
+const MerchantSolutions = require('./merchant-solutions-alt');
+const WalletApp = require('./wallet-app-alt');
 const Move = require('./move');
-const NodeOperators = require('./node-operators');
+const NodeOperators = require('./node-operators-alt');
 
 module.exports = {
   Core,

@@ -40,7 +40,7 @@ const Sidebar = [
       'core/clients',
       'core/events',
     ]
-  },  
+  },
   {
     extra: {
       icon: 'img/tutorials.svg',
