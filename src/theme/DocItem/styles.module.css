@@ -5,10 +5,10 @@
 .docItemContainer {
   margin: 0 auto;
   overflow: hidden;
-  padding: 
-    var(--doc-padding-top) 
-    var(--doc-padding-right) 
-    var(--doc-padding-bottom) 
+  padding:
+    var(--doc-padding-top)
+    var(--doc-padding-right)
+    var(--doc-padding-bottom)
     var(--doc-padding-left);
 }
 
@@ -18,11 +18,14 @@
   padding: 0;
 }
 
+.docItemWrapper article {
+  margin-bottom: 55px;
+}
+
 .community {
   color: var(--doc-secondary-color);
   display: block;
   font-size: 15px;
-  padding-top: 60px;
 }
 
 .community a {

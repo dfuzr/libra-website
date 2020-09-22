@@ -13,7 +13,7 @@ const ResetCookie = ({ baseUrl }) => {
 
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
-      <h2>Please enable cookies to use this form</h2>
+      <h2>Please enable cookies to use this form.</h2>
       <div className="buttonWrapper">
         <a className="button secondary" onClick={resetCookie}>
           Click to reset cookies
