@@ -10,8 +10,9 @@ module.exports = function(context, options) {
           alias: {
             CSS: path.resolve(__dirname, '../../../src/css'),
             components: path.resolve(__dirname, '../../../src/components'),
+            img: path.resolve(__dirname, '../../../static/img'),
+            src: path.resolve(__dirname, '../../../src'),
             react: path.resolve('./node_modules/react'),
-            img: path.resolve(__dirname, '../../../static/img')
           }
         },
         module: {
