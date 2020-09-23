@@ -219,12 +219,22 @@ form label.required:after {
 }
 
 .button {
-  color: var(--accent-highlight);
   border: 1px solid var(--accent-highlight);
+  color: var(--accent-highlight);
 }
 
 .button:hover {
   color: inherit;
+}
+
+.button.secondary {
+  border: 1px solid var(--brand-color);
+  color: var(--brand-color);
+}
+
+.button.secondary:hover {
+  background-color: var(--brand-color);
+  color: white;
 }
 
 .postContainer {

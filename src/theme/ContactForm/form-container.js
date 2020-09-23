@@ -1,10 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import DisableAdblock from './disable-adblock';
+import EnableCookies from './enable-cookies';
 import FieldSet from './fieldset';
 import FormHeader from './form-header';
+import ResetCookie from './reset-cookie';
+import utils from 'libra-docusaurus-components/src/utils';
+
+const {getCookie} = utils;
 
 import 'CSS/forms.css';
 
@@ -33,16 +39,25 @@ const getForm = (formId, fields) => {
 
 
 const FormContainer = ({ children, fields, formId, subtitle, title }) => {
-  useEffect(() => {
-    const segmentScript = document.createElement('script');
-    segmentScript.async = true;
-    segmentScript.src = '/js/segmentForm.js';
-    document.body.appendChild(segmentScript);
+  const segmentPermissionCookie = ExecutionEnvironment.canUseDOM
+    ? getCookie(window.trackingCookieConsent)
+    : undefined;
 
-    const formScript = document.createElement('script');
-    formScript.async = true;
-    formScript.src = '/js/forms.js';
-    document.body.appendChild(formScript);
+  useEffect(() => {
+    /*
+     * In the edge case where a user has not yet accepted the cookie policy
+     * and does so while on this page. We need to have the segment form script
+     * even though it wouldn't have loaded on the initial load.
+     * When the cookie is accepted, window.loadSegment will load again, and if
+     * window.isFormPage is true, the form script will then be loaded.
+     */
+    window.isFormPage = true;
+
+    if (segmentPermissionCookie !== 'true') {
+      return;
+    }
+
+    window.loadSegmentFormScript();
   }, []);
   const {siteConfig: {baseUrl}} = useDocusaurusContext();
 
@@ -58,6 +73,8 @@ const FormContainer = ({ children, fields, formId, subtitle, title }) => {
 
   return (
     <div className="mainContainer formPage">
+      {segmentPermissionCookie === undefined && <EnableCookies />}
+      {segmentPermissionCookie === 'false' && <ResetCookie />}
       <DisableAdblock baseUrl={baseUrl} />
       <FormHeader title={title} subtitle={subtitle} />
       <div className="wrapper">

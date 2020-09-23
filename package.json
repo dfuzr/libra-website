@@ -6,15 +6,16 @@
     "start": "docusaurus start",
     "start-with-ada": "TEST_ADA=1 docusaurus start",
     "build": "docusaurus build",
+    "build-staging": "SEGMENT=staging docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "deploy": "npm run build-staging && npx now"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.53",
     "@docusaurus/preset-classic": "^2.0.0-alpha.53",
     "@svgr/webpack": "^5.4.0",
     "classnames": "^2.2.6",
-    "libra-docusaurus-components": "^0.2.9",
+    "libra-docusaurus-components": "^0.2.18",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
