@@ -21,6 +21,21 @@ const Sidebar = [
     label: 'Overview',
     type: 'link',
   },
+  {
+    extra: {classNames: ['categoryIndex']},
+    type: 'doc',
+    id: 'node/nodes',
+  },
+  {
+    extra: {classNames: ['categoryIndex']},
+    type: 'doc',
+    id: 'node/config-deploy-fn',
+  },
+  {
+    extra: {classNames: ['categoryIndex']},
+    type: 'doc',
+    id: 'node/run-local-network',
+  },
   getReference(),
 ];
 

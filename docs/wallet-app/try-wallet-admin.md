@@ -1,8 +1,7 @@
 ---
 id: try-wallet-admin
 title: 'Try the Wallet Administration Dashboard'
-sidebar_label: Try the Wallet Admin Dashboard 
-
+sidebar_label: Use the Admin Dashboard
 ---
 
 
@@ -20,11 +19,11 @@ The admin UI allows admin users to perform several administrative tasks:
 To access the admin UI, log in using the admin credentials `admin@lrw.com`. Upon login, the user will be presented with a UI different from the regular user.
 
 >
->Note: 
->    
+>Note:
+>
 >           - There always exists an admin user named admin@lrw
->           - The admin UI is not accessible in the mobile app.  
-> 
+>           - The admin UI is not accessible in the mobile app.
+>
 
 
 
@@ -55,7 +54,7 @@ This page simulates management of the wallet debt for its liquidity provider. Th
 ## Reference
 
 * [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
-* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows. 
+* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows.
 * [Wallet Architecture](wallet-arch.md) - Learn more about PubSub and how it's implemented.
 * [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet
 * [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet

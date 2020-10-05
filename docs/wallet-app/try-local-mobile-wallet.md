@@ -1,14 +1,12 @@
 ---
 id: try-local-mobile-wallet
 title: 'Try the Local Mobile Wallet'
-sidebar_label: Try the Local Mobile Wallet
-
-
+sidebar_label: Mobile
 ---
 
 
 >
-> Note: This section is currently under development. An updated version of this document shall be included in a future documentation release. 
+> Note: This section is currently under development. An updated version of this document shall be included in a future documentation release.
 >
 
 
@@ -47,6 +45,6 @@ The Libra Reference Wallet mobile app allows sending Libra Coins using the built
 ## Reference
 
 * [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
-* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows. 
+* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows.
 * [Wallet Architecture](wallet-arch.md) - Learn more about PubSub and how it's implemented.
 * [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet

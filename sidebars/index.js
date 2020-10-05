@@ -1,9 +1,11 @@
-const Core = require('./core-alt');
-const Home = require('./home-alt');
-const MerchantSolutions = require('./merchant-solutions-alt');
-const WalletApp = require('./wallet-app-alt');
+const Core = require('./core');
+const Home = require('./home');
+const MerchantSolutions = require('./merchant-solutions');
 const Move = require('./move');
-const NodeOperators = require('./node-operators-alt');
+const NodeOperators = require('./node-operators');
+const SDKs = require('./sdks');
+const Tutorials = require('./tutorials');
+const WalletApp = require('./wallet-app');
 
 module.exports = {
   Core,
@@ -11,5 +13,7 @@ module.exports = {
   MerchantSolutions,
   Move,
   NodeOperators,
+  SDKs,
+  Tutorials,
   WalletApp,
 };

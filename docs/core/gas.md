@@ -4,8 +4,6 @@ title: Gas
 sidebar_label: Gas
 ---
 
-
-
 Gas is a way for the Move virtual machine to track and account for the abstract representation of computational resources consumed during execution. In other words, gas is used to track and measure the network resources used during a transaction in the Libra Payment Network (LPN).
 
 Gas is used to ensure that all Move programs running on the Libra Blockchain terminate, so that the computational resources used are bounded. It also provides the ability to charge a transaction fee, partly based on consumed resources during a transaction.

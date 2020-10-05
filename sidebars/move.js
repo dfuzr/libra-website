@@ -14,36 +14,70 @@ const Sidebar = [
     type: 'doc',
   },
   {
-    extra: {
-      classNames: ['categoryIndex'],
-    },
+    extra: {classNames: ['categoryIndex']},
     href: '/docs/move/overview',
     label: 'Overview',
     type: 'link',
   },
   {
-    extra: {
-      icon: 'img/concepts.svg',
-      iconDark: 'img/concepts-dark.svg',
-      iconClasses: ['listTitle'],
-    },
-    label: 'Concepts',
+    extra: {iconClasses: ['listTitle']},
+    label: 'Getting Started',
     type: 'category',
     items: [
-      'move/move-paper',
+      {
+        href: '',
+        label: 'Installation',
+        type: 'link',
+      },
+      {
+        href: '',
+        label: 'Hello, Move',
+        type: 'link',
+      },
+      {
+        href: '',
+        label: 'Transactions Scripts vs. Modules',
+        type: 'link',
+      },
     ]
   },
   {
-    extra: {
-      icon: 'img/tutorials.svg',
-      iconDark: 'img/tutorials-dark.svg',
-      iconClasses: ['listTitle'],
-    },
-    label: 'Tutorials',
+    href: 'https://github.com/libra/move-documentation-workspace/blob/master/source-language/programming-your-first-move-module.md',
+    label: 'Programming Your First Move Module',
+    type: 'link',
+  },
+  {
+    href: 'https://github.com/libra/move-documentation-workspace/blob/master/source-language/move-language-basics.md',
+    label: 'Move Language Basics',
+    type: 'link',
+  },
+  {
+    href: 'https://github.com/libra/move-documentation-workspace/blob/master/source-language/resources.md',
+    label: 'Resources',
+    type: 'link',
+  },
+  {
+    href: 'https://github.com/libra/move-documentation-workspace/blob/master/source-language/ownership.md',
+    label: 'Ownership',
+    type: 'link',
+  },
+  {
+    href: '',
+    label: 'Storage and Execution',
+    type: 'link',
+  },
+
+
+
+  {
+    extra: {iconClasses: ['listTitle']},
+    label: 'Get Started',
     type: 'category',
     items: [
-      'move/move-getting-started',
-      'move/run-move-locally',
+      'tutorials/my-first-transaction',
+      'tutorials/my-first-client',
+      'tutorials/query-the-blockchain',
+      'tutorials/run-local-network',
     ]
   },
   getReference(),

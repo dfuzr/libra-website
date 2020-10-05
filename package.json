@@ -8,7 +8,7 @@
     "build": "docusaurus build",
     "build-staging": "SEGMENT=staging docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "npm run build-staging && npx now"
+    "deploy-staging": "npm run build-staging && npx now"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.53",

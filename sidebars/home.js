@@ -43,6 +43,15 @@ const Sidebar = [
       },
       {
         type: 'ref',
+        id: 'node/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/node-operators.svg',
+          iconDark: 'img/node-operators-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
         id: 'move/overview',
         extra: {
           classNames: ['iconIndented'],
@@ -52,13 +61,22 @@ const Sidebar = [
       },
       {
         type: 'ref',
-        id: 'node/overview',
+        id: 'tutorials/overview',
         extra: {
           classNames: ['iconIndented'],
-          icon: 'img/node-operators.svg',
-          iconDark: 'img/node-operators-dark.svg',
+          icon: 'img/compliance.svg',
+          iconDark: 'img/compliance-dark.svg',
         },
-      }
+      },
+      {
+        type: 'ref',
+        id: 'sdks/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/cog.png',
+          iconDark: 'img/cog-dark.png',
+        },
+      },
     ],
   },
   getReference('primary'),

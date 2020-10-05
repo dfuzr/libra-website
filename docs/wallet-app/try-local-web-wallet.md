@@ -1,9 +1,7 @@
 ---
 id: try-local-web-wallet
 title: 'Try the Local Wallet'
-sidebar_label: Try the Local Web Wallet
-
-
+sidebar_label: Web
 ---
 
 
@@ -22,7 +20,7 @@ The Libra Reference Local Web Wallet is a web wallet interface provided as a dem
 The main purpose is to demonstrate common use cases when working with Libra Coins and show options for further development. To illustrate key Libra wallet concepts, we’ve simplified the implementation and avoided some of the complexities of real world, production-grade financial software.
 
 >
->Note: This code is to be used as a reference only; never use this code in production! 
+>Note: This code is to be used as a reference only; never use this code in production!
 >
 
 ### Solutions stack
@@ -42,7 +40,7 @@ The Libra Reference Wallet web UI has been developed using the following tools:
 
 ### Assumptions
 
-The Libra Reference Wallet implementation makes several assumptions to simplify the system. 
+The Libra Reference Wallet implementation makes several assumptions to simplify the system.
 
 #### Simplified authentication model
 The Libra Reference Wallet uses simplified authentication and authorization mechanisms. Users are authenticated using a username and password. When a user logs in successfully, a bearer token is issued for the user by the backend server and stored in the tokens table.
@@ -63,7 +61,7 @@ The image below details the different user flows for the local Reference Wallet 
 
 ### Development
 
-You can read further technical documentation in the [Libra Reference Wallet git repository](https://github.com/libra/libra-reference-wallet). All web UI resources can be found [here](https://github.com/libra/libra-reference-wallet/tree/master/frontend). 
+You can read further technical documentation in the [Libra Reference Wallet git repository](https://github.com/libra/libra-reference-wallet). All web UI resources can be found [here](https://github.com/libra/libra-reference-wallet/tree/master/frontend).
 
 
 ### Deploy the Reference Wallet
@@ -101,14 +99,14 @@ The local web client is accessible only for authenticated users. When a user acc
 
 Upon login, if a user is presented with a “Verification Pending” page, it means that the authentication has been successful but the user verification process is still underway.
 
-The password can be reset using the “Forgot Password” link. Alternatively, if the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page. 
+The password can be reset using the “Forgot Password” link. Alternatively, if the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page.
 
 
 ### Sign out
 A user can sign out of the wallet on the [Settings](#modify-settings) page.
 
 ### Reset password
-It is possible to reset the user password by entering a verified email address on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. Note that the email address provided must be an address previously registered in the system. 
+It is possible to reset the user password by entering a verified email address on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. Note that the email address provided must be an address previously registered in the system.
 
 >
 >Note: For the reference wallet, entering a known email address redirects the user immediately to the password change page, without sending the reset message.
@@ -155,7 +153,7 @@ In addition, the page shows the email address of the active user. It is not poss
 ![](/img/docs/modify-settings.svg)
 
 >
->Note: The payment methods are for demonstration purposes only. The supplied information is not validated, and no real transactions are made using the configured credit cards and bank accounts. 
+>Note: The payment methods are for demonstration purposes only. The supplied information is not validated, and no real transactions are made using the configured credit cards and bank accounts.
 >
 
 
@@ -185,7 +183,7 @@ Each transaction consists of:
 
 ### Check transaction details
 
-Clicking a transaction in the transactions list will open a window with transaction details. 
+Clicking a transaction in the transactions list will open a window with transaction details.
 
 ![](/img/docs/check-transaction.svg)
 
@@ -199,10 +197,10 @@ Each transaction consists of:
 * Amount of Libra Coins
 * Current fiat value in default fiat currency, as configured in the wallet settings
 * Transaction execution date and time
-* Address 
+* Address
 * Libra transaction ID – Libra transaction ID – Libra Blockchain ledger version number of the transaction with link to an external Libra Blockchain explorer, if applicable. If not applicable, as in the cases of internal transactions, the field will be marked as unavailable.
 
- 
+
 
 ### Deposit and withdraw Libra Coins
 
@@ -211,7 +209,7 @@ Users can deposit and withdraw Libra Coins to and from the Libra Reference Walle
 When a user requests to deposit an amount of Libra Coin, the Libra Reference Wallet simulates a purchase of Libra Coins using the user's credit card or bank account wire transfer.
 
 >
->Note: For your safety and security, never use real credit card or bank account details. 
+>Note: For your safety and security, never use real credit card or bank account details.
 >
 
 To perform a deposit, follow these steps:
@@ -272,7 +270,7 @@ Other wallets can send funds without any action on the receiving party’s side,
 ## Reference
 
 * [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
-* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows. 
+* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows.
 * [Wallet Architecture](wallet-arch.md) - Learn more about PubSub and how it's implemented.
 * [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
-* [Login and Authentication](login-auth.md) - Learn how the login and authentication functionalities have been implemented. 
+* [Login and Authentication](login-auth.md) - Learn how the login and authentication functionalities have been implemented.

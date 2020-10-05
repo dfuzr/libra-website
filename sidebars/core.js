@@ -1,7 +1,7 @@
 const {backToHome, getReference} = require('./components');
 
 const Sidebar = [
-   backToHome,
+  backToHome,
   {
     extra: {
       classNames: ['categoryLabel'],
@@ -13,59 +13,63 @@ const Sidebar = [
     type: 'doc',
   },
   {
-    extra: {
-      classNames: ['categoryIndex'],
-    },
+    extra: {classNames: ['categoryIndex']},
     href: '/docs/core/overview',
     label: 'Overview',
     type: 'link',
   },
   {
-    extra: {
-      iconClasses: ['listTitle'],
-    },
+    extra: {iconClasses: ['listTitle']},
     label: 'Concepts',
     type: 'category',
     items: [
       'core/libra-protocol',
+      'core/nodes',
       'core/life-of-a-transaction',
-      'core/the-libra-blockchain-paper',
-      'core/state-machine-replication-paper',
       'core/accounts',
       'core/transaction-types',
-      'core/gas',
-      'core/nodes',
-      'core/clients',
+      'core/keys',
       'core/events',
+      'core/gas',
+      'core/clients',
     ]
   },
   {
-    extra: {
-      iconClasses: ['listTitle'],
-    },
+    extra: {iconClasses: ['listTitle']},
     label: 'Tutorials',
     type: 'category',
     items: [
       'core/my-first-transaction',
       'core/my-first-client',
+      'core/query-the-blockchain',
       'core/run-local-network',
     ]
   },
   {
-    extra: {
-      iconClasses: ['listTitle'],
-    },
+    extra: {iconClasses: ['listTitle']},
     label: 'Develop',
     type: 'category',
     items: [
       {
         type: 'link',
-        href: 'https://github.com/orgs/libra/projects/1',
-        label: 'Roadmap',
+        href: 'https://github.com/libra/libra/blob/master/json-rpc/json-rpc-spec.md',
+        label: 'JSON-RPC Spec',
       },
-      'core/libra-open-source-paper',
-      'core/contributing',
-      'core/coding-guidelines',
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-go',
+        label: 'Go SDK',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-java',
+        label: 'Java SDK',
+      },
+      {
+        type: 'link',
+        href: 'https://github.com/libra/libra-client-sdk-python',
+        label: 'Python SDK',
+      },
       'core/libra-cli',
     ]
   },
