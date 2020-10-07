@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Overview
-sidebar_label: Move
+sidebar_label: Develop with Move
 ---
 
 Welcome to Move, a programming language for implementing custom transaction logic and “smart contracts” on the Libra Blockchain. Move allows developers to write programs that flexibly manage and transfer assets, while providing the security and protections against attacks on those assets.
