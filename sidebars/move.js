@@ -1,4 +1,4 @@
-const {backToHome} = require('./components');
+const {backToHome, getReference} = require('./components');
 
 const Sidebar = [
   backToHome,
@@ -46,6 +46,7 @@ const Sidebar = [
       'move/run-move-locally',
     ]
   },
+  getReference(),
 ];
 
 module.exports = Sidebar;

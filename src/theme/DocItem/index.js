@@ -6,6 +6,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
+import {OVERFLOW_CONTAINER_CLASS} from '@theme/Layout';
+
+import Feedback from 'components/docs/Feedback';
 import Pagination from './Pagination';
 import {RightSidebar} from 'libra-docusaurus-components';
 
@@ -85,6 +88,7 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
+              <Feedback />
               <span className={styles.community}>
                 <a href="https://community.libra.org/">Ask the community</a> for support
               </span>

@@ -19,35 +19,35 @@ The [Libra Association](https://www.libra.org) manages the development roadmap f
     icon="img/core-contributors.svg"
     iconDark="img/core-contributors-dark.svg"
     title="Contribute to Libra Core"
-    to="#"
+    to="/docs/core/overview"
   />
   <OverlayCard
     description="Develop a wallet for the Libra Payment Network"
     icon="img/wallet-app.svg"
     iconDark="img/wallet-app-dark.svg"
     title="Build a Wallet"
-    to="#"
+    to="/docs/wallet-app/overview"
   />
   <OverlayCard
     description="Learn and experiment with the Move programming language"
     icon="img/move.svg"
     iconDark="img/move-dark.svg"
     title="Develop with Move"
-    to="#"
+    to="/docs/move/overview"
   />
   <OverlayCard
     description="Accept payments and integrate with the LPN"
     icon="img/docs/merchant-solutions.svg"
     iconDark="img/docs/merchant-solutions-dark.svg"
     title="Accept Payments"
-    to="#"
+    to="/docs/merchant/overview"
   />
   <OverlayCard
     description="Learn how to operate full nodes in the Libra Blockchain"
     icon="img/move.svg"
     iconDark="img/move-dark.svg"
     title="Run a Full Node"
-    to="#"
+    to="/docs/node/overview"
   />
 </CardsWrapper>
 

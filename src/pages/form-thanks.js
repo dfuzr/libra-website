@@ -6,8 +6,6 @@ import FormHeader from '@theme/ContactForm/form-header';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import 'CSS/disable-adblock.css';
-
 const FormThanks = () => {
   const {siteConfig: {baseUrl}} = useDocusaurusContext();
 

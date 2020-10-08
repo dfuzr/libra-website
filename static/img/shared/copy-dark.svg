@@ -6,9 +6,9 @@
             <g id="Document-Icon" transform="translate(378.000000, 1231.000000)">
                 <rect id="Rectangle" stroke="#B5B5B5" x="0.16" y="4" width="16" height="19"></rect>
                 <polyline id="Path" stroke="#727272" points="3 0 20 0 20 20"></polyline>
-                <line x1="4" y1="12.5" x2="12" y2="12.5" id="Path" stroke="#B5B5B5"></line>
-                <line x1="4" y1="8.5" x2="12" y2="8.5" id="Path" stroke="#B5B5B5"></line>
-                <line x1="4" y1="16.5" x2="8" y2="16.5" id="Path" stroke="#B5B5B5"></line>
+                <line x1="4" y1="12.5" x2="12" y2="12.5" id="Path" stroke="#ffffff"></line>
+                <line x1="4" y1="8.5" x2="12" y2="8.5" id="Path" stroke="#ffffff"></line>
+                <line x1="4" y1="16.5" x2="8" y2="16.5" id="Path" stroke="#ffffff"></line>
             </g>
         </g>
     </g>

@@ -40,12 +40,7 @@
   }
 
   function toggleAdBlockModal(on) {
-    const modal = document.getElementById('disable-ad-block');
-    if (on) {
-      modal.classList.add('visible');
-    } else {
-      modal.classList.remove('visible');
-    }
+    window.toggleAdBlockModal(on);
   }
 
   /**

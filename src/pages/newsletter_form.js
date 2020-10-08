@@ -41,7 +41,7 @@ const formFields = [{
       text: 'Institutional Developer'
     }, {
       value: 'dAppsDeveloper',
-      text: 'dApps Developer'
+      text: 'Apps Developer'
     }, {
       value: 'Other',
       text: 'Other'
