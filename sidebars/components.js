@@ -1,3 +1,14 @@
+const { isWebUri } = require('valid-url');
+
+const category = (label, items) => {
+  return {
+    extra: {iconClasses: ['listTitle']},
+    label,
+    type: 'category',
+    items
+  };
+};
+
 const backToHome = {
   extra: {
     classNames: ['backToHome'],
@@ -8,6 +19,31 @@ const backToHome = {
   href: '/docs/welcome-to-libra',
   label: 'Home',
   type: 'link',
+};
+
+const categoryBoilerplate = (id, image, includeOverview = true) => {
+  const imageUrl = typeof image === 'string' ? image : image.url;
+  const imageType = typeof image === 'string' ? 'svg' : image.type;
+
+  return [
+    backToHome,
+    {
+      extra: {
+        classNames: ['categoryLabel'],
+        icon: `img/${imageUrl}.${imageType}`,
+        iconDark: `img/${imageUrl}-dark.${imageType}`,
+        noLink: true,
+      },
+      id,
+      type: 'doc',
+    },
+    {
+      extra: standaloneLinkClasses(),
+      href: `/docs/${id}`,
+      label: 'Overview',
+      type: 'link',
+    },
+  ];
 };
 
 const getReference = (theme = 'secondary') => {
@@ -54,12 +90,53 @@ const getReference = (theme = 'secondary') => {
           icon: 'img/security.svg',
           iconDark: 'img/security-dark.svg',
         }
-      }
+      },
+      {
+        type,
+        id: 'cli',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/cog.png',
+          iconDark: 'img/cog-dark.png',
+        }
+      },
+      {
+        type,
+        id: 'using-the-sidebar',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/compliance.svg',
+          iconDark: 'img/compliance-dark.svg',
+        }
+      },
     ],
   };
 };
 
+const standaloneLink = (link, label) =>
+  isWebUri(link) || link === ''
+    ? {
+        extra: standaloneLinkClasses(),
+        href: link,
+        label,
+        type: 'link',
+      }
+    : {
+        extra: standaloneLinkClasses(),
+        id: link,
+        type: 'doc',
+      };
+
+const standaloneLinkClasses = () => {
+  return {
+    classNames: ['categoryIndex']
+  };
+}
+
 module.exports = {
+  category,
   backToHome,
+  categoryBoilerplate,
   getReference,
+  standaloneLink,
 };
