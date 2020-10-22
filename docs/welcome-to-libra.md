@@ -3,9 +3,8 @@ id: welcome-to-libra
 title: Libra Developer Documentation
 disable_pagination: true
 sidebar_label: Home
+include_marketing_module: true
 ---
-
-<span />
 
 ## Welcome to Libra!
 
