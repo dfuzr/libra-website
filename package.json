@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prepare-cli": "cp typescript-sdk-tsconfig.json libra-client-sdk-typescript/tsconfig.json && cd libra-client-sdk-typescript && npm install && npm run build && cd ../ && cd libra-cli && npm install && tsc && cd ../",
     "start": "docusaurus start",
     "start-with-ada": "TEST_ADA=1 docusaurus start",
-    "build": "docusaurus build",
-    "build-staging": "SEGMENT=staging docusaurus build",
+    "build": "npm run prepare-cli && docusaurus build",
+    "build-staging": "npm run prepare-cli && SEGMENT=staging docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy-staging": "npm run build-staging && npx now"
   },
@@ -17,7 +18,8 @@
     "classnames": "^2.2.6",
     "libra-docusaurus-components": "^0.2.18",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "valid-url": "^1.0.9"
   },
   "browserslist": {
     "production": [

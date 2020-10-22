@@ -1,5 +1,6 @@
 import BlogRedirect from './BlogRedirect';
 import Cards from './Cards';
+import CLI from './CLI';
 import Excerpt from './Excerpt';
 import Feedback from './Feedback';
 import MultiStepSnippet from './MultiStepSnippet';
@@ -10,6 +11,7 @@ import WaveBackground from './WaveBackground';
 export default {
   BlogRedirect,
   ...Cards,
+  CLI,
   Excerpt,
   Feedback,
   MultiStepSnippet,
