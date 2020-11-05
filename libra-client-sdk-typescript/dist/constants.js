@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CURRENCIES = exports.libraScheme = exports.zeroSubAddress = exports.bech32AddressVersion = exports.bech32AddressLength = exports.subAddressBytesSize = exports.addressBytesSize = exports.coreCodeAddressHex = exports.testnetChainID = void 0;
+exports.testnetChainID = 2;
+exports.coreCodeAddressHex = '00000000000000000000000000000001';
+exports.addressBytesSize = 16;
+exports.subAddressBytesSize = 8;
+exports.bech32AddressLength = 50;
+exports.bech32AddressVersion = 1;
+exports.zeroSubAddress = '0000000000000000';
+exports.libraScheme = 'libra';
+exports.CURRENCIES = ['LBR', 'Coin1', 'Coin2'];
