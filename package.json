@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prepare-cli": "cp typescript-sdk-tsconfig.json libra-client-sdk-typescript/tsconfig.json && cd libra-client-sdk-typescript && npm install && npm run build && cd ../ && cd libra-cli && npm install && tsc && cd ../",
+    "prepare": "npm run prepare-submodules && npm run prepare-sdk && npm run prepare-cli",
+    "prepare-sdk": "cd libra-client-sdk-typescript && npm install && npm run build-with-esmodules && cd ../",
+    "prepare-cli": "cd libra-cli && npm install && tsc && cd ../",
     "prepare-submodules": "git submodule init && git submodule update",
     "start": "docusaurus start",
     "start-with-ada": "TEST_ADA=1 docusaurus start",
-    "build": "npm run prepare-submodules && npm run prepare-cli && docusaurus build",
-    "build-staging": "npm run prepare-submodules && npm run prepare-cli && SEGMENT=staging docusaurus build",
+    "build": "npm run prepare && NODE_ENV=production docusaurus build",
+    "build-staging": "npm run prepare && SEGMENT=staging docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy-staging": "npm run build-staging && npx now"
   },

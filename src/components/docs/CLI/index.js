@@ -1,12 +1,12 @@
 import React from 'react';
-import Terminal from 'libra-cli';
+import Terminal from 'react-libra-shell';
 
-import CommandsPreset from './commands-preset.tsx';
+// import CommandsPreset from './commands-preset.tsx';
 
 const CLI = () => {
   return (
     <div className="cli">
-      <Terminal Commands={CommandsPreset} />
+      <Terminal />
     </div>
   );
 };
