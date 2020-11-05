@@ -1,9 +1,3 @@
 [submodule "libra"]
 	path = libra
 	url = https://github.com/libra/libra
-[submodule "libra-client-sdk-typescript"]
-	path = libra-client-sdk-typescript
-	url = git@github.com:libra/libra-client-sdk-typescript.git
-[submodule "libra-cli"]
-	path = libra-cli
-	url = git@github.com:dfuzr/libra-cli.git
