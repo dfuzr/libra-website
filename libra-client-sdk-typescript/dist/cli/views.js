@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Prettify {
+export default class Prettify {
     constructor(logger) {
         this.logger = logger;
     }
@@ -62,4 +60,3 @@ class Prettify {
         this.logger.info('Version:', transaction.version);
     }
 }
-exports.default = Prettify;

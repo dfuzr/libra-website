@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helpers = exports.WriteSetPayloadVariantScript = exports.WriteSetPayloadVariantDirect = exports.WriteSetPayload = exports.WriteSetMut = exports.WriteSet = exports.WriteOpVariantValue = exports.WriteOpVariantDeletion = exports.WriteOp = exports.UnstructuredBytesMetadata = exports.TypeTagVariantStruct = exports.TypeTagVariantVector = exports.TypeTagVariantSigner = exports.TypeTagVariantAddress = exports.TypeTagVariantU128 = exports.TypeTagVariantU64 = exports.TypeTagVariantU8 = exports.TypeTagVariantBool = exports.TypeTag = exports.TravelRuleMetadataV0 = exports.TravelRuleMetadataVariantTravelRuleMetadataVersion0 = exports.TravelRuleMetadata = exports.TransactionPayloadVariantModule = exports.TransactionPayloadVariantScript = exports.TransactionPayloadVariantWriteSet = exports.TransactionPayload = exports.TransactionAuthenticatorVariantMultiEd25519 = exports.TransactionAuthenticatorVariantEd25519 = exports.TransactionAuthenticator = exports.TransactionArgumentVariantBool = exports.TransactionArgumentVariantU8Vector = exports.TransactionArgumentVariantAddress = exports.TransactionArgumentVariantU128 = exports.TransactionArgumentVariantU64 = exports.TransactionArgumentVariantU8 = exports.TransactionArgument = exports.TransactionVariantBlockMetadata = exports.TransactionVariantGenesisTransaction = exports.TransactionVariantUserTransaction = exports.Transaction = exports.StructTag = exports.SignedTransaction = exports.Script = exports.RawTransaction = exports.MultiEd25519Signature = exports.MultiEd25519PublicKey = exports.Module = exports.MetadataVariantUnstructuredBytesMetadata = exports.MetadataVariantTravelRuleMetadata = exports.MetadataVariantGeneralMetadata = exports.MetadataVariantUndefined = exports.Metadata = exports.Identifier = exports.HashValue = exports.GeneralMetadataV0 = exports.GeneralMetadataVariantGeneralMetadataVersion0 = exports.GeneralMetadata = exports.EventKey = exports.Ed25519Signature = exports.Ed25519PublicKey = exports.ContractEventV0 = exports.ContractEventVariantV0 = exports.ContractEvent = exports.ChangeSet = exports.ChainId = exports.BlockMetadata = exports.AccountAddress = exports.AccessPath = void 0;
-class AccessPath {
+export class AccessPath {
     constructor(address, path) {
         this.address = address;
         this.path = path;
@@ -16,8 +13,7 @@ class AccessPath {
         return new AccessPath(address, path);
     }
 }
-exports.AccessPath = AccessPath;
-class AccountAddress {
+export class AccountAddress {
     constructor(value) {
         this.value = value;
     }
@@ -29,8 +25,7 @@ class AccountAddress {
         return new AccountAddress(value);
     }
 }
-exports.AccountAddress = AccountAddress;
-class BlockMetadata {
+export class BlockMetadata {
     constructor(id, round, timestamp_usecs, previous_block_votes, proposer) {
         this.id = id;
         this.round = round;
@@ -54,8 +49,7 @@ class BlockMetadata {
         return new BlockMetadata(id, round, timestamp_usecs, previous_block_votes, proposer);
     }
 }
-exports.BlockMetadata = BlockMetadata;
-class ChainId {
+export class ChainId {
     constructor(value) {
         this.value = value;
     }
@@ -67,8 +61,7 @@ class ChainId {
         return new ChainId(value);
     }
 }
-exports.ChainId = ChainId;
-class ChangeSet {
+export class ChangeSet {
     constructor(write_set, events) {
         this.write_set = write_set;
         this.events = events;
@@ -83,8 +76,7 @@ class ChangeSet {
         return new ChangeSet(write_set, events);
     }
 }
-exports.ChangeSet = ChangeSet;
-class ContractEvent {
+export class ContractEvent {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -95,8 +87,7 @@ class ContractEvent {
         }
     }
 }
-exports.ContractEvent = ContractEvent;
-class ContractEventVariantV0 extends ContractEvent {
+export class ContractEventVariantV0 extends ContractEvent {
     constructor(value) {
         super();
         this.value = value;
@@ -110,8 +101,7 @@ class ContractEventVariantV0 extends ContractEvent {
         return new ContractEventVariantV0(value);
     }
 }
-exports.ContractEventVariantV0 = ContractEventVariantV0;
-class ContractEventV0 {
+export class ContractEventV0 {
     constructor(key, sequence_number, type_tag, event_data) {
         this.key = key;
         this.sequence_number = sequence_number;
@@ -132,8 +122,7 @@ class ContractEventV0 {
         return new ContractEventV0(key, sequence_number, type_tag, event_data);
     }
 }
-exports.ContractEventV0 = ContractEventV0;
-class Ed25519PublicKey {
+export class Ed25519PublicKey {
     constructor(value) {
         this.value = value;
     }
@@ -145,8 +134,7 @@ class Ed25519PublicKey {
         return new Ed25519PublicKey(value);
     }
 }
-exports.Ed25519PublicKey = Ed25519PublicKey;
-class Ed25519Signature {
+export class Ed25519Signature {
     constructor(value) {
         this.value = value;
     }
@@ -158,8 +146,7 @@ class Ed25519Signature {
         return new Ed25519Signature(value);
     }
 }
-exports.Ed25519Signature = Ed25519Signature;
-class EventKey {
+export class EventKey {
     constructor(value) {
         this.value = value;
     }
@@ -171,8 +158,7 @@ class EventKey {
         return new EventKey(value);
     }
 }
-exports.EventKey = EventKey;
-class GeneralMetadata {
+export class GeneralMetadata {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -183,8 +169,7 @@ class GeneralMetadata {
         }
     }
 }
-exports.GeneralMetadata = GeneralMetadata;
-class GeneralMetadataVariantGeneralMetadataVersion0 extends GeneralMetadata {
+export class GeneralMetadataVariantGeneralMetadataVersion0 extends GeneralMetadata {
     constructor(value) {
         super();
         this.value = value;
@@ -198,8 +183,7 @@ class GeneralMetadataVariantGeneralMetadataVersion0 extends GeneralMetadata {
         return new GeneralMetadataVariantGeneralMetadataVersion0(value);
     }
 }
-exports.GeneralMetadataVariantGeneralMetadataVersion0 = GeneralMetadataVariantGeneralMetadataVersion0;
-class GeneralMetadataV0 {
+export class GeneralMetadataV0 {
     constructor(to_subaddress, from_subaddress, referenced_event) {
         this.to_subaddress = to_subaddress;
         this.from_subaddress = from_subaddress;
@@ -217,8 +201,7 @@ class GeneralMetadataV0 {
         return new GeneralMetadataV0(to_subaddress, from_subaddress, referenced_event);
     }
 }
-exports.GeneralMetadataV0 = GeneralMetadataV0;
-class HashValue {
+export class HashValue {
     constructor(value) {
         this.value = value;
     }
@@ -230,8 +213,7 @@ class HashValue {
         return new HashValue(value);
     }
 }
-exports.HashValue = HashValue;
-class Identifier {
+export class Identifier {
     constructor(value) {
         this.value = value;
     }
@@ -243,8 +225,7 @@ class Identifier {
         return new Identifier(value);
     }
 }
-exports.Identifier = Identifier;
-class Metadata {
+export class Metadata {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -261,8 +242,7 @@ class Metadata {
         }
     }
 }
-exports.Metadata = Metadata;
-class MetadataVariantUndefined extends Metadata {
+export class MetadataVariantUndefined extends Metadata {
     constructor() {
         super();
     }
@@ -273,8 +253,7 @@ class MetadataVariantUndefined extends Metadata {
         return new MetadataVariantUndefined();
     }
 }
-exports.MetadataVariantUndefined = MetadataVariantUndefined;
-class MetadataVariantGeneralMetadata extends Metadata {
+export class MetadataVariantGeneralMetadata extends Metadata {
     constructor(value) {
         super();
         this.value = value;
@@ -288,8 +267,7 @@ class MetadataVariantGeneralMetadata extends Metadata {
         return new MetadataVariantGeneralMetadata(value);
     }
 }
-exports.MetadataVariantGeneralMetadata = MetadataVariantGeneralMetadata;
-class MetadataVariantTravelRuleMetadata extends Metadata {
+export class MetadataVariantTravelRuleMetadata extends Metadata {
     constructor(value) {
         super();
         this.value = value;
@@ -303,8 +281,7 @@ class MetadataVariantTravelRuleMetadata extends Metadata {
         return new MetadataVariantTravelRuleMetadata(value);
     }
 }
-exports.MetadataVariantTravelRuleMetadata = MetadataVariantTravelRuleMetadata;
-class MetadataVariantUnstructuredBytesMetadata extends Metadata {
+export class MetadataVariantUnstructuredBytesMetadata extends Metadata {
     constructor(value) {
         super();
         this.value = value;
@@ -318,8 +295,7 @@ class MetadataVariantUnstructuredBytesMetadata extends Metadata {
         return new MetadataVariantUnstructuredBytesMetadata(value);
     }
 }
-exports.MetadataVariantUnstructuredBytesMetadata = MetadataVariantUnstructuredBytesMetadata;
-class Module {
+export class Module {
     constructor(code) {
         this.code = code;
     }
@@ -331,8 +307,7 @@ class Module {
         return new Module(code);
     }
 }
-exports.Module = Module;
-class MultiEd25519PublicKey {
+export class MultiEd25519PublicKey {
     constructor(value) {
         this.value = value;
     }
@@ -344,8 +319,7 @@ class MultiEd25519PublicKey {
         return new MultiEd25519PublicKey(value);
     }
 }
-exports.MultiEd25519PublicKey = MultiEd25519PublicKey;
-class MultiEd25519Signature {
+export class MultiEd25519Signature {
     constructor(value) {
         this.value = value;
     }
@@ -357,8 +331,7 @@ class MultiEd25519Signature {
         return new MultiEd25519Signature(value);
     }
 }
-exports.MultiEd25519Signature = MultiEd25519Signature;
-class RawTransaction {
+export class RawTransaction {
     constructor(sender, sequence_number, payload, max_gas_amount, gas_unit_price, gas_currency_code, expiration_timestamp_secs, chain_id) {
         this.sender = sender;
         this.sequence_number = sequence_number;
@@ -391,8 +364,7 @@ class RawTransaction {
         return new RawTransaction(sender, sequence_number, payload, max_gas_amount, gas_unit_price, gas_currency_code, expiration_timestamp_secs, chain_id);
     }
 }
-exports.RawTransaction = RawTransaction;
-class Script {
+export class Script {
     constructor(code, ty_args, args) {
         this.code = code;
         this.ty_args = ty_args;
@@ -410,8 +382,7 @@ class Script {
         return new Script(code, ty_args, args);
     }
 }
-exports.Script = Script;
-class SignedTransaction {
+export class SignedTransaction {
     constructor(raw_txn, authenticator) {
         this.raw_txn = raw_txn;
         this.authenticator = authenticator;
@@ -426,8 +397,7 @@ class SignedTransaction {
         return new SignedTransaction(raw_txn, authenticator);
     }
 }
-exports.SignedTransaction = SignedTransaction;
-class StructTag {
+export class StructTag {
     constructor(address, module, name, type_params) {
         this.address = address;
         this.module = module;
@@ -448,8 +418,7 @@ class StructTag {
         return new StructTag(address, module, name, type_params);
     }
 }
-exports.StructTag = StructTag;
-class Transaction {
+export class Transaction {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -464,8 +433,7 @@ class Transaction {
         }
     }
 }
-exports.Transaction = Transaction;
-class TransactionVariantUserTransaction extends Transaction {
+export class TransactionVariantUserTransaction extends Transaction {
     constructor(value) {
         super();
         this.value = value;
@@ -479,8 +447,7 @@ class TransactionVariantUserTransaction extends Transaction {
         return new TransactionVariantUserTransaction(value);
     }
 }
-exports.TransactionVariantUserTransaction = TransactionVariantUserTransaction;
-class TransactionVariantGenesisTransaction extends Transaction {
+export class TransactionVariantGenesisTransaction extends Transaction {
     constructor(value) {
         super();
         this.value = value;
@@ -494,8 +461,7 @@ class TransactionVariantGenesisTransaction extends Transaction {
         return new TransactionVariantGenesisTransaction(value);
     }
 }
-exports.TransactionVariantGenesisTransaction = TransactionVariantGenesisTransaction;
-class TransactionVariantBlockMetadata extends Transaction {
+export class TransactionVariantBlockMetadata extends Transaction {
     constructor(value) {
         super();
         this.value = value;
@@ -509,8 +475,7 @@ class TransactionVariantBlockMetadata extends Transaction {
         return new TransactionVariantBlockMetadata(value);
     }
 }
-exports.TransactionVariantBlockMetadata = TransactionVariantBlockMetadata;
-class TransactionArgument {
+export class TransactionArgument {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -531,8 +496,7 @@ class TransactionArgument {
         }
     }
 }
-exports.TransactionArgument = TransactionArgument;
-class TransactionArgumentVariantU8 extends TransactionArgument {
+export class TransactionArgumentVariantU8 extends TransactionArgument {
     constructor(value) {
         super();
         this.value = value;
@@ -546,8 +510,7 @@ class TransactionArgumentVariantU8 extends TransactionArgument {
         return new TransactionArgumentVariantU8(value);
     }
 }
-exports.TransactionArgumentVariantU8 = TransactionArgumentVariantU8;
-class TransactionArgumentVariantU64 extends TransactionArgument {
+export class TransactionArgumentVariantU64 extends TransactionArgument {
     constructor(value) {
         super();
         this.value = value;
@@ -561,8 +524,7 @@ class TransactionArgumentVariantU64 extends TransactionArgument {
         return new TransactionArgumentVariantU64(value);
     }
 }
-exports.TransactionArgumentVariantU64 = TransactionArgumentVariantU64;
-class TransactionArgumentVariantU128 extends TransactionArgument {
+export class TransactionArgumentVariantU128 extends TransactionArgument {
     constructor(value) {
         super();
         this.value = value;
@@ -576,8 +538,7 @@ class TransactionArgumentVariantU128 extends TransactionArgument {
         return new TransactionArgumentVariantU128(value);
     }
 }
-exports.TransactionArgumentVariantU128 = TransactionArgumentVariantU128;
-class TransactionArgumentVariantAddress extends TransactionArgument {
+export class TransactionArgumentVariantAddress extends TransactionArgument {
     constructor(value) {
         super();
         this.value = value;
@@ -591,8 +552,7 @@ class TransactionArgumentVariantAddress extends TransactionArgument {
         return new TransactionArgumentVariantAddress(value);
     }
 }
-exports.TransactionArgumentVariantAddress = TransactionArgumentVariantAddress;
-class TransactionArgumentVariantU8Vector extends TransactionArgument {
+export class TransactionArgumentVariantU8Vector extends TransactionArgument {
     constructor(value) {
         super();
         this.value = value;
@@ -606,8 +566,7 @@ class TransactionArgumentVariantU8Vector extends TransactionArgument {
         return new TransactionArgumentVariantU8Vector(value);
     }
 }
-exports.TransactionArgumentVariantU8Vector = TransactionArgumentVariantU8Vector;
-class TransactionArgumentVariantBool extends TransactionArgument {
+export class TransactionArgumentVariantBool extends TransactionArgument {
     constructor(value) {
         super();
         this.value = value;
@@ -621,8 +580,7 @@ class TransactionArgumentVariantBool extends TransactionArgument {
         return new TransactionArgumentVariantBool(value);
     }
 }
-exports.TransactionArgumentVariantBool = TransactionArgumentVariantBool;
-class TransactionAuthenticator {
+export class TransactionAuthenticator {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -635,8 +593,7 @@ class TransactionAuthenticator {
         }
     }
 }
-exports.TransactionAuthenticator = TransactionAuthenticator;
-class TransactionAuthenticatorVariantEd25519 extends TransactionAuthenticator {
+export class TransactionAuthenticatorVariantEd25519 extends TransactionAuthenticator {
     constructor(public_key, signature) {
         super();
         this.public_key = public_key;
@@ -653,8 +610,7 @@ class TransactionAuthenticatorVariantEd25519 extends TransactionAuthenticator {
         return new TransactionAuthenticatorVariantEd25519(public_key, signature);
     }
 }
-exports.TransactionAuthenticatorVariantEd25519 = TransactionAuthenticatorVariantEd25519;
-class TransactionAuthenticatorVariantMultiEd25519 extends TransactionAuthenticator {
+export class TransactionAuthenticatorVariantMultiEd25519 extends TransactionAuthenticator {
     constructor(public_key, signature) {
         super();
         this.public_key = public_key;
@@ -671,8 +627,7 @@ class TransactionAuthenticatorVariantMultiEd25519 extends TransactionAuthenticat
         return new TransactionAuthenticatorVariantMultiEd25519(public_key, signature);
     }
 }
-exports.TransactionAuthenticatorVariantMultiEd25519 = TransactionAuthenticatorVariantMultiEd25519;
-class TransactionPayload {
+export class TransactionPayload {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -687,8 +642,7 @@ class TransactionPayload {
         }
     }
 }
-exports.TransactionPayload = TransactionPayload;
-class TransactionPayloadVariantWriteSet extends TransactionPayload {
+export class TransactionPayloadVariantWriteSet extends TransactionPayload {
     constructor(value) {
         super();
         this.value = value;
@@ -702,8 +656,7 @@ class TransactionPayloadVariantWriteSet extends TransactionPayload {
         return new TransactionPayloadVariantWriteSet(value);
     }
 }
-exports.TransactionPayloadVariantWriteSet = TransactionPayloadVariantWriteSet;
-class TransactionPayloadVariantScript extends TransactionPayload {
+export class TransactionPayloadVariantScript extends TransactionPayload {
     constructor(value) {
         super();
         this.value = value;
@@ -717,8 +670,7 @@ class TransactionPayloadVariantScript extends TransactionPayload {
         return new TransactionPayloadVariantScript(value);
     }
 }
-exports.TransactionPayloadVariantScript = TransactionPayloadVariantScript;
-class TransactionPayloadVariantModule extends TransactionPayload {
+export class TransactionPayloadVariantModule extends TransactionPayload {
     constructor(value) {
         super();
         this.value = value;
@@ -732,8 +684,7 @@ class TransactionPayloadVariantModule extends TransactionPayload {
         return new TransactionPayloadVariantModule(value);
     }
 }
-exports.TransactionPayloadVariantModule = TransactionPayloadVariantModule;
-class TravelRuleMetadata {
+export class TravelRuleMetadata {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -744,8 +695,7 @@ class TravelRuleMetadata {
         }
     }
 }
-exports.TravelRuleMetadata = TravelRuleMetadata;
-class TravelRuleMetadataVariantTravelRuleMetadataVersion0 extends TravelRuleMetadata {
+export class TravelRuleMetadataVariantTravelRuleMetadataVersion0 extends TravelRuleMetadata {
     constructor(value) {
         super();
         this.value = value;
@@ -759,8 +709,7 @@ class TravelRuleMetadataVariantTravelRuleMetadataVersion0 extends TravelRuleMeta
         return new TravelRuleMetadataVariantTravelRuleMetadataVersion0(value);
     }
 }
-exports.TravelRuleMetadataVariantTravelRuleMetadataVersion0 = TravelRuleMetadataVariantTravelRuleMetadataVersion0;
-class TravelRuleMetadataV0 {
+export class TravelRuleMetadataV0 {
     constructor(off_chain_reference_id) {
         this.off_chain_reference_id = off_chain_reference_id;
     }
@@ -772,8 +721,7 @@ class TravelRuleMetadataV0 {
         return new TravelRuleMetadataV0(off_chain_reference_id);
     }
 }
-exports.TravelRuleMetadataV0 = TravelRuleMetadataV0;
-class TypeTag {
+export class TypeTag {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -798,8 +746,7 @@ class TypeTag {
         }
     }
 }
-exports.TypeTag = TypeTag;
-class TypeTagVariantBool extends TypeTag {
+export class TypeTagVariantBool extends TypeTag {
     constructor() {
         super();
     }
@@ -810,8 +757,7 @@ class TypeTagVariantBool extends TypeTag {
         return new TypeTagVariantBool();
     }
 }
-exports.TypeTagVariantBool = TypeTagVariantBool;
-class TypeTagVariantU8 extends TypeTag {
+export class TypeTagVariantU8 extends TypeTag {
     constructor() {
         super();
     }
@@ -822,8 +768,7 @@ class TypeTagVariantU8 extends TypeTag {
         return new TypeTagVariantU8();
     }
 }
-exports.TypeTagVariantU8 = TypeTagVariantU8;
-class TypeTagVariantU64 extends TypeTag {
+export class TypeTagVariantU64 extends TypeTag {
     constructor() {
         super();
     }
@@ -834,8 +779,7 @@ class TypeTagVariantU64 extends TypeTag {
         return new TypeTagVariantU64();
     }
 }
-exports.TypeTagVariantU64 = TypeTagVariantU64;
-class TypeTagVariantU128 extends TypeTag {
+export class TypeTagVariantU128 extends TypeTag {
     constructor() {
         super();
     }
@@ -846,8 +790,7 @@ class TypeTagVariantU128 extends TypeTag {
         return new TypeTagVariantU128();
     }
 }
-exports.TypeTagVariantU128 = TypeTagVariantU128;
-class TypeTagVariantAddress extends TypeTag {
+export class TypeTagVariantAddress extends TypeTag {
     constructor() {
         super();
     }
@@ -858,8 +801,7 @@ class TypeTagVariantAddress extends TypeTag {
         return new TypeTagVariantAddress();
     }
 }
-exports.TypeTagVariantAddress = TypeTagVariantAddress;
-class TypeTagVariantSigner extends TypeTag {
+export class TypeTagVariantSigner extends TypeTag {
     constructor() {
         super();
     }
@@ -870,8 +812,7 @@ class TypeTagVariantSigner extends TypeTag {
         return new TypeTagVariantSigner();
     }
 }
-exports.TypeTagVariantSigner = TypeTagVariantSigner;
-class TypeTagVariantVector extends TypeTag {
+export class TypeTagVariantVector extends TypeTag {
     constructor(value) {
         super();
         this.value = value;
@@ -885,8 +826,7 @@ class TypeTagVariantVector extends TypeTag {
         return new TypeTagVariantVector(value);
     }
 }
-exports.TypeTagVariantVector = TypeTagVariantVector;
-class TypeTagVariantStruct extends TypeTag {
+export class TypeTagVariantStruct extends TypeTag {
     constructor(value) {
         super();
         this.value = value;
@@ -900,8 +840,7 @@ class TypeTagVariantStruct extends TypeTag {
         return new TypeTagVariantStruct(value);
     }
 }
-exports.TypeTagVariantStruct = TypeTagVariantStruct;
-class UnstructuredBytesMetadata {
+export class UnstructuredBytesMetadata {
     constructor(metadata) {
         this.metadata = metadata;
     }
@@ -913,8 +852,7 @@ class UnstructuredBytesMetadata {
         return new UnstructuredBytesMetadata(metadata);
     }
 }
-exports.UnstructuredBytesMetadata = UnstructuredBytesMetadata;
-class WriteOp {
+export class WriteOp {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -927,8 +865,7 @@ class WriteOp {
         }
     }
 }
-exports.WriteOp = WriteOp;
-class WriteOpVariantDeletion extends WriteOp {
+export class WriteOpVariantDeletion extends WriteOp {
     constructor() {
         super();
     }
@@ -939,8 +876,7 @@ class WriteOpVariantDeletion extends WriteOp {
         return new WriteOpVariantDeletion();
     }
 }
-exports.WriteOpVariantDeletion = WriteOpVariantDeletion;
-class WriteOpVariantValue extends WriteOp {
+export class WriteOpVariantValue extends WriteOp {
     constructor(value) {
         super();
         this.value = value;
@@ -954,8 +890,7 @@ class WriteOpVariantValue extends WriteOp {
         return new WriteOpVariantValue(value);
     }
 }
-exports.WriteOpVariantValue = WriteOpVariantValue;
-class WriteSet {
+export class WriteSet {
     constructor(value) {
         this.value = value;
     }
@@ -967,8 +902,7 @@ class WriteSet {
         return new WriteSet(value);
     }
 }
-exports.WriteSet = WriteSet;
-class WriteSetMut {
+export class WriteSetMut {
     constructor(write_set) {
         this.write_set = write_set;
     }
@@ -980,8 +914,7 @@ class WriteSetMut {
         return new WriteSetMut(write_set);
     }
 }
-exports.WriteSetMut = WriteSetMut;
-class WriteSetPayload {
+export class WriteSetPayload {
     static deserialize(deserializer) {
         const index = deserializer.deserializeVariantIndex();
         switch (index) {
@@ -994,8 +927,7 @@ class WriteSetPayload {
         }
     }
 }
-exports.WriteSetPayload = WriteSetPayload;
-class WriteSetPayloadVariantDirect extends WriteSetPayload {
+export class WriteSetPayloadVariantDirect extends WriteSetPayload {
     constructor(value) {
         super();
         this.value = value;
@@ -1009,8 +941,7 @@ class WriteSetPayloadVariantDirect extends WriteSetPayload {
         return new WriteSetPayloadVariantDirect(value);
     }
 }
-exports.WriteSetPayloadVariantDirect = WriteSetPayloadVariantDirect;
-class WriteSetPayloadVariantScript extends WriteSetPayload {
+export class WriteSetPayloadVariantScript extends WriteSetPayload {
     constructor(execute_as, script) {
         super();
         this.execute_as = execute_as;
@@ -1027,8 +958,7 @@ class WriteSetPayloadVariantScript extends WriteSetPayload {
         return new WriteSetPayloadVariantScript(execute_as, script);
     }
 }
-exports.WriteSetPayloadVariantScript = WriteSetPayloadVariantScript;
-class Helpers {
+export class Helpers {
     static serializeArray16U8Array(value, serializer) {
         value.forEach((item) => {
             serializer.serializeU8(item[0]);
@@ -1176,4 +1106,3 @@ class Helpers {
         return list;
     }
 }
-exports.Helpers = Helpers;

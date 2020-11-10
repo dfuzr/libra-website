@@ -1,23 +1,3 @@
-"use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -27,21 +7,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.JSONParse = exports.JSONStringify = exports.BIG_INT_KEYS = void 0;
-const axios_1 = __importDefault(require("axios"));
-const http = __importStar(require("http"));
-const https = __importStar(require("https"));
-const errors_1 = require("./errors");
-const json_bigint_1 = __importDefault(require("json-bigint"));
-const JSONbigNative = json_bigint_1.default({
+import axios from 'axios';
+import * as http from 'http';
+import * as https from 'https';
+import { JsonRpcError, JsonRpcNetworkError, JsonRpcProtocolError, JsonRpcTransportError, } from './errors';
+import json_bigint from 'json-bigint';
+const JSONbigNative = json_bigint({
     useNativeBigInt: true,
 });
 const NEVER_CHANGING_MSG_ID_BECAUSE_NOT_USED_FOR_ANYTHING = 2009;
-exports.BIG_INT_KEYS = [
+export const BIG_INT_KEYS = [
     'sequence_number',
     'sequenceNumber',
     'expiration_time',
@@ -72,9 +47,9 @@ exports.BIG_INT_KEYS = [
     'transaction_version',
     'transactionVersion',
 ];
-exports.JSONStringify = (data) => JSONbigNative.stringify(data);
-exports.JSONParse = (data) => JSONbigNative.parse(data, (key, value) => {
-    if (exports.BIG_INT_KEYS.includes(key)) {
+export const JSONStringify = (data) => JSONbigNative.stringify(data);
+export const JSONParse = (data) => JSONbigNative.parse(data, (key, value) => {
+    if (BIG_INT_KEYS.includes(key)) {
         try {
             return BigInt(value);
         }
@@ -84,16 +59,16 @@ exports.JSONParse = (data) => JSONbigNative.parse(data, (key, value) => {
     }
     return value;
 });
-class JsonRpcClient {
+export default class JsonRpcClient {
     constructor(serverUrl) {
-        this.caller = axios_1.default.create({
+        this.caller = axios.create({
             url: serverUrl,
             headers: { 'Content-Type': 'application/json' },
             timeout: 5 * 1000,
             httpAgent: new http.Agent({ keepAlive: true }),
             httpsAgent: new https.Agent({ keepAlive: true }),
-            transformRequest: exports.JSONStringify,
-            transformResponse: exports.JSONParse,
+            transformRequest: JSONStringify,
+            transformResponse: JSONParse,
         });
     }
     call(method, params) {
@@ -115,24 +90,23 @@ class JsonRpcClient {
                 });
                 if (response.headers['content-type'] !== 'application/json' ||
                     typeof response.data === 'string') {
-                    throw new errors_1.JsonRpcProtocolError(response.data);
+                    throw new JsonRpcProtocolError(response.data);
                 }
                 const body = response.data;
                 if (body.error) {
-                    throw new errors_1.JsonRpcError(body.error);
+                    throw new JsonRpcError(body.error);
                 }
                 return body;
             }
             catch (e) {
                 if (e.isAxiosError) {
                     if (e.response) {
-                        throw new errors_1.JsonRpcTransportError(e);
+                        throw new JsonRpcTransportError(e);
                     }
-                    throw new errors_1.JsonRpcNetworkError(e);
+                    throw new JsonRpcNetworkError(e);
                 }
                 throw e;
             }
         });
     }
 }
-exports.default = JsonRpcClient;

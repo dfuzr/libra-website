@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,22 +7,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
-const libraClient_1 = __importDefault(require("./libraClient"));
-const errors_1 = require("./errors");
-const client_1 = require("./jsonRpc/client");
-class TestnetClient extends libraClient_1.default {
+import axios from 'axios';
+import LibraClient from './libraClient';
+import { FaucetNetworkError, FaucetTransportError } from './errors';
+import { JSONParse, JSONStringify } from './jsonRpc/client';
+export default class TestnetClient extends LibraClient {
     constructor(faucetUrl = TestnetClient.TESTNET_FAUCET_URL, jsonRpcUrl = TestnetClient.TESTNET_JSONRPC_URL, chainID = TestnetClient.TESTNET_CHAIN_ID) {
         super(jsonRpcUrl, chainID);
-        this.faucetCaller = axios_1.default.create({
+        this.faucetCaller = axios.create({
             url: faucetUrl,
             headers: { 'Content-Type': 'application/json' },
-            transformRequest: client_1.JSONStringify,
-            transformResponse: client_1.JSONParse,
+            transformRequest: JSONStringify,
+            transformResponse: JSONParse,
         });
     }
     mint(authKeyHex, amount, currency) {
@@ -42,16 +37,15 @@ class TestnetClient extends libraClient_1.default {
             catch (e) {
                 if (e.isAxiosError) {
                     if (e.response) {
-                        throw new errors_1.FaucetTransportError(e.message);
+                        throw new FaucetTransportError(e.message);
                     }
-                    throw new errors_1.FaucetNetworkError(e.message);
+                    throw new FaucetNetworkError(e.message);
                 }
                 throw e;
             }
         });
     }
 }
-exports.default = TestnetClient;
 TestnetClient.TESTNET_JSONRPC_URL = 'https://testnet.libra.org/v1';
 TestnetClient.TESTNET_FAUCET_URL = 'https://testnet.libra.org/mint';
 TestnetClient.TESTNET_DESIGNATED_DEALER = '000000000000000000000000000000dd';

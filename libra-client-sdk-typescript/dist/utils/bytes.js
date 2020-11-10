@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.concat = exports.bytesToHexString = exports.bytesFromHexString = exports.bytesToBuffer = void 0;
-function bytesToBuffer(bytes, sizeRestriction) {
+export function bytesToBuffer(bytes, sizeRestriction) {
     if (bytes instanceof Uint8Array) {
         if (sizeRestriction && bytes.length !== sizeRestriction) {
             throw new TypeError(`Value must be ${sizeRestriction} bytes length`);
@@ -14,12 +11,10 @@ function bytesToBuffer(bytes, sizeRestriction) {
     }
     return bytesFromHexString(bytes);
 }
-exports.bytesToBuffer = bytesToBuffer;
-function bytesFromHexString(hexString) {
+export function bytesFromHexString(hexString) {
     return new Uint8Array(hexString.match(/.{1,2}/g).map((byte) => parseInt(byte, 16)));
 }
-exports.bytesFromHexString = bytesFromHexString;
-function bytesToHexString(bytes) {
+export function bytesToHexString(bytes) {
     if (bytes instanceof Uint8Array) {
         return Array.from(bytes, function (byte) {
             return ('0' + (byte & 0xff).toString(16)).slice(-2);
@@ -31,8 +26,7 @@ function bytesToHexString(bytes) {
     // string
     return bytes;
 }
-exports.bytesToHexString = bytesToHexString;
-function concat(...element) {
+export function concat(...element) {
     const elementBuffers = element.map((val) => bytesToBuffer(val));
     const totalSize = elementBuffers
         .map((val) => val.byteLength)
@@ -45,4 +39,3 @@ function concat(...element) {
     }
     return bytes;
 }
-exports.concat = concat;

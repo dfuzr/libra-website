@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BinarySerializer = void 0;
-const util_1 = __importDefault(require("util"));
-class BinarySerializer {
+import util from 'util';
+export class BinarySerializer {
     constructor() {
         this.buffer = new ArrayBuffer(64);
         this.offset = 0;
@@ -128,7 +122,6 @@ class BinarySerializer {
         this.offset += bytes;
     }
 }
-exports.BinarySerializer = BinarySerializer;
 BinarySerializer.BIG_32 = BigInt(32);
 BinarySerializer.BIG_64 = BigInt(64);
 // TypeScript with target below es2016 will translate BigInt(2)**BigInt(32) to Math.pow(BigInt(2), BigInt(32))
@@ -136,4 +129,4 @@ BinarySerializer.BIG_64 = BigInt(64);
 // parsing it directly from the string representation of the number will overcome it and allow es6 to be configured as well
 BinarySerializer.BIG_32Fs = BigInt('4294967295');
 BinarySerializer.BIG_64Fs = BigInt('18446744073709551615');
-BinarySerializer.textEncoder = typeof window === 'undefined' ? new util_1.default.TextEncoder() : new TextEncoder();
+BinarySerializer.textEncoder = typeof window === 'undefined' ? new util.TextEncoder() : new TextEncoder();

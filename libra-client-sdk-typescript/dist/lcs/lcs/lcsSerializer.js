@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LcsSerializer = void 0;
-const binarySerializer_1 = require("../serde/binarySerializer");
-class LcsSerializer extends binarySerializer_1.BinarySerializer {
+import { BinarySerializer } from '../serde/binarySerializer';
+export class LcsSerializer extends BinarySerializer {
     constructor() {
         super();
     }
@@ -25,4 +22,3 @@ class LcsSerializer extends binarySerializer_1.BinarySerializer {
         // leaving it empty for now, should be implemented soon
     }
 }
-exports.LcsSerializer = LcsSerializer;

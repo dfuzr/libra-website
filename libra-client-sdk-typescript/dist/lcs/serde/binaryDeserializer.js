@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BinaryDeserializer = void 0;
-class BinaryDeserializer {
+export class BinaryDeserializer {
     constructor(data) {
         // As we can't be sure about the origin of the data, it's better to copy it to a new buffer
         // e.g. if the data originated by: Buffer.from('16a9', 'hex'), the internal buffer would be much longer and/or different (as Buffer is some sort of a view)
@@ -90,7 +87,6 @@ class BinaryDeserializer {
         return new DataView(this.read(8)).getFloat64(0, true);
     }
 }
-exports.BinaryDeserializer = BinaryDeserializer;
 BinaryDeserializer.BIG_32 = BigInt(32);
 BinaryDeserializer.BIG_64 = BigInt(64);
 BinaryDeserializer.textDecoder = new TextDecoder();

@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Intent {
+export default class Intent {
     constructor(hrp, address, subAddress, currency, amount) {
         this.hrp = hrp;
         this.address = address;
@@ -9,4 +7,3 @@ class Intent {
         this.amount = amount;
     }
 }
-exports.default = Intent;

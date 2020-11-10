@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LcsDeserializer = void 0;
-const binaryDeserializer_1 = require("../serde/binaryDeserializer");
-class LcsDeserializer extends binaryDeserializer_1.BinaryDeserializer {
+import { BinaryDeserializer } from '../serde/binaryDeserializer';
+export class LcsDeserializer extends BinaryDeserializer {
     constructor(data) {
         super(data);
     }
@@ -38,5 +35,4 @@ class LcsDeserializer extends binaryDeserializer_1.BinaryDeserializer {
         return;
     }
 }
-exports.LcsDeserializer = LcsDeserializer;
 LcsDeserializer.MAX_UINT_32 = Math.pow(2, 32) - 1;

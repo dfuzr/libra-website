@@ -1,105 +1,100 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const bech32_1 = __importDefault(require("bech32"));
-const signer_1 = require("./utils/signer");
-const accountKeys_1 = __importDefault(require("./account/accountKeys"));
-const constants_1 = require("./constants");
-const bytes_1 = require("./utils/bytes");
-const libraTypes_1 = require("./lcs/libraTypes");
-const lcsSerializer_1 = require("./lcs/lcs/lcsSerializer");
-const libraStdlib_1 = require("./lcs/libraStdlib");
-const intent_1 = __importDefault(require("./utils/intent"));
-const sha3_1 = require("sha3");
-const util_1 = __importDefault(require("util"));
-class LibraUtils {
+import bech32 from 'bech32';
+import { Signer } from './utils/signer';
+import AccountKeys from './account/accountKeys';
+import { addressBytesSize, bech32AddressLength, bech32AddressVersion, coreCodeAddressHex, libraScheme, subAddressBytesSize, zeroSubAddress, } from './constants';
+import { bytesToBuffer, bytesToHexString, concat } from './utils/bytes';
+import { AccountAddress, ChainId, Ed25519PublicKey, Ed25519Signature, GeneralMetadataV0, GeneralMetadataVariantGeneralMetadataVersion0, Identifier, MetadataVariantGeneralMetadata, MetadataVariantTravelRuleMetadata, RawTransaction, SignedTransaction, StructTag, TransactionAuthenticatorVariantEd25519, TransactionPayloadVariantScript, TravelRuleMetadataV0, TravelRuleMetadataVariantTravelRuleMetadataVersion0, TypeTagVariantStruct, } from './lcs/libraTypes';
+import { LcsSerializer } from './lcs/lcs/lcsSerializer';
+import { Stdlib } from './lcs/libraStdlib';
+import Intent from './utils/intent';
+import { SHA3 } from 'sha3';
+import util from 'util';
+export default class LibraUtils {
     static generateAccountKeys(seed) {
-        const keyPair = signer_1.Signer.generateKeyPair(seed);
-        return new accountKeys_1.default(keyPair);
+        const keyPair = Signer.generateKeyPair(seed);
+        return new AccountKeys(keyPair);
     }
     static createAddCurrencyToAccountTransaction(sender, sequenceNumber, currency, gasCurrency, gasUnitPrice, maxGasAmount, expirationTimestampSecs, network) {
         const currencyTag = LibraUtils.makeCurrencyTypeTag(currency);
-        const script = libraStdlib_1.Stdlib.encodeAddCurrencyToAccountScript(currencyTag);
-        return new libraTypes_1.RawTransaction(LibraUtils.makeAccountAddress(sender), sequenceNumber, new libraTypes_1.TransactionPayloadVariantScript(script), maxGasAmount, gasUnitPrice, gasCurrency, expirationTimestampSecs, new libraTypes_1.ChainId(network));
+        const script = Stdlib.encodeAddCurrencyToAccountScript(currencyTag);
+        return new RawTransaction(LibraUtils.makeAccountAddress(sender), sequenceNumber, new TransactionPayloadVariantScript(script), maxGasAmount, gasUnitPrice, gasCurrency, expirationTimestampSecs, new ChainId(network));
     }
     static createGeneralMetadata(receiverSubaddress, senderSubaddress, referenceEventNumber) {
-        const serializer = new lcsSerializer_1.LcsSerializer();
-        const metadata = new libraTypes_1.MetadataVariantGeneralMetadata(new libraTypes_1.GeneralMetadataVariantGeneralMetadataVersion0(new libraTypes_1.GeneralMetadataV0(receiverSubaddress ? bytes_1.bytesToBuffer(receiverSubaddress) : null, senderSubaddress ? bytes_1.bytesToBuffer(senderSubaddress) : null, referenceEventNumber !== null && referenceEventNumber !== void 0 ? referenceEventNumber : null)));
+        const serializer = new LcsSerializer();
+        const metadata = new MetadataVariantGeneralMetadata(new GeneralMetadataVariantGeneralMetadataVersion0(new GeneralMetadataV0(receiverSubaddress ? bytesToBuffer(receiverSubaddress) : null, senderSubaddress ? bytesToBuffer(senderSubaddress) : null, referenceEventNumber !== null && referenceEventNumber !== void 0 ? referenceEventNumber : null)));
         metadata.serialize(serializer);
         const signature = new Uint8Array();
         return [serializer.getBytes(), signature];
     }
     static signTravelRuleMetadata(metadata, sender, amount, privateKey) {
-        const sigSerializer = new lcsSerializer_1.LcsSerializer();
+        const sigSerializer = new LcsSerializer();
         const address = LibraUtils.makeAccountAddress(sender);
         address.serialize(sigSerializer);
         sigSerializer.serializeU64(amount);
-        const dualAttestationMessage = bytes_1.concat(metadata, bytes_1.concat(sigSerializer.getBytes(), this.textEncoder.encode('@@$$LIBRA_ATTEST$$@@')));
-        return signer_1.Signer.sign(privateKey, dualAttestationMessage);
+        const dualAttestationMessage = concat(metadata, concat(sigSerializer.getBytes(), this.textEncoder.encode('@@$$LIBRA_ATTEST$$@@')));
+        return Signer.sign(privateKey, dualAttestationMessage);
     }
     static createTravelRuleMetadata(offChainReferenceId) {
-        const serializer = new lcsSerializer_1.LcsSerializer();
-        const metadata = new libraTypes_1.MetadataVariantTravelRuleMetadata(new libraTypes_1.TravelRuleMetadataVariantTravelRuleMetadataVersion0(new libraTypes_1.TravelRuleMetadataV0(offChainReferenceId !== null && offChainReferenceId !== void 0 ? offChainReferenceId : null)));
+        const serializer = new LcsSerializer();
+        const metadata = new MetadataVariantTravelRuleMetadata(new TravelRuleMetadataVariantTravelRuleMetadataVersion0(new TravelRuleMetadataV0(offChainReferenceId !== null && offChainReferenceId !== void 0 ? offChainReferenceId : null)));
         metadata.serialize(serializer);
         return serializer.getBytes();
     }
     static createP2PTransaction(sender, sequenceNumber, currency, receiver, amount, gasCurrency, gasUnitPrice, maxGasAmount, expirationTimestampSecs, network, metadata, metadataSignature) {
         const currencyTag = LibraUtils.makeCurrencyTypeTag(currency);
-        const script = libraStdlib_1.Stdlib.encodePeerToPeerWithMetadataScript(currencyTag, LibraUtils.makeAccountAddress(receiver), amount, metadata, metadataSignature);
-        return new libraTypes_1.RawTransaction(LibraUtils.makeAccountAddress(sender), sequenceNumber, new libraTypes_1.TransactionPayloadVariantScript(script), maxGasAmount, gasUnitPrice, gasCurrency, expirationTimestampSecs, new libraTypes_1.ChainId(network));
+        const script = Stdlib.encodePeerToPeerWithMetadataScript(currencyTag, LibraUtils.makeAccountAddress(receiver), amount, metadata, metadataSignature);
+        return new RawTransaction(LibraUtils.makeAccountAddress(sender), sequenceNumber, new TransactionPayloadVariantScript(script), maxGasAmount, gasUnitPrice, gasCurrency, expirationTimestampSecs, new ChainId(network));
     }
     static signTransaction(rawTransaction, accountKeys) {
-        const txSerializer = new lcsSerializer_1.LcsSerializer();
+        const txSerializer = new LcsSerializer();
         rawTransaction.serialize(txSerializer);
-        const signature = signer_1.Signer.signRawTransaction(bytes_1.bytesToBuffer(accountKeys.privateKey), txSerializer.getBytes());
-        return new libraTypes_1.SignedTransaction(rawTransaction, new libraTypes_1.TransactionAuthenticatorVariantEd25519(new libraTypes_1.Ed25519PublicKey(bytes_1.bytesToBuffer(accountKeys.publicKey)), new libraTypes_1.Ed25519Signature(signature)));
+        const signature = Signer.signRawTransaction(bytesToBuffer(accountKeys.privateKey), txSerializer.getBytes());
+        return new SignedTransaction(rawTransaction, new TransactionAuthenticatorVariantEd25519(new Ed25519PublicKey(bytesToBuffer(accountKeys.publicKey)), new Ed25519Signature(signature)));
     }
     static hashTransaction(signedTxBytes) {
-        const prefixHash = new sha3_1.SHA3(256);
+        const prefixHash = new SHA3(256);
         prefixHash.update('LIBRA::Transaction');
         const prefix = prefixHash.digest();
-        const transactionHash = new sha3_1.SHA3(256);
+        const transactionHash = new SHA3(256);
         transactionHash.update(prefix);
         transactionHash.update(Buffer.from([0]));
         transactionHash.update(Buffer.from(signedTxBytes));
         return transactionHash.digest().toString('hex');
     }
     static encodeAddress(address, subAddress, hrp = 'tlb') {
-        const addressBytes = bytes_1.bytesToBuffer(address);
-        const subAddressBytes = bytes_1.bytesToBuffer(subAddress !== null && subAddress !== void 0 ? subAddress : constants_1.zeroSubAddress);
-        if (addressBytes.length != constants_1.addressBytesSize) {
-            throw new TypeError(`Address size should be ${constants_1.addressBytesSize} bytes, got: ${addressBytes.length}`);
+        const addressBytes = bytesToBuffer(address);
+        const subAddressBytes = bytesToBuffer(subAddress !== null && subAddress !== void 0 ? subAddress : zeroSubAddress);
+        if (addressBytes.length != addressBytesSize) {
+            throw new TypeError(`Address size should be ${addressBytesSize} bytes, got: ${addressBytes.length}`);
         }
-        if (subAddressBytes.length != constants_1.subAddressBytesSize) {
-            throw new TypeError(`Subaddress size should be ${constants_1.subAddressBytesSize} bytes, got: ${subAddressBytes.length}`);
+        if (subAddressBytes.length != subAddressBytesSize) {
+            throw new TypeError(`Subaddress size should be ${subAddressBytesSize} bytes, got: ${subAddressBytes.length}`);
         }
-        const mergedAddressBytes = bytes_1.concat(addressBytes, subAddressBytes);
-        const words = bech32_1.default.toWords(mergedAddressBytes);
-        words.unshift(constants_1.bech32AddressVersion);
-        return bech32_1.default.encode(hrp, words);
+        const mergedAddressBytes = concat(addressBytes, subAddressBytes);
+        const words = bech32.toWords(mergedAddressBytes);
+        words.unshift(bech32AddressVersion);
+        return bech32.encode(hrp, words);
     }
     static decodeAddress(hrp, bech32Address) {
-        if (bech32Address.length !== constants_1.bech32AddressLength) {
-            throw new TypeError(`Bech32 address size should be ${constants_1.bech32AddressLength}, got: ${bech32Address.length}`);
+        if (bech32Address.length !== bech32AddressLength) {
+            throw new TypeError(`Bech32 address size should be ${bech32AddressLength}, got: ${bech32Address.length}`);
         }
-        const { prefix, words } = bech32_1.default.decode(bech32Address);
+        const { prefix, words } = bech32.decode(bech32Address);
         if (prefix !== hrp) {
             throw new TypeError(`Wrong Libra address Bech32 human readable part (prefix): requested ${hrp}, got ${prefix}`);
         }
         const addressVersion = words[0];
-        const mergedAddress = new Uint8Array(bech32_1.default.fromWords(words.slice(1)));
-        if (constants_1.bech32AddressVersion !== addressVersion) {
-            throw new TypeError(`Version mismatch. Expected ${constants_1.bech32AddressVersion}, got ${addressVersion}`);
+        const mergedAddress = new Uint8Array(bech32.fromWords(words.slice(1)));
+        if (bech32AddressVersion !== addressVersion) {
+            throw new TypeError(`Version mismatch. Expected ${bech32AddressVersion}, got ${addressVersion}`);
         }
-        const address = bytes_1.bytesToHexString(mergedAddress.slice(0, constants_1.addressBytesSize));
-        const subAddress = bytes_1.bytesToHexString(mergedAddress.slice(constants_1.addressBytesSize));
+        const address = bytesToHexString(mergedAddress.slice(0, addressBytesSize));
+        const subAddress = bytesToHexString(mergedAddress.slice(addressBytesSize));
         return [address, subAddress.length ? subAddress : undefined];
     }
     static encodeIntent(intent) {
         const bech32Address = LibraUtils.encodeAddress(intent.address, intent.subAddress, intent.hrp);
-        const url = new URL(`${constants_1.libraScheme}://${bech32Address}`);
+        const url = new URL(`${libraScheme}://${bech32Address}`);
         if (intent.currency) {
             url.searchParams.set('c', intent.currency);
         }
@@ -110,7 +105,7 @@ class LibraUtils {
     }
     static decodeIntent(hrp, intent) {
         const protocol = intent.protocol.slice(0, -1);
-        if (protocol !== constants_1.libraScheme) {
+        if (protocol !== libraScheme) {
             throw new TypeError(`invalid intent scheme: ${protocol}`);
         }
         const [address, subAddress] = LibraUtils.decodeAddress(hrp, intent.hostname);
@@ -122,16 +117,16 @@ class LibraUtils {
         if (intent.searchParams.has('am')) {
             amount = parseInt(intent.searchParams.get('am'));
         }
-        return new intent_1.default(hrp, address, subAddress, currency, amount);
+        return new Intent(hrp, address, subAddress, currency, amount);
     }
     static makeCurrencyTypeTag(currency) {
-        const structTag = new libraTypes_1.StructTag(LibraUtils.makeAccountAddress(constants_1.coreCodeAddressHex), new libraTypes_1.Identifier(currency), new libraTypes_1.Identifier(currency), []);
-        return new libraTypes_1.TypeTagVariantStruct(structTag);
+        const structTag = new StructTag(LibraUtils.makeAccountAddress(coreCodeAddressHex), new Identifier(currency), new Identifier(currency), []);
+        return new TypeTagVariantStruct(structTag);
     }
     static makeAccountAddress(address) {
         const asTuple = [];
-        bytes_1.bytesToBuffer(address).forEach((value) => asTuple.push([value]));
-        return new libraTypes_1.AccountAddress(asTuple);
+        bytesToBuffer(address).forEach((value) => asTuple.push([value]));
+        return new AccountAddress(asTuple);
     }
     static parseAccountAddress(address) {
         const addressBuffer = new Uint8Array(address.value.length);
@@ -144,10 +139,10 @@ class LibraUtils {
         return addressBuffer;
     }
     static matchScriptByCode(code) {
-        const codeHex = bytes_1.bytesToHexString(code);
-        const scripts = Object.entries(libraStdlib_1.Stdlib.ScriptArgs).filter(([, scriptDef]) => {
+        const codeHex = bytesToHexString(code);
+        const scripts = Object.entries(Stdlib.ScriptArgs).filter(([, scriptDef]) => {
             const name = `${scriptDef.codeName}_CODE`;
-            const stdCode = bytes_1.bytesToHexString(libraStdlib_1.Stdlib[name]);
+            const stdCode = bytesToHexString(Stdlib[name]);
             return stdCode === codeHex;
         });
         if (scripts.length < 1) {
@@ -160,5 +155,4 @@ class LibraUtils {
         return def;
     }
 }
-exports.default = LibraUtils;
-LibraUtils.textEncoder = typeof window === 'undefined' ? new util_1.default.TextEncoder() : new TextEncoder();
+LibraUtils.textEncoder = typeof window === 'undefined' ? new util.TextEncoder() : new TextEncoder();

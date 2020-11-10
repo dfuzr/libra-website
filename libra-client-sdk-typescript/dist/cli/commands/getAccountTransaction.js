@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,28 +7,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAccountTransaction = void 0;
-const command_1 = require("./command");
-const views_1 = __importDefault(require("../views"));
-const cliError_1 = require("../cliError");
+import { getClient } from './command';
+import Prettify from '../views';
+import { CliError } from '../cliError';
 function getAccountTransactionFromClient(argv) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            return yield command_1.getClient().getAccountTransaction(argv.address, argv.sequenceNumber, argv.includeEvents);
+            return yield getClient().getAccountTransaction(argv.address, argv.sequenceNumber, argv.includeEvents);
         }
         catch (e) {
-            throw new cliError_1.CliError('Failed to get account transaction from client', e);
+            throw new CliError('Failed to get account transaction from client', e);
         }
     });
 }
 function print(transaction, argv, logger) {
     if (transaction) {
         if (argv.prettify) {
-            const prettify = new views_1.default(logger);
+            const prettify = new Prettify(logger);
             prettify.prettifyTx(transaction);
         }
         else {
@@ -40,10 +34,9 @@ function print(transaction, argv, logger) {
         logger.error('Transaction not found');
     }
 }
-function getAccountTransaction(argv, logger) {
+export function getAccountTransaction(argv, logger) {
     return __awaiter(this, void 0, void 0, function* () {
         const transaction = yield getAccountTransactionFromClient(argv);
         print(transaction, argv, logger);
     });
 }
-exports.getAccountTransaction = getAccountTransaction;

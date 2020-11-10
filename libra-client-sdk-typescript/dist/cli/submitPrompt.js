@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,18 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const inquirer_1 = __importDefault(require("inquirer"));
-const libraStdlib_1 = require("../lcs/libraStdlib");
-const constants_1 = require("../constants");
-const submitArgs_1 = require("./args/submitArgs");
+import inquirer from 'inquirer';
+import { Stdlib, Types } from '../lcs/libraStdlib';
+import { CURRENCIES } from '../constants';
+import { ADD_CURRENCY_TO_ACCOUNT, PEER_TO_PEER_WITH_METADATA, } from './args/submitArgs';
 function promptTypeArgs(scriptDef, argv) {
     return __awaiter(this, void 0, void 0, function* () {
         if (scriptDef.typeArgs.length > 0) {
-            const answer = yield inquirer_1.default.prompt([
+            const answer = yield inquirer.prompt([
                 {
                     type: 'input',
                     name: 'resources',
@@ -33,7 +28,7 @@ function promptTypeArgs(scriptDef, argv) {
 function promptGenericTransactionArguments(type, argv) {
     return __awaiter(this, void 0, void 0, function* () {
         yield promptBaseSubmitArguments(argv);
-        const scriptDef = libraStdlib_1.Stdlib.ScriptArgs[type];
+        const scriptDef = Stdlib.ScriptArgs[type];
         argv.stdlibFunction = scriptDef.stdlibEncodeFunction;
         yield promptArgs(scriptDef, argv);
         yield promptTypeArgs(scriptDef, argv);
@@ -46,9 +41,9 @@ function promptArgs(scriptDef, argv) {
             const argName = arg.name;
             if (!Object.prototype.hasOwnProperty.call(argv, argName)) {
                 const typeTagDef = arg.type;
-                let typeMessage = libraStdlib_1.Types[typeTagDef.type];
+                let typeMessage = Types[typeTagDef.type];
                 if (arg.type.arrayType) {
-                    const arrayType = libraStdlib_1.Types[(_a = arg.type.arrayType) === null || _a === void 0 ? void 0 : _a.type];
+                    const arrayType = Types[(_a = arg.type.arrayType) === null || _a === void 0 ? void 0 : _a.type];
                     typeMessage += ' of ' + arrayType;
                 }
                 argv[argName] = yield promptDynamicArg(arg.name, typeMessage);
@@ -58,10 +53,10 @@ function promptArgs(scriptDef, argv) {
 }
 const submitPrompt = (argv) => __awaiter(void 0, void 0, void 0, function* () {
     const type = argv._[1];
-    if (type === submitArgs_1.PEER_TO_PEER_WITH_METADATA) {
+    if (type === PEER_TO_PEER_WITH_METADATA) {
         yield promptsPeerToPeerArguments(argv);
     }
-    else if (type === submitArgs_1.ADD_CURRENCY_TO_ACCOUNT) {
+    else if (type === ADD_CURRENCY_TO_ACCOUNT) {
         yield promptsAddCurrencyToAccountArguments(argv);
     }
     else {
@@ -70,7 +65,7 @@ const submitPrompt = (argv) => __awaiter(void 0, void 0, void 0, function* () {
 });
 function promptNetwork(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'number',
                 name: 'network',
@@ -82,7 +77,7 @@ function promptNetwork(argv) {
 }
 function promptExpirationTime(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'number',
                 name: 'expirationTime',
@@ -94,7 +89,7 @@ function promptExpirationTime(argv) {
 }
 function promptMaxGasAmount(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'number',
                 name: 'maxGasAmount',
@@ -106,7 +101,7 @@ function promptMaxGasAmount(argv) {
 }
 function promptGasUnitPrice(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'number',
                 name: 'gasUnitPrice',
@@ -118,12 +113,12 @@ function promptGasUnitPrice(argv) {
 }
 function promptGasCurrency(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'list',
                 name: 'gasCurrency',
                 message: `Gas Currency: `,
-                choices: constants_1.CURRENCIES,
+                choices: CURRENCIES,
             },
         ]);
         argv.gasCurrency = answer.gasCurrency;
@@ -131,7 +126,7 @@ function promptGasCurrency(argv) {
 }
 function promptAmount(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'number',
                 name: 'amount',
@@ -143,7 +138,7 @@ function promptAmount(argv) {
 }
 function promptReceiverAddress(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'input',
                 name: 'receiverAddress',
@@ -156,12 +151,12 @@ function promptReceiverAddress(argv) {
 }
 function promptCurrency(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'list',
                 name: 'currency',
                 message: `Currency: `,
-                choices: constants_1.CURRENCIES,
+                choices: CURRENCIES,
                 validate: (answer) => answer.length >= 2,
             },
         ]);
@@ -170,7 +165,7 @@ function promptCurrency(argv) {
 }
 function promptSequenceNumber(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'number',
                 name: 'sequenceNumber',
@@ -182,7 +177,7 @@ function promptSequenceNumber(argv) {
 }
 function promptPublicKey(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'input',
                 name: 'publicKey',
@@ -195,7 +190,7 @@ function promptPublicKey(argv) {
 }
 function promptPrivateKey(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'input',
                 name: 'privateKey',
@@ -208,7 +203,7 @@ function promptPrivateKey(argv) {
 }
 function promptSenderAddress(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'input',
                 name: 'senderAddress',
@@ -221,7 +216,7 @@ function promptSenderAddress(argv) {
 }
 function promptDynamicArg(argName, typeMessage, choices) {
     return __awaiter(this, void 0, void 0, function* () {
-        const answer = yield inquirer_1.default.prompt([
+        const answer = yield inquirer.prompt([
             {
                 type: 'input',
                 name: argName,
@@ -270,4 +265,4 @@ function promptsAddCurrencyToAccountArguments(argv) {
         yield promptBaseSubmitArguments(argv);
     });
 }
-exports.default = submitPrompt;
+export default submitPrompt;

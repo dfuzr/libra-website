@@ -1,12 +1,7 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const yargs_1 = __importDefault(require("yargs"));
-const submitArgs_1 = require("./submitArgs");
-const constants_1 = require("../../constants");
-const args = yargs_1.default
+import yargs from 'yargs';
+import { submitYargs } from './submitArgs';
+import { CURRENCIES } from '../../constants';
+const args = yargs
     .usage('To see each command optional arguments use <<command-name>> --help')
     .command('get_account <address>', 'Returns Libra account by address', (argv) => {
     argv.positional('address', {
@@ -157,7 +152,7 @@ const args = yargs_1.default
         choices: ['lbr', 'tlb'],
     });
 })
-    .command('submit <type>', 'Submit new transaction to Libra blockchain', submitArgs_1.submitYargs)
+    .command('submit <type>', 'Submit new transaction to Libra blockchain', submitYargs)
     .command('generate_keys', 'Generate new keys pair (random or by given seed)', (yargs) => {
     yargs.options('seed', { type: 'string' });
 })
@@ -179,7 +174,7 @@ const args = yargs_1.default
     })
         .option('currency', {
         type: 'string',
-        choices: constants_1.CURRENCIES,
+        choices: CURRENCIES,
         default: 'LBR',
         description: 'The type of currency we add',
     })
@@ -187,4 +182,4 @@ const args = yargs_1.default
 })
     .strict()
     .demandCommand();
-exports.default = args.argv;
+export default args.argv;

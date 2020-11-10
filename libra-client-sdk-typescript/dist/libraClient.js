@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,19 +7,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const client_1 = __importDefault(require("./jsonRpc/client"));
-const errors_1 = require("./errors");
-const errors_2 = require("./jsonRpc/errors");
-const sleep_1 = __importDefault(require("./utils/sleep"));
-const bytes_1 = require("./utils/bytes");
-class LibraClient {
+import JsonRpcClient from './jsonRpc/client';
+import { AccountTransactionNotFound, getErrorFromErrorPayload, LibraChainIDMismatchError, LibraNetworkStaleError, TransactionExecutionFailure, TransactionExpiredError, TransactionSequenceNumberConflictError, } from './errors';
+import { JsonRpcError } from './jsonRpc/errors';
+import sleep from './utils/sleep';
+import { bytesToHexString } from './utils/bytes';
+export default class LibraClient {
     constructor(jsonRpcUrl, chainID) {
         this.chainID = chainID;
-        this.jsonRpc = new client_1.default(jsonRpcUrl);
+        this.jsonRpc = new JsonRpcClient(jsonRpcUrl);
     }
     jsonRpcCall(method, params) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -34,8 +29,8 @@ class LibraClient {
                 return res.result;
             }
             catch (e) {
-                if (e instanceof errors_2.JsonRpcError) {
-                    throw errors_1.getErrorFromErrorPayload(e.error);
+                if (e instanceof JsonRpcError) {
+                    throw getErrorFromErrorPayload(e.error);
                 }
                 throw e;
             }
@@ -43,7 +38,7 @@ class LibraClient {
     }
     validateChainID(chainId) {
         if (chainId !== this.chainID) {
-            throw new errors_1.LibraChainIDMismatchError(this.chainID, chainId);
+            throw new LibraChainIDMismatchError(this.chainID, chainId);
         }
     }
     validateLedger(ledger) {
@@ -55,7 +50,7 @@ class LibraClient {
                 BigInt(ledger.timestampUsecs) +
                     BigInt(LibraClient.STALE_TIMESTAMP_USECS_THRESHOLD) <
                     lastSeen.timestampUsecs)) {
-            throw new errors_1.LibraNetworkStaleError(lastSeen, ledger);
+            throw new LibraNetworkStaleError(lastSeen, ledger);
         }
         this.lastSeenLedger = ledger;
     }
@@ -71,18 +66,18 @@ class LibraClient {
     getAccount(address) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.jsonRpcCall('get_account', [
-                bytes_1.bytesToHexString(address),
+                bytesToHexString(address),
             ]);
         });
     }
     getAccountTransaction(address, sequenceNumber, includeEvents) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.jsonRpcCall('get_account_transaction', [bytes_1.bytesToHexString(address), sequenceNumber, includeEvents]);
+            return this.jsonRpcCall('get_account_transaction', [bytesToHexString(address), sequenceNumber, includeEvents]);
         });
     }
     getAccountTransactions(address, fromVersion, limit, includeEvents) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.jsonRpcCall('get_account_transactions', [bytes_1.bytesToHexString(address), fromVersion, limit, includeEvents]);
+            return this.jsonRpcCall('get_account_transactions', [bytesToHexString(address), fromVersion, limit, includeEvents]);
         });
     }
     getMetadata(version) {
@@ -109,15 +104,15 @@ class LibraClient {
         return __awaiter(this, void 0, void 0, function* () {
             const transaction = yield this.waitForTransactionUnsafe(senderAddress, sequenceNumber, includeEvents, timeoutMillis);
             if (transaction.hash !== transactionHash) {
-                throw new errors_1.TransactionSequenceNumberConflictError(transaction, sequenceNumber);
+                throw new TransactionSequenceNumberConflictError(transaction, sequenceNumber);
             }
             if (BigInt((_a = transaction.transaction) === null || _a === void 0 ? void 0 : _a.expiration_timestamp_secs) * BigInt(1e6) <
                 this.lastSeenLedger.timestampUsecs) {
-                throw new errors_1.TransactionExpiredError(BigInt((_b = transaction.transaction) === null || _b === void 0 ? void 0 : _b.expiration_timestamp_secs), this.lastSeenLedger.timestampUsecs);
+                throw new TransactionExpiredError(BigInt((_b = transaction.transaction) === null || _b === void 0 ? void 0 : _b.expiration_timestamp_secs), this.lastSeenLedger.timestampUsecs);
             }
             if (((_c = transaction.vm_status) === null || _c === void 0 ? void 0 : _c.type) !== 'executed') {
                 const vmStatusType = ((_d = transaction === null || transaction === void 0 ? void 0 : transaction.vm_status) === null || _d === void 0 ? void 0 : _d.type) || 'unknown';
-                throw new errors_1.TransactionExecutionFailure(vmStatusType);
+                throw new TransactionExecutionFailure(vmStatusType);
             }
             return transaction;
         });
@@ -130,9 +125,9 @@ class LibraClient {
                 if (transaction) {
                     return transaction;
                 }
-                yield sleep_1.default(step);
+                yield sleep(step);
             }
-            throw new errors_1.AccountTransactionNotFound(senderAddress, sequenceNumber);
+            throw new AccountTransactionNotFound(senderAddress, sequenceNumber);
         });
     }
     submitRawSignedTransaction(signedTransactionHex) {
@@ -143,6 +138,5 @@ class LibraClient {
         });
     }
 }
-exports.default = LibraClient;
 LibraClient.STALE_TIMESTAMP_VERSION_THRESHOLD = BigInt(30);
 LibraClient.STALE_TIMESTAMP_USECS_THRESHOLD = BigInt(10000000);

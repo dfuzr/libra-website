@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,18 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.submitPeerToPeerTransaction = void 0;
-const _1 = require("./");
-const libraUtils_1 = __importDefault(require("../../../libraUtils"));
-function submitPeerToPeerTransaction(argv) {
+import { executeSubmit } from './';
+import LibraUtils from '../../../libraUtils';
+export function submitPeerToPeerTransaction(argv) {
     return __awaiter(this, void 0, void 0, function* () {
-        const [metadata, metadataSignature] = libraUtils_1.default.createGeneralMetadata(argv.receiverAddress, argv.senderSubAddress, argv.referenceEventNumber);
-        const transaction = libraUtils_1.default.createP2PTransaction(argv.senderAddress, argv.sequenceNumber, argv.currency, argv.receiverAddress, argv.amount, argv.gasCurrency, argv.gasUnitPrice, argv.maxGasAmount, argv.expirationTime, argv.network, metadata, metadataSignature);
-        yield _1.executeSubmit(argv, transaction);
+        const [metadata, metadataSignature] = LibraUtils.createGeneralMetadata(argv.receiverAddress, argv.senderSubAddress, argv.referenceEventNumber);
+        const transaction = LibraUtils.createP2PTransaction(argv.senderAddress, argv.sequenceNumber, argv.currency, argv.receiverAddress, argv.amount, argv.gasCurrency, argv.gasUnitPrice, argv.maxGasAmount, argv.expirationTime, argv.network, metadata, metadataSignature);
+        yield executeSubmit(argv, transaction);
     });
 }
-exports.submitPeerToPeerTransaction = submitPeerToPeerTransaction;

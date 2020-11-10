@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,17 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertAddressToBech32 = void 0;
-const libraUtils_1 = __importDefault(require("../../libraUtils"));
-function convertAddressToBech32(argv, logger) {
+import LibraUtils from '../../libraUtils';
+export function convertAddressToBech32(argv, logger) {
     return __awaiter(this, void 0, void 0, function* () {
         logger.info('Original address', argv.address, argv.subAddress);
-        const addressBech32 = libraUtils_1.default.encodeAddress(argv.address, argv.subAddress, argv.hrp);
+        const addressBech32 = LibraUtils.encodeAddress(argv.address, argv.subAddress, argv.hrp);
         logger.info('Encoded address', addressBech32);
     });
 }
-exports.convertAddressToBech32 = convertAddressToBech32;
