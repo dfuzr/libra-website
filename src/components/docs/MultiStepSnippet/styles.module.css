@@ -113,6 +113,11 @@ desktop-breakpoint-query {
 
   .root ul[role="tablist"] {
     flex-direction: column;
+    min-height: 400px;
+  }
+
+  .root ul[role="tablist"] > * {
+    flex: 1 !important;
   }
 
   .root li[role="tab"] {

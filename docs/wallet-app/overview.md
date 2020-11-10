@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Wallets
 sidebar_label: Wallet Concepts
 ---
 

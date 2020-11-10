@@ -5,6 +5,7 @@ import Excerpt from './Excerpt';
 import Feedback from './Feedback';
 import MultiStepSnippet from './MultiStepSnippet';
 import MultiStepTabItem from './MultiStepTabItem';
+import NotificationBar from './NotificationBar';
 import OverviewReferences from './OverviewReferences';
 import WaveBackground from './WaveBackground';
 
@@ -16,6 +17,7 @@ export default {
   Feedback,
   MultiStepSnippet,
   MultiStepTabItem,
+  NotificationBar,
   ...OverviewReferences,
   WaveBackground,
 };

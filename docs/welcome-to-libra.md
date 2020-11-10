@@ -1,77 +1,101 @@
 ---
 id: welcome-to-libra
-title: Libra Developer Documentation
+title: Libra Developer Portal
 disable_pagination: true
 sidebar_label: Home
-include_marketing_module: true
+include_marketing_module: false
 ---
 
-## Welcome to Libra!
+Explore the technical and economic concepts behind the Libra Payment Network, experiment with the specialized tutorials, or start building with the Development Tools
 
-The Libra payment system is built on a secure, scalable, and reliable blockchain.
+<NotificationBar>
+  <p>
+    The first phase of the Libra Network will be restricted to regulated virtual asset service providers (VASPs). <a href="">Click here</a> to learn about our 3-stage rollout plan, or <a href="">here</a> to see if your organization qualifies as a VASP
+  </p>
+</NotificationBar>
 
-The [Libra Association](https://www.libra.org) manages the development roadmap for Libra Core, and oversees the public process for proposing changes to it. The Libra Association’s subsidiary, Libra Networks, is responsible for and manages all aspects of the Libra Payment Network, which is the layer where all payment-related activity and decisions occur.
+### Topics
 
-<CardsWrapper title="We welcome developers who want to">
+<CardsWrapper>
   <OverlayCard
-    description="Contribute to the Libra Blockchain"
+    description="Protocol Overview, Transaction Types, Nodes, Accounts"
     icon="img/core-contributors.svg"
     iconDark="img/core-contributors-dark.svg"
-    title="Contribute to Libra Core"
+    title="Libra Core"
     to="/docs/core/overview"
+  />
+  <OverlayCard
+    description="Requirements, Configuration, Running a Local Network"
+    icon="img/node-operators.svg"
+    iconDark="img/node-operators-dark.svg"
+    title="Nodes"
+    to="/docs/node/overview"
   />
   <OverlayCard
     description="Develop a wallet for the Libra Payment Network"
     icon="img/wallet-app.svg"
     iconDark="img/wallet-app-dark.svg"
-    title="Build a Wallet"
+    title="Wallets"
     to="/docs/wallet-app/overview"
   />
   <OverlayCard
-    description="Learn and experiment with the Move programming language"
-    icon="img/move.svg"
-    iconDark="img/move-dark.svg"
-    title="Develop with Move"
-    to="/docs/move/overview"
-  />
-  <OverlayCard
-    description="Accept payments and integrate with the LPN"
+    description="Integration, Libra Reference Merchant"
     icon="img/docs/merchant-solutions.svg"
     iconDark="img/docs/merchant-solutions-dark.svg"
-    title="Accept Payments"
+    title="Merchants"
     to="/docs/merchant/overview"
   />
   <OverlayCard
-    description="Learn how to operate full nodes in the Libra Blockchain"
+    description="Key Components,  Writing Modules,  Testing & Debugging"
     icon="img/move.svg"
     iconDark="img/move-dark.svg"
-    title="Run a Full Node"
-    to="/docs/node/overview"
+    title="Move"
+    to="/docs/move/overview"
+  />
+</CardsWrapper>
+
+### Tools
+
+<CardsWrapper cardsPerRow={4}>
+  <SimpleCard
+    icon="img/document.svg"
+    iconDark="img/document-dark.svg"
+    title="SDKs"
+    to="/docs/core/contributing"
+  />
+  <SimpleCard
+    icon="img/core-contributors.svg"
+    iconDark="img/core-contributors-dark.svg"
+    title="CLI"
+    to="/docs/core/contributing"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="GitHub"
+    to="/docs/core/contributing"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Rust Crates"
+    to="/docs/core/contributing"
   />
 </CardsWrapper>
 
 <WaveBackground />
 
-## Discover Libra documentation
+### Discover Libra documentation
 
 <MultiStepSnippet
   defaultValue="my-first-transaction"
   values={[
-    { value: 'my-first-transaction', label: (
-      <ColorCard
-        color="purpleDark"
-        icon="img/transaction.svg"
-        overlay="Create accounts and send your first transaction on the Libra Blockchain testnet."
-        title="Send your first transaction on the testnet"
-        type="snippetTab"
-      />
-    )},
     { value: 'run-move', label: (
       <ColorCard
         color="purpleLight"
         icon="img/docs/move-program.svg"
         overlay="Execute a sample Move script in a local network "
-        title="Run a Move program"
+        title="Wallet Demo"
         type="snippetTab"
       />
     )},
@@ -80,7 +104,7 @@ The [Libra Association](https://www.libra.org) manages the development roadmap f
         color="aqua"
         icon="img/docs/try-a-wallet.svg"
         overlay="Demo the Libra Reference Wallet to learn how wallets work on the blockchain."
-        title="Try out our reference wallet"
+        title="Merchant Demo"
         type="snippetTab"
       />
     )},
@@ -142,37 +166,3 @@ git clone git@github.com:libra/libra-wallet.git
 
 </MultiStepTabItem>
 </MultiStepSnippet>
-
-## Explore Github
-
-<CardsWrapper>
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Wallet"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Merchant"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Core"]}
-    title="Libra Core"
-    to="https://github.com/libra"
-  />
-</CardsWrapper>
-
-<div className="margin-vert--lg" />
-
-Check out the Libra Payment Network’s documentation and community sites, and stay up to date by signing up for our newsletter here.
-
-<div className="margin-vert--lg" />
-
-Tell us your plan to build a [product or service](/partner_form/). We know that not all aspects of the Libra Payment Network will be available immediately to some developers. We're excited to work with the community to evolve these features, and look forward to your participation!

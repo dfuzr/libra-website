@@ -96,8 +96,8 @@ const getReference = (theme = 'secondary') => {
         id: 'cli',
         extra: {
           classNames: ['iconIndented'],
-          icon: 'img/cog.png',
-          iconDark: 'img/cog-dark.png',
+          icon: 'img/core-contributors.svg',
+          iconDark: 'img/core-contributors-dark.svg',
         }
       },
       {
