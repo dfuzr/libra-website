@@ -12,3 +12,36 @@ iframe {
 .gapless-image {
   margin-top: -9px;
 }
+
+.sdks {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.cli .card {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.cli .card:last-child {
+  margin-top: 15px !important;
+}
+
+.cli .cursor-pointer {
+  cursor: pointer;
+}
+
+.cli .list-group-item {
+  padding: 5px;
+}
+
+.cli .list-group-item:hover {
+  background-color: var(--brand-color);
+  color: white;
+}
+
+.cli .list-group {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}

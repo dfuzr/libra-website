@@ -1,27 +1,11 @@
-const {backToHome, getReference} = require('./components');
+const {categoryBoilerplate, getReference, standaloneLink} = require('./components');
 
 const Sidebar = [
-  backToHome,
-  {
-    extra: {
-      classNames: ['categoryLabel'],
-      icon: 'img/node-operators.svg',
-      iconDark: 'img/node-operators-dark.svg',
-      iconClasses: ['iconLeft'],
-      noLink: true,
-    },
-    id: 'node/overview',
-    type: 'doc',
-  },
-  {
-    extra: {
-      classNames: ['categoryIndex'],
-    },
-    href: '/docs/node/overview',
-    label: 'Overview',
-    type: 'link',
-  },
-  getReference(),
+  ...categoryBoilerplate('node/overview', 'node-operators'),
+  standaloneLink('node/nodes'),
+  standaloneLink('node/config-deploy-fn'),
+  standaloneLink('node/run-local-network'),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

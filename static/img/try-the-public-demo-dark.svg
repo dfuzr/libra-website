@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Tutorial Icons/Libra Reference Wallet/Try the Public Demo Darkmode</title>
+    <g id="Tutorial-Icons/Libra-Reference-Wallet/Try-the-Public-Demo-Darkmode" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wallet-43" transform="translate(18.788184, 6.500000)" stroke="#A3ACB9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M11.3737734,6.84285237 L11.3737734,3.43100469 L1.13737734,3.43100469 C0.509260705,3.43100469 3.79252185e-13,2.92174398 3.79252185e-13,2.29362734 L3.79252185e-13,10.8239574 C3.79252185e-13,11.7662745 0.763748886,12.5300234 1.70606601,12.5300234 L11.3737734,12.5300234 L11.3737734,9.1178914 L11.3737734,6.84285237 Z" id="Path" fill="#EEEFF0"></path>
+            <path d="M9.09901875,1.59260912 L9.09901875,0.739576115 L1.13737734,0.739576115 C0.509260705,0.739576115 -6.03961325e-14,1.24883682 -6.03961325e-14,1.87695346 L-6.03961325e-14,1.87695346 C-6.03961325e-14,2.5050701 0.509260705,3.0143308 1.13737734,3.0143308" id="Path"></path>
+        </g>
+        <g id="box-3d-67" transform="translate(8.571538, 18.062500)">
+            <line x1="16.3964266" y1="0" x2="16.3964266" y2="24.985031" id="Path" stroke="#A3ACB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+            <polyline id="Path" stroke="#A3ACB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="29.6697243 10.1501688 29.6697243 21.0811199 16.3964266 24.985031 3.12312887 21.0811199 3.12312887 10.1501688"></polyline>
+            <path d="M18.326341,5.07508441 L21.7805392,5.07508441 C24.7637058,5.07508441 27.5010294,3.42142258 28.888942,0.780782217 L28.888942,0.780782217 L28.888942,0.780782217 L16.3964266,0 L3.90391109,0.780782217 C5.23804394,3.41488197 7.93991489,5.07508441 10.8926072,5.07508441 L14.842301,5.07508441 L14.842301,5.07508441 L16.3964266,0 L18.326341,5.07508441 Z" id="Path" fill="#A3ACB9"></path>
+            <polyline id="Path" stroke="#A3ACB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="16.3964266 0 19.5195554 10.1501688 32.7928531 10.1501688 28.888942 1.56156443 16.3964266 0 3.90391109 1.56156443 0 10.1501688 13.2732977 10.1501688 16.3964266 0"></polyline>
+        </g>
+    </g>
+</svg>

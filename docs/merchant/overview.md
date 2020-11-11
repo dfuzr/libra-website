@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Overview
-sidebar_label: Merchant Concepts
+sidebar_label: Merchants
 ---
 
 We are developing a reference merchant project for developers. The project will demonstrate how your service can accept ≋Libra payments Libra online, in-app, and in-person.

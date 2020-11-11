@@ -35,7 +35,7 @@ const Sidebar = [
       'core/events',
     ]
    },
- getReference(),
+ ...getReference(),
 ];
 
 

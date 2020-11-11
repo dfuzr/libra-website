@@ -1,7 +1,7 @@
 ---
 id: intro-to-lrw
 title: 'Libra Reference Wallet Concepts'
-sidebar_label: Concepts
+sidebar_label: Wallet Concepts
 ---
 
 

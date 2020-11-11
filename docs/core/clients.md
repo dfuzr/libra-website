@@ -4,8 +4,6 @@ title: Clients
 sidebar_label: Libra Clients
 ---
 
-
-
 ## Overview
 A Libra client is software that interacts with the Libra Blockchain by submitting transactions or querying, via [full nodes](link to glossary definition). Libra clients communicate with full nodes exclusively using a JSON-RPC interface.
 

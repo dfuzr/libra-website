@@ -1,75 +1,48 @@
-const {backToHome, getReference} = require('./components');
+const {category, categoryBoilerplate, getReference} = require('./components');
 
 const Sidebar = [
-   backToHome,
-  {
-    extra: {
-      classNames: ['categoryLabel'],
-      icon: 'img/core-contributors.svg',
-      iconDark: 'img/core-contributors-dark.svg',
-      noLink: false,
+  ...categoryBoilerplate('core/overview', 'core-contributors'),
+  category('Concepts', [
+    'core/libra-protocol',
+    'core/nodes',
+    'core/life-of-a-transaction',
+    'core/accounts',
+    'core/transaction-types',
+    'core/keys',
+    'core/events',
+    'core/gas',
+    'core/clients',
+  ]),
+  category('Tutorials', [
+    'core/my-first-transaction',
+    'core/my-first-client',
+    'core/query-the-blockchain',
+    'core/run-local-network',
+  ]),
+  category('Develop', [
+    {
+      type: 'link',
+      href: 'https://github.com/libra/libra/blob/master/json-rpc/json-rpc-spec.md',
+      label: 'JSON-RPC Spec',
     },
-    id: 'core/overview',
-    type: 'doc',
-  },
-  {
-    extra: {
-      classNames: ['categoryIndex'],
+    {
+      type: 'link',
+      href: 'https://github.com/libra/libra-client-sdk-go',
+      label: 'Go SDK',
     },
-    href: '/docs/core/overview',
-    label: 'Overview',
-    type: 'link',
-  },
-  {
-    extra: {
-      iconClasses: ['listTitle'],
+    {
+      type: 'link',
+      href: 'https://github.com/libra/libra-client-sdk-java',
+      label: 'Java SDK',
     },
-    label: 'Concepts',
-    type: 'category',
-    items: [
-      'core/libra-protocol',
-      'core/life-of-a-transaction',
-      'core/the-libra-blockchain-paper',
-      'core/state-machine-replication-paper',
-      'core/accounts',
-      'core/transaction-types',
-      'core/gas',
-      'core/nodes',
-      'core/clients',
-      'core/events',
-    ]
-  },
-  {
-    extra: {
-      iconClasses: ['listTitle'],
+    {
+      type: 'link',
+      href: 'https://github.com/libra/libra-client-sdk-python',
+      label: 'Python SDK',
     },
-    label: 'Tutorials',
-    type: 'category',
-    items: [
-      'core/my-first-transaction',
-      'core/my-first-client',
-      'core/run-local-network',
-    ]
-  },
-  {
-    extra: {
-      iconClasses: ['listTitle'],
-    },
-    label: 'Develop',
-    type: 'category',
-    items: [
-      {
-        type: 'link',
-        href: 'https://github.com/orgs/libra/projects/1',
-        label: 'Roadmap',
-      },
-      'core/libra-open-source-paper',
-      'core/contributing',
-      'core/coding-guidelines',
-      'core/libra-cli',
-    ]
-  },
-  getReference(),
+    'core/libra-cli',
+  ]),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

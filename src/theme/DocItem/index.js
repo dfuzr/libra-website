@@ -11,6 +11,7 @@ import {OVERFLOW_CONTAINER_CLASS} from '@theme/Layout';
 import Feedback from 'components/docs/Feedback';
 import Pagination from './Pagination';
 import {RightSidebar} from 'libra-docusaurus-components';
+import MarketingModule from '@theme/MarketingModule';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -36,6 +37,7 @@ function DocItem(props) {
       keywords,
       hide_title: hideTitle,
       hide_table_of_contents: hideTableOfContents,
+      include_marketing_module: includeMarketingModule,
     },
   } = DocContent;
 
@@ -96,6 +98,9 @@ function DocItem(props) {
                 <Pagination metadata={metadata} />
               }
             </div>
+            {includeMarketingModule &&
+              <MarketingModule />
+            }
           </div>
         <RightSidebar
           editUrl={editUrl}

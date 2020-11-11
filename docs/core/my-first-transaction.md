@@ -635,3 +635,4 @@ Once you have executed your first transaction, you may refer to the document [Li
 * [Life of a Transaction](life-of-a-transaction.md) &mdash; Provides a look at what happens "under the hood" when a transaction is submitted and executed.
 * [CLI Guide](libra-cli.md) &mdash; Lists the commands (and their usage) of the Libra CLI client.
 * [Libra Glossary](reference/glossary.md) &mdash; Provides a quick reference to Libra terminology.
+

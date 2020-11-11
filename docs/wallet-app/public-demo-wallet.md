@@ -1,9 +1,7 @@
 ---
 id: public-demo-wallet
 title: 'Try the Public Demo Wallet (web)'
-sidebar_label: Try the Demo Wallet
-
-
+sidebar_label: Wallet Demo
 ---
 
 
@@ -37,15 +35,15 @@ The image below details the different user flows for the Public Demo Wallet.
 
 ### Use the Demo Wallet
 
-Check out the embedded demo (Public Demo Wallet) of the Web version of the reference wallet hosted at https://developers.libra.org/docs/wallet-app/demo-wallet/. 
+Check out the embedded demo (Public Demo Wallet) of the Web version of the reference wallet hosted at https://developers.libra.org/docs/wallet-app/demo-wallet/.
 
 ## Create your account and login
 
-Since this is a demo, login and authentication is simulated using auto generated fake user data. 
+Since this is a demo, login and authentication is simulated using auto generated fake user data.
 
 ### Register and sign up
 
-New users who want to use the Public Demo Wallet go through a simulated registration process. Users should enter a dummy username and password at signup and choose from a dummy identity during the sign up process. 
+New users who want to use the Public Demo Wallet go through a simulated registration process. Users should enter a dummy username and password at signup and choose from a dummy identity during the sign up process.
 
 The registration process simulates the following steps:
 
@@ -75,14 +73,14 @@ The Public Demo Wallet is only accessible to authenticated users. When a user ac
 
 Upon login, if a user is presented with a “Verification Pending” page, it means that the authentication has been successful but the user verification process is still underway.
 
-If the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page. 
+If the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page.
 
 
 ### Sign out
 A user can sign out of the wallet on the [Settings](#modify-settings) page.
 
 ### Reset password
-It is possible to reset the user password by entering a username on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. The password reset flow is simulated where the user has to enter the fake username and is redirected to a page where they have to enter their new dummy password. 
+It is possible to reset the user password by entering a username on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. The password reset flow is simulated where the user has to enter the fake username and is redirected to a page where they have to enter their new dummy password.
 
 >
 >Note: For the reference wallet, entering an existing username redirects the user immediately to the password change page, without sending the reset message.
@@ -165,14 +163,14 @@ Each transaction consists of:
 * Amount of Libra Coins
 * Current fiat value in default fiat currency, as configured in the wallet settings
 * Transaction execution date and time
-* Address 
+* Address
 * Libra transaction ID – Libra Blockchain transaction’s ledger version number with link to an external Libra Blockchain explorer, if applicable. If not applicable, as in the cases of internal transactions, the field will be marked as unavailable.
 
- 
+
 
 ### Deposit and withdraw Libra Coins
 
-Users can simulate the deposit and withdraw Libra Coins to and from the Public Demo Web Wallet.  
+Users can simulate the deposit and withdraw Libra Coins to and from the Public Demo Web Wallet.
 
 When a user deposits a Libra Coin currency amount, the Public Demo Web Wallet simulates a purchase of Libra Coins using the user's credit card or bank account wire transfer.
 
@@ -238,7 +236,7 @@ Other wallets can simulate sending funds without any action on the receiving par
 
 * [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
 
-* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows. 
+* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows.
 
 * [Wallet Architecture](wallet-arch.md) - Learn more about PubSub and how it's implemented.
 
@@ -246,4 +244,4 @@ Other wallets can simulate sending funds without any action on the receiving par
 
 * [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
 
-  
+

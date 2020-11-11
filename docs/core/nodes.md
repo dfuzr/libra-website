@@ -1,7 +1,6 @@
 ---
 id: nodes
 title: Libra Nodes
-sidebar_label: Libra Nodes
 ---
 
 

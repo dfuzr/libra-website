@@ -29,7 +29,7 @@ const Sidebar = [
       'node/manage-monitor-fn',
     ]
    },
- getReference(),
+ ...getReference(),
 ];
 
 

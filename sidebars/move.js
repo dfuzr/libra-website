@@ -1,52 +1,35 @@
-const {backToHome, getReference} = require('./components');
+const {category, categoryBoilerplate, getReference, standaloneLink} = require('./components');
 
 const Sidebar = [
-  backToHome,
-  {
-    extra: {
-      classNames: ['categoryLabel'],
-      icon: 'img/move.svg',
-      iconDark: 'img/move-dark.svg',
-      iconClasses: ['iconLeft'],
-      noLink: true,
+  ...categoryBoilerplate('move/overview', 'move'),
+  category('Getting Started', [
+    /*
+     * The hrefs shouldn't just be '' but right now we don't
+     * know where they would link to
+     */
+    {
+      href: '',
+      label: 'Installation',
+      type: 'link',
     },
-    id: 'move/overview',
-    type: 'doc',
-  },
-  {
-    extra: {
-      classNames: ['categoryIndex'],
+    {
+      href: '',
+      label: 'Hello, Move',
+      type: 'link',
     },
-    href: '/docs/move/overview',
-    label: 'Overview',
-    type: 'link',
-  },
-  {
-    extra: {
-      icon: 'img/concepts.svg',
-      iconDark: 'img/concepts-dark.svg',
-      iconClasses: ['listTitle'],
+    {
+      href: '',
+      label: 'Transactions Scripts vs. Modules',
+      type: 'link',
     },
-    label: 'Concepts',
-    type: 'category',
-    items: [
-      'move/move-paper',
-    ]
-  },
-  {
-    extra: {
-      icon: 'img/tutorials.svg',
-      iconDark: 'img/tutorials-dark.svg',
-      iconClasses: ['listTitle'],
-    },
-    label: 'Tutorials',
-    type: 'category',
-    items: [
-      'move/move-getting-started',
-      'move/run-move-locally',
-    ]
-  },
-  getReference(),
+  ]),
+  category('Get Started', [
+    'tutorials/my-first-transaction',
+    'tutorials/my-first-client',
+    'tutorials/query-the-blockchain',
+    'tutorials/run-local-network',
+  ]),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

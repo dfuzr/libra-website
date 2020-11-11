@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Tutorial Icons/Get Started/Query the Blockchain Darkmode</title>
+    <g id="Tutorial-Icons/Get-Started/Query-the-Blockchain-Darkmode" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-17" transform="translate(7.766206, 5.244187)">
+            <path d="M10.9287475,36.2265094 C11.9551681,35.084035 14.3951946,34.280772 17.2421452,34.280772 C20.0723937,34.280772 22.5002732,35.0752079 23.5388407,36.2063333 L18.001332,39.3248093 L14.9645847,38.0638" id="Fill-1" fill="#A3ACB9"></path>
+            <path d="M23.5388407,3.75341761 C22.5109018,4.89589206 20.0723937,5.69789399 17.2254431,5.69789399 C14.3951946,5.69789399 11.9657967,4.90471912 10.9287475,3.77359376 L16.4662562,0.653856687 L19.5030036,1.91486601" id="Fill-3" fill="#A3ACB9"></path>
+            <polygon id="Stroke-5" stroke="#A3ACB9" stroke-width="2" points="10.0880746 4.64705289 10.0880746 12.6334453 17.2337941 16.6266415 24.3795136 12.6334453 24.3795136 4.64705289 17.2337941 0.653856687"></polygon>
+            <polygon id="Stroke-7" stroke="#A3ACB9" stroke-width="2" points="0 10.5317631 0 18.5181555 7.14571951 22.5113517 14.291439 18.5181555 14.291439 10.5317631 7.14571951 6.53856687"></polygon>
+            <polygon id="Stroke-9" stroke="#EEEFF0" stroke-width="2" points="20.1761492 10.5317631 20.1761492 18.5181555 27.3218687 22.5113517 34.4675882 18.5181555 34.4675882 10.5317631 27.3218687 6.53856687"></polygon>
+            <polygon id="Stroke-11" stroke="#EEEFF0" stroke-width="2" points="0 21.4605106 0 29.446903 7.14571951 33.4400992 14.291439 29.446903 14.291439 21.4605106 7.14571951 17.4673144"></polygon>
+            <polygon id="Stroke-13" stroke="#A3ACB9" stroke-width="2" points="20.1761492 21.4605106 20.1761492 29.446903 27.3218687 33.4400992 34.4675882 29.446903 34.4675882 21.4605106 27.3218687 17.4673144"></polygon>
+            <polygon id="Stroke-15" stroke="#A3ACB9" stroke-width="2" points="10.0880746 27.3452207 10.0880746 35.3316131 17.2337941 39.3248093 24.3795136 35.3316131 24.3795136 27.3452207 17.2337941 23.3520245"></polygon>
+        </g>
+    </g>
+</svg>

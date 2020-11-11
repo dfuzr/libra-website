@@ -25,7 +25,7 @@ module.exports = {
     },
   },
   plugins: [
-    require.resolve('./plugins/alias/src'),
+    require.resolve('./plugins/webpack'),
     require.resolve('./plugins/react-axe-ada-monitoring'),
     require.resolve('libra-docusaurus-components/src/plugin-segment'),
   ],

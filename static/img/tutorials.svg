@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="16px" viewBox="0 0 30 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon</title>
+<svg width="24px" height="21px" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>39C7AFEB-F725-46B6-B6D8-0FDC60290E8E@1x</title>
     <g id="---Developers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Documentation---Inline-Command---Wallet-+-App" transform="translate(-20.000000, -325.000000)">
-            <g id="Left-Rail" transform="translate(15.000000, 140.000000)">
-                <g id="Search" transform="translate(0.000000, 57.000000)">
-                    <g id="Icon/Tutorials" transform="translate(5.000000, 121.000000)">
-                        <rect id="Rectangle" fill="#C4C4C4" x="0" y="13.5" width="30" height="2" rx="1"></rect>
-                        <rect id="Rectangle" stroke="#727272" stroke-width="1.75" fill="#FFFFFF" x="4" y="8.5" width="13" height="13" rx="1.27118644"></rect>
-                    </g>
-                </g>
+        <g id="Documentation---Libra-Developer-Portal" transform="translate(-40.000000, -743.000000)">
+            <g id="Group-14" transform="translate(41.000000, 744.423813)">
+                <path d="M10,15.5761866 L18,15.5761866 C19.6568542,15.5761866 21,16.9193324 21,18.5761866 L21,18.5761866 L21,18.5761866 L7,18.5761866 C7,16.9193324 8.34314575,15.5761866 10,15.5761866 Z" id="Rectangle" fill="#92B5D8"></path>
+                <path d="M7,7.23333868 L2,7.23333868 C0.8954305,7.23333868 3.41744293e-15,8.12876918 3.55271368e-15,9.23333868 L3.55271368e-15,16.4076921 C3.68798443e-15,17.5122616 0.8954305,18.4076921 2,18.4076921 L5,18.4076921 C6.1045695,18.4076921 7,17.5122616 7,16.4076921 L7,2 C7,0.8954305 7.8954305,-5.50862005e-14 9,-5.5067062e-14 L15.5126975,-5.5067062e-14 C16.617267,-5.7046325e-14 17.5126975,0.8954305 17.5126975,2 L17.5126975,3.74285329 L17.5126975,3.74285329 L19.7894024,3.74285329 C20.8939719,3.74285329 21.7894024,4.63828379 21.7894024,5.74285329 L21.7894024,16.4076921 C21.7894024,17.5122616 20.8939719,18.4076921 19.7894024,18.4076921 L5.73769421,18.4076921 L5.73769421,18.4076921" id="Path-8" stroke="#473291" stroke-width="1.3"></path>
+                <line x1="10.3692098" y1="10.5389911" x2="14.5196444" y2="10.5389911" id="Path-9" stroke="#6E66A8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="10.3692098" y1="13.5389911" x2="18.1597194" y2="13.5389911" id="Path-9" stroke="#6E66A8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></line>
+                <path d="M10,3.4940021 L10,7.09292718 C10,7.36906955 10.2238576,7.59292718 10.5,7.59292718 C10.6221671,7.59292718 10.7401071,7.54820006 10.8315524,7.46719049 L12.9992163,5.54690048 C13.2059162,5.36378916 13.2250386,5.04778472 13.0419273,4.8410848 C13.0212561,4.81775079 12.9984481,4.79640105 12.9738011,4.77731447 L10.8061372,3.09867941 C10.5878065,2.92960452 10.2737522,2.96953423 10.1046773,3.18786493 C10.036821,3.27548951 10,3.38317545 10,3.4940021 Z" id="Path-15" fill="#8ECFBA"></path>
             </g>
         </g>
     </g>

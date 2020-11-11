@@ -17,3 +17,11 @@
     width: calc(100% + calc( var(--horizontal-spacing) * 2 ));
   }
 }
+
+.root.rowOf3 {
+  --doc-card-size: var(--doc-card-3-per-row);
+}
+
+.root.rowOf4 {
+  --doc-card-size: var(--doc-card-4-per-row);
+}

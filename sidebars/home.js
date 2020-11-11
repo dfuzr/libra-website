@@ -12,7 +12,7 @@ const Sidebar = [
   },
   {
     type: 'category',
-    label: 'Developers',
+    label: 'Topics',
     items: [
       {
         type: 'ref',
@@ -25,11 +25,11 @@ const Sidebar = [
       },
       {
         type: 'ref',
-        id: 'merchant/overview',
+        id: 'node/overview',
         extra: {
           classNames: ['iconIndented'],
-          icon: 'img/merchant-solutions.svg',
-          iconDark: 'img/merchant-solutions-dark.svg',
+          icon: 'img/node-operators.svg',
+          iconDark: 'img/node-operators-dark.svg',
         },
       },
       {
@@ -43,6 +43,15 @@ const Sidebar = [
       },
       {
         type: 'ref',
+        id: 'merchant/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/merchant-solutions.svg',
+          iconDark: 'img/merchant-solutions-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
         id: 'move/overview',
         extra: {
           classNames: ['iconIndented'],
@@ -50,18 +59,9 @@ const Sidebar = [
           iconDark: 'img/move-dark.svg',
         },
       },
-      {
-        type: 'ref',
-        id: 'node/overview',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/node-operators.svg',
-          iconDark: 'img/node-operators-dark.svg',
-        },
-      }
     ],
   },
-  getReference('primary'),
+  ...getReference('primary'),
 ];
 
 module.exports = Sidebar;

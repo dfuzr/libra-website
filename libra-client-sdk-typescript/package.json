@@ -1,0 +1,67 @@
+{
+  "name": "@libra/client",
+  "version": "1.0.0",
+  "description": "Libra client SDK in Typescript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/libra/libra-client-sdk-typescript"
+  },
+  "keywords": [
+    "libra",
+    "library",
+    "crypto",
+    "SDK"
+  ],
+  "author": "Libra Association <info@libra.org>",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build-with-esmodules": "tsc --module esnext",
+    "test": "",
+    "test:ci": "",
+    "test:watch": "jest --watch",
+    "format": "prettier --write .",
+    "format:check": "",
+    "lint": "eslint --fix .",
+    "lint:check": "eslint .",
+    "prepublishOnly": "npm run build-with-esmodules && npm run test:ci && npm run format:check && npm run lint:check"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bech32": "^1.1.4",
+    "bip39": "^3.0.2",
+    "elliptic": "^6.5.3",
+    "json-bigint": "^1.0.0",
+    "sha3": "^2.1.3",
+    "ts-proto": "^1.37.0",
+    "util": "^0.12.3"
+  },
+  "devDependencies": {
+    "@types/elliptic": "^6.4.12",
+    "@types/inquirer": "^7.3.1",
+    "@types/jest": "^26.0.14",
+    "@types/json-bigint": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^7.10.0",
+    "husky": "^4.3.0",
+    "inquirer": "^7.3.3",
+    "jest": "^26.4.2",
+    "nock": "^13.0.4",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
+    "typescript": "^3.9.6",
+    "yargs": "^15.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build-with-esmodules && npm run test:ci && npm run format:check && npm run lint:check",
+      "pre-push": "npm run test:ci"
+    }
+  }
+}
