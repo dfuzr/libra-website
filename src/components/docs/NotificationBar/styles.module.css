@@ -12,3 +12,9 @@
 .root p {
   margin: 0;
 }
+
+html[data-theme="dark"] .root {
+  background-color: var(--doc-component-background);
+  border: 0;
+  color: white;
+}

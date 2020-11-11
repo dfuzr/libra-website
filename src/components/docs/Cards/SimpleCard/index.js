@@ -7,20 +7,25 @@ import {WithBackgroundImage} from 'libra-docusaurus-components';
 import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const SimpleCard = ({ icon, iconDark, smallerImage, title, to }) => (
+const SimpleCard = ({ bolded, icon, iconDark, smallerImage, title, to }) => (
   <BaseContainer className={styles.root} to={to}>
-    <WithBackgroundImage 
+    <WithBackgroundImage
       className={classnames(styles.image, {
         [styles.smaller]: smallerImage,
       })}
       imageLight={icon}
       imageDark={iconDark}
     />
-    <span className={styles.title}>{title}</span>
+    <span className={classnames(styles.title, {
+      [styles.bolded]: bolded
+    })}>
+      {title}
+    </span>
   </BaseContainer>
 );
 
 SimpleCard.propTypes = {
+  bolded: PropTypes.bool,
   icon: PropTypes.string.isRequired,
   iconDark: PropTypes.string,
   smallerImage: PropTypes.bool,

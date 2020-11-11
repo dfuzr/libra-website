@@ -54,46 +54,15 @@ Explore the technical and economic concepts behind the Libra Payment Network, ex
   />
 </CardsWrapper>
 
-### Tools
-
-<CardsWrapper cardsPerRow={4}>
-  <SimpleCard
-    icon="img/document.svg"
-    iconDark="img/document-dark.svg"
-    title="SDKs"
-    to="/docs/core/contributing"
-  />
-  <SimpleCard
-    icon="img/core-contributors.svg"
-    iconDark="img/core-contributors-dark.svg"
-    title="CLI"
-    to="/docs/core/contributing"
-  />
-  <SimpleCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    title="GitHub"
-    to="/docs/core/contributing"
-  />
-  <SimpleCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    title="Rust Crates"
-    to="/docs/core/contributing"
-  />
-</CardsWrapper>
-
-<WaveBackground />
-
-### Discover Libra documentation
+### Learning
 
 <MultiStepSnippet
   defaultValue="my-first-transaction"
   values={[
     { value: 'run-move', label: (
       <ColorCard
-        color="purpleLight"
-        icon="img/docs/move-program.svg"
+        color="purpleDark"
+        icon="img/docs/try-a-wallet.svg"
         overlay="Execute a sample Move script in a local network "
         title="Wallet Demo"
         type="snippetTab"
@@ -101,8 +70,8 @@ Explore the technical and economic concepts behind the Libra Payment Network, ex
     )},
     { value: 'demo-wallet', label: (
       <ColorCard
-        color="aqua"
-        icon="img/docs/try-a-wallet.svg"
+        color="purpleLight"
+        icon="img/docs/move-program.svg"
         overlay="Demo the Libra Reference Wallet to learn how wallets work on the blockchain."
         title="Merchant Demo"
         type="snippetTab"
@@ -166,3 +135,32 @@ git clone git@github.com:libra/libra-wallet.git
 
 </MultiStepTabItem>
 </MultiStepSnippet>
+
+### Tools
+
+<CardsWrapper cardsPerRow={4}>
+  <SimpleCard
+    icon="img/document.svg"
+    iconDark="img/document-dark.svg"
+    title="SDKs"
+    to="/docs/core/contributing"
+  />
+  <SimpleCard
+    icon="img/core-contributors.svg"
+    iconDark="img/core-contributors-dark.svg"
+    title="CLI"
+    to="/docs/core/contributing"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="GitHub"
+    to="/docs/core/contributing"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Rust Crates"
+    to="/docs/core/contributing"
+  />
+</CardsWrapper>

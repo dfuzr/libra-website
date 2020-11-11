@@ -29,7 +29,7 @@
     "format:check": "",
     "lint": "eslint --fix .",
     "lint:check": "eslint .",
-    "prepublishOnly": "npm run build && npm run test:ci && npm run format:check && npm run lint:check"
+    "prepublishOnly": "npm run build-with-esmodules && npm run test:ci && npm run format:check && npm run lint:check"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -60,7 +60,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && npm run test:ci && npm run format:check && npm run lint:check",
+      "pre-commit": "npm run build-with-esmodules && npm run test:ci && npm run format:check && npm run lint:check",
       "pre-push": "npm run test:ci"
     }
   }
