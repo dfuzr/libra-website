@@ -1,7 +1,7 @@
 ---
 id: public-demo-wallet
 title: 'Try the Public Demo Wallet (web)'
-sidebar_label: Try the Demo Wallet
+sidebar_label: Wallet Demo
 ---
 
 
