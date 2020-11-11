@@ -34,7 +34,7 @@ const Sidebar = [
       label: 'TypeScript',
     },
   ]),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

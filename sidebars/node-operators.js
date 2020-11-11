@@ -5,7 +5,7 @@ const Sidebar = [
   standaloneLink('node/nodes'),
   standaloneLink('node/config-deploy-fn'),
   standaloneLink('node/run-local-network'),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

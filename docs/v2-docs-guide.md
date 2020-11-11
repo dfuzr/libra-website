@@ -1,4 +1,4 @@
----
+bo---
 id: v2-docs-guide
 title: V2 Docs Guide
 sidebar_label: V2 Docs Guide
@@ -31,8 +31,8 @@ sidebar_label: V2 Docs Guide
     { value: 'py', label: (
       <ColorCard
         color="purpleLight"
-        icon="img/docs/move-program.svg"
-        iconDark="img/docs/move-program-dark.svg"
+        icon="img/bobby-pin.svg"
+        iconDark="img/bobby-pin-dark.svg"
         overlay="Second overlay (no content specified in comps"
         title="Write a move program"
         type="snippetTab"
@@ -41,8 +41,8 @@ sidebar_label: V2 Docs Guide
     { value: 'java', label: (
       <ColorCard
         color="aqua"
-        icon="img/docs/try-a-wallet.svg"
-        iconDark="img/docs/try-a-wallet-dark.svg"
+        icon="img/overlapping-circle-and-square.svg"
+        iconDark="img/overlapping-circle-and-square-dark.svg"
         overlay="Third overlay (no content specified in comps"
         title="Try out a wallet"
         type="snippetTab"
@@ -224,8 +224,8 @@ function Example() {
     { value: 'py', label: (
       <ColorCard
         color="purpleLight"
-        icon="img/docs/move-program.svg"
-        iconDark="img/docs/move-program-dark.svg"
+        icon="img/bobby-pin.svg"
+        iconDark="img/bobby-pin-dark.svg"
         overlay="Second overlay (no content specified in comps"
         title="Write a move program"
         type="snippetTab"
@@ -234,8 +234,8 @@ function Example() {
     { value: 'java', label: (
       <ColorCard
         color="aqua"
-        icon="img/docs/try-a-wallet.svg"
-        iconDark="img/docs/try-a-wallet-dark.svg"
+        icon="img/overlapping-circle-and-square.svg"
+        iconDark="img/overlapping-circle-and-square-dark.svg"
         overlay="Third overlay (no content specified in comps"
         title="Try out a wallet"
         type="snippetTab"
@@ -327,8 +327,8 @@ class HelloWorld {
     { value: 'py', label: (
       <ColorCard
         color="purpleLight"
-        icon="img/docs/move-program.svg"
-        iconDark="img/docs/move-program-dark.svg"
+        icon="img/bobby-pin.svg"
+        iconDark="img/bobby-pin-dark.svg"
         title="Write a move program"
         type="snippetTab"
       />
@@ -336,8 +336,8 @@ class HelloWorld {
     { value: 'java', label: (
       <ColorCard
         color="aqua"
-        icon="img/docs/try-a-wallet.svg"
-        iconDark="img/docs/try-a-wallet-dark.svg"
+        icon="img/overlapping-circle-and-square.svg"
+        iconDark="img/overlapping-circle-and-square-dark.svg"
         title="Try out a wallet"
         type="snippetTab"
       />
@@ -345,8 +345,8 @@ class HelloWorld {
     { value: 'fourth', label: (
       <ColorCard
         color="purpleLight"
-        icon="img/docs/try-a-wallet.svg"
-        iconDark="img/docs/try-a-wallet-dark.svg"
+        icon="img/overlapping-circle-and-square.svg"
+        iconDark="img/overlapping-circle-and-square-dark.svg"
         overlay="Another random overlay"
         title="Test of the fourth tab"
         type="snippetTab"
@@ -355,8 +355,8 @@ class HelloWorld {
     { value: 'fifth', label: (
       <ColorCard
         color="purpleDark"
-        icon="img/docs/try-a-wallet.svg"
-        iconDark="img/docs/try-a-wallet-dark.svg"
+        icon="img/overlapping-circle-and-square.svg"
+        iconDark="img/overlapping-circle-and-square-dark.svg"
         overlay="Another random overlay"
         title="Test of the fifth tab"
         type="snippetTab"

@@ -1,4 +1,7 @@
 const { isWebUri } = require('valid-url');
+const path = require('path');
+
+const getDarkModeImage = img => `img/${path.parse(img).name}-dark${path.parse(img).ext}`;
 
 const category = (label, items) => {
   return {
@@ -47,70 +50,47 @@ const categoryBoilerplate = (id, image, includeOverview = true) => {
 };
 
 const getReference = (theme = 'secondary') => {
-  const classNames = ['reference'];
   const type = theme === 'primary' ? 'doc' : 'ref';
-
-  if (theme === 'secondary') {
-    classNames.push({
-      global: true,
-      name: 'margin-top--md',
-    });
-  }
-
-  return {
+  const standaloneReferenceLink = id => ({
     extra: {
-      classNames: classNames,
+      classNames: ['standaloneReferenceLink'],
     },
-    label: 'Reference',
-    type: 'category',
-    items: [
-      {
-        type,
-        id: 'reference/glossary',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/terminology.svg',
-          iconDark: 'img/terminology-dark.svg',
-        },
-      },
-      {
-        type,
-        id: 'reference/prospective-vasps',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/compliance.svg',
-          iconDark: 'img/compliance-dark.svg',
-        }
-      },
-      {
-        type,
-        id: 'reference/security',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/security.svg',
-          iconDark: 'img/security-dark.svg',
-        }
-      },
-      {
-        type,
-        id: 'cli',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/core-contributors.svg',
-          iconDark: 'img/core-contributors-dark.svg',
-        }
-      },
-      {
-        type,
-        id: 'using-the-sidebar',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/compliance.svg',
-          iconDark: 'img/compliance-dark.svg',
-        }
-      },
-    ],
-  };
+    id,
+    type
+  });
+  const referenceLink = (id, icon, iconDark) => ({
+    type,
+    id,
+    extra: {
+      classNames: ['iconIndented'],
+      icon,
+      iconDark: iconDark ? iconDark : getDarkModeImage(icon),
+    }
+  });
+
+  return [
+    {
+      type: 'category',
+      label: 'Tools',
+      items: [
+        referenceLink('sdks/overview', 'img/document.svg'),
+        referenceLink('cli', 'img/cli.svg'),
+        // referenceLink('core/contributing', 'img/github.svg'),
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Learning Center',
+      items: [
+        referenceLink('tutorials/overview', 'img/tutorials.svg'),
+        referenceLink('wallet-app/public-demo-wallet', 'img/overlapping-circle-and-square-2.svg', 'img/overlapping-circle-and-square-dark.svg'),
+        referenceLink('merchant/try-demo-merchant', 'img/bobby-pin-2.svg', 'img/bobby-pin-dark.svg'),
+      ],
+    },
+    standaloneReferenceLink('reference/security'),
+    standaloneReferenceLink('reference/glossary'),
+    standaloneReferenceLink('reference/prospective-vasps'),
+  ];
 };
 
 const standaloneLink = (link, label) =>
@@ -131,7 +111,7 @@ const standaloneLinkClasses = () => {
   return {
     classNames: ['categoryIndex']
   };
-}
+};
 
 module.exports = {
   category,

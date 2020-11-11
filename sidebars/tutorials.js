@@ -23,7 +23,7 @@ const Sidebar = [
       'tutorials/payment-mgmt',
       'tutorials/set-up-for-development',
   ]),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

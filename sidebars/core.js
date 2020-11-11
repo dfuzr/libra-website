@@ -42,7 +42,7 @@ const Sidebar = [
     },
     'core/libra-cli',
   ]),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

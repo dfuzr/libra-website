@@ -12,7 +12,7 @@ const Sidebar = [
   },
   {
     type: 'category',
-    label: 'Developers',
+    label: 'Topics',
     items: [
       {
         type: 'ref',
@@ -21,24 +21,6 @@ const Sidebar = [
           classNames: ['iconIndented'],
           icon: 'img/core-contributors.svg',
           iconDark: 'img/core-contributors-dark.svg',
-        },
-      },
-      {
-        type: 'ref',
-        id: 'merchant/overview',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/merchant-solutions.svg',
-          iconDark: 'img/merchant-solutions-dark.svg',
-        },
-      },
-      {
-        type: 'ref',
-        id: 'wallet-app/overview',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/wallet-app.svg',
-          iconDark: 'img/wallet-app-dark.svg',
         },
       },
       {
@@ -52,6 +34,24 @@ const Sidebar = [
       },
       {
         type: 'ref',
+        id: 'wallet-app/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/wallet-app.svg',
+          iconDark: 'img/wallet-app-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
+        id: 'merchant/overview',
+        extra: {
+          classNames: ['iconIndented'],
+          icon: 'img/merchant-solutions.svg',
+          iconDark: 'img/merchant-solutions-dark.svg',
+        },
+      },
+      {
+        type: 'ref',
         id: 'move/overview',
         extra: {
           classNames: ['iconIndented'],
@@ -59,27 +59,9 @@ const Sidebar = [
           iconDark: 'img/move-dark.svg',
         },
       },
-      {
-        type: 'ref',
-        id: 'tutorials/overview',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/compliance.svg',
-          iconDark: 'img/compliance-dark.svg',
-        },
-      },
-      {
-        type: 'ref',
-        id: 'sdks/overview',
-        extra: {
-          classNames: ['iconIndented'],
-          icon: 'img/cog.png',
-          iconDark: 'img/cog-dark.png',
-        },
-      },
     ],
   },
-  getReference('primary'),
+  ...getReference('primary'),
 ];
 
 module.exports = Sidebar;

@@ -29,7 +29,7 @@ const Sidebar = [
     'tutorials/query-the-blockchain',
     'tutorials/run-local-network',
   ]),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

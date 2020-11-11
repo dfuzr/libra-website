@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Wallets
-sidebar_label: Wallet Concepts
+sidebar_label: Wallets
 ---
 
 Build, deploy, or use a wallet with the Libra Payment Network

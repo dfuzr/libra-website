@@ -157,7 +157,7 @@ const Sidebar = [
       },
     ]
   },
-  getReference('primary'),
+  ...getReference('primary'),
 ];
 module.exports = Sidebar;
       /*
@@ -297,6 +297,6 @@ module.exports = Sidebar;
       },
     ]
   },
-  getReference('primary'),
+  ...getReference('primary'),
 ];
 */

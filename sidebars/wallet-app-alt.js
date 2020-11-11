@@ -35,7 +35,7 @@ const Sidebar = [
       'wallet-app/develop-reference-wallet'
     ]
   },
-    getReference(),
+    ...getReference(),
 ];
 
 module.exports = Sidebar;

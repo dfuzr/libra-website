@@ -62,7 +62,7 @@ Explore the technical and economic concepts behind the Libra Payment Network, ex
     { value: 'run-move', label: (
       <ColorCard
         color="purpleDark"
-        icon="img/docs/try-a-wallet.svg"
+        icon="img/overlapping-circle-and-square.svg"
         overlay="Execute a sample Move script in a local network "
         title="Wallet Demo"
         type="snippetTab"
@@ -71,7 +71,7 @@ Explore the technical and economic concepts behind the Libra Payment Network, ex
     { value: 'demo-wallet', label: (
       <ColorCard
         color="purpleLight"
-        icon="img/docs/move-program.svg"
+        icon="img/bobby-pin.svg"
         overlay="Demo the Libra Reference Wallet to learn how wallets work on the blockchain."
         title="Merchant Demo"
         type="snippetTab"
@@ -158,8 +158,8 @@ git clone git@github.com:libra/libra-wallet.git
     to="/docs/core/contributing"
   />
   <SimpleCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
+    icon="img/rust.png"
+    iconDark="img/rust-dark.png"
     title="Rust Crates"
     to="/docs/core/contributing"
   />

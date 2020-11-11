@@ -17,7 +17,7 @@ const Sidebar = [
       'merchant/develop-lrm'
     ]),
   ]),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;

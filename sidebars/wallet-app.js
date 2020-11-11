@@ -16,7 +16,7 @@ const Sidebar = [
       'wallet-app/set-up-for-development'
     ]),
   ]),
-  getReference(),
+  ...getReference(),
 ];
 
 module.exports = Sidebar;
