@@ -12,59 +12,59 @@ const Sidebar = [
     },
   ]),
   category('Libra Reference Merchant', [
-    // category('Basics', [
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/intro-to-lrm',
-    //     extra: {
-    //       sidebarLabel: 'Introduction',
-    //     },
-    //   },
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/intro-to-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'architecture',
-    //       sidebarLabel: 'Architecture',
-    //     },
-    //   },
-    // ]),
-    // category('Getting Started', [
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/develop-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'set-up-and-deploy',
-    //       sidebarLabel: 'Reference Merchant Store Setup',
-    //     },
-    //   },
-    // ]),
-    // category('Modules', [
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/develop-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'merchant-front-end-module',
-    //       sidebarLabel: 'Front-end',
-    //     },
-    //   },
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/develop-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'merchant-back-end-module',
-    //       sidebarLabel: 'Back-end',
-    //     },
-    //   },
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/develop-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'vasp-module',
-    //       sidebarLabel: 'VASP',
-    //     },
-    //   },
-    // ]),
+     // category('Basics', [
+     //    {
+     //      type: 'doc',
+     //      id: 'merchant/intro-to-lrm',
+     //      extra: {
+     //        sidebarLabel: 'Introduction',
+     //      },
+     //    },
+     //    {
+     //      type: 'doc',
+     //      id: 'merchant/intro-to-lrm',
+     //      extra: {
+     //        fragmentIdentifier: 'architecture',
+     //        sidebarLabel: 'Architecture',
+     //      },
+     //    },
+     // ]),
+     category('Getting Started', [
+       {
+         type: 'doc',
+         id: 'merchant/develop-lrm',
+         extra: {
+           fragmentIdentifier: 'set-up-and-deploy',
+           sidebarLabel: 'Reference Merchant Store Setup',
+         },
+       },
+     ]),
+     category('Modules', [
+       {
+         type: 'doc',
+         id: 'merchant/develop-lrm',
+         extra: {
+           fragmentIdentifier: 'merchant-front-end-module',
+           sidebarLabel: 'Front-end',
+         },
+       },
+       {
+         type: 'doc',
+         id: 'merchant/develop-lrm',
+         extra: {
+           fragmentIdentifier: 'merchant-back-end-module',
+           sidebarLabel: 'Back-end',
+         },
+       },
+       {
+         type: 'doc',
+         id: 'merchant/develop-lrm',
+         extra: {
+           fragmentIdentifier: 'vasp-module',
+           sidebarLabel: 'VASP',
+         },
+       },
+     ]),
     category('Test', [
       {
         type: 'doc',
@@ -88,27 +88,25 @@ const Sidebar = [
         },
       },
     ]),
-    // category('Other', [
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/develop-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'localization',
-    //       sidebarLabel: 'Localization',
-    //     },
-    //   },
-    //   {
-    //     type: 'doc',
-    //     id: 'merchant/develop-lrm',
-    //     extra: {
-    //       fragmentIdentifier: 'contribute',
-    //       sidebarLabel: 'Contribute',
-    //     },
-    //   },
-    // ]),
+    category('Other', [
+      {
+        type: 'doc',
+        id: 'merchant/develop-lrm',
+        extra: {
+          fragmentIdentifier: 'localization',
+          sidebarLabel: 'Localization',
+        },
+      },
+      {
+        type: 'doc',
+        id: 'merchant/develop-lrm',
+        extra: {
+          fragmentIdentifier: 'contribute',
+          sidebarLabel: 'Contribute',
+        },
+      },
+    ]),
   ]),
-
-
   ...getReference(),
 ];
 
