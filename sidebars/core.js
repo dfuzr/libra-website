@@ -16,7 +16,12 @@ const Sidebar = [
   ]),
   category('Keys', [
     'core/keys',
-    // 'core/manage-keys',
+    // replace when actual page exists
+    {
+      href: '',
+      label: 'Manage Keys',
+      type: 'link',
+    },
   ]),
   category('Reference', [
     {

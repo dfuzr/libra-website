@@ -70,12 +70,36 @@ const getReference = (theme = 'secondary') => {
 
   return [
     {
+      extra: {
+        classNames: [
+          theme === 'secondary' && 'referenceVerticalSpacing',
+        ],
+      },
       type: 'category',
       label: 'Tools',
       items: [
         referenceLink('sdks/overview', 'img/document.svg'),
         referenceLink('cli', 'img/cli.svg'),
-        // referenceLink('core/contributing', 'img/github.svg'),
+        {
+          type: 'link',
+          href: 'https://github.com/libra/libra',
+          label: 'Github',
+          extra: {
+            classNames: ['iconIndented'],
+            icon: 'img/github.svg',
+            iconDark: 'img/github-dark.svg',
+          }
+        },
+        {
+          type: 'link',
+          href: '',
+          label: 'Rust Crates',
+          extra: {
+            classNames: ['iconIndented'],
+            icon: 'img/rust.png',
+            iconDark: 'img/rust-dark.png',
+          }
+        },
       ],
     },
     {

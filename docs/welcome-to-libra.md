@@ -156,7 +156,7 @@ git clone git@github.com:libra/libra-wallet.git
     icon="img/github.svg"
     iconDark="img/github-dark.svg"
     title="GitHub"
-    to="/docs/core/contributing"
+    to="https://github.com/libra/libra"
   />
   <SimpleCard
     icon="img/rust.png"
