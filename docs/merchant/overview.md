@@ -4,25 +4,110 @@ title: Overview
 sidebar_label: Merchants
 ---
 
-We are developing a reference merchant project for developers. The project will demonstrate how your service can accept ≋Libra payments Libra online, in-app, and in-person.
+Create new revenue streams, instantly access funds, and enjoy low processing fees as a Libra merchant partner
 
-In this section, you will find the upcoming Libra Reference Merchant project, relevant technical and conceptual documentation, and technical specifications.
-
-Merchant services providers who would like to enable Libra payments on their platforms will need:
-  * To be a regulated Virtual Asset Service Provider (VASP). Review the requirements [here](https://libra.org/white-paper/#compliance-and-the-prevention-of-illicit-activity)
-  * To provide or partner with a custody service to securely hold assets.
-  * To provide or partner  with a liquidity service to support the exchange of funds between fiat and supported Libra currencies.
-<br />
-
-<p className="margin-top--none">These services can be put in place now to set your business up to facilitate payments on the Libra Payment Network.</p>
-
-Sign up for the [developer newsletter](/newsletter_form) for upcoming announcements on this and other reference projects.
-
-## Reference
+### Guides
 
 <CardsWrapper>
-  <CoreReference />
-  <WalletReference />
-  <MoveReference />
-  <NodeReference />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Integrate Your Merchant Store with the LPN"
+    to="/docs/wallet-app/wallet-guide"
+  />
 </CardsWrapper>
+
+## Libra Reference Merchant
+
+### Basics
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Introduction"
+    to="/docs/merchant/intro-to-lrm"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Architecture"
+    to="/docs/merchant/intro-to-lrm#architecture"
+  />
+</CardsWrapper>
+
+### Getting Started
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Reference Merchant Store Setup"
+    to="/docs/merchant/intro-to-lrm"
+  />
+</CardsWrapper>
+
+### Modules
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Front-end"
+    to="/docs/merchant/develop-lrm#merchant-front-end-module"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Back-end"
+    to="/docs/merchant/develop-lrm#merchant-back-end-module"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="VASP"
+    to="/docs/merchant/vasp-module"
+  />
+</CardsWrapper>
+
+### Test
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Public Demo"
+    to="/docs/merchant/try-demo-merchant"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Merchant Store"
+    to="/docs/merchant/local-merchant-store"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Payment Management"
+    to="/docs/merchant/payment-mgmt"
+  />
+</CardsWrapper>
+
+### Other
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Localization"
+    to="/docs/merchant/develop-lrm#localization"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Contribute"
+    to="/docs/merchant/develop-lrm#contribute"
+  />
+</CardsWrapper>
+
+

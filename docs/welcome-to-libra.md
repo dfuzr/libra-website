@@ -1,16 +1,17 @@
 ---
 id: welcome-to-libra
-title: Libra Developer Portal
+title: Welcome Libra Developers
 disable_pagination: true
 sidebar_label: Home
 include_marketing_module: false
+small_title: true
 ---
 
-Explore the technical and economic concepts behind the Libra Payment Network, experiment with the specialized tutorials, or start building with the Development Tools
+Explore the technical and economic concepts behind the Libra Payment Network, experiment with specialized tutorials, or start building with the Development Tools.
 
 <NotificationBar>
   <p>
-    The first phase of the Libra Network will be restricted to regulated virtual asset service providers (VASPs). <a href="">Click here</a> to learn about our 3-stage rollout plan, or <a href="">here</a> to see if your organization qualifies as a VASP
+    The first phase of the Libra Network will be restricted to regulated virtual asset service providers (VASPs). Click <a href="/docs/reference/prospective-vasps">here</a> to see if your organization qualifies as a VASP.
   </p>
 </NotificationBar>
 
@@ -18,28 +19,28 @@ Explore the technical and economic concepts behind the Libra Payment Network, ex
 
 <CardsWrapper>
   <OverlayCard
-    description="Protocol Overview, Transaction Types, Nodes, Accounts"
+    description="Protocol Overview, Transaction Types,  Nodes, Accounts"
     icon="img/core-contributors.svg"
     iconDark="img/core-contributors-dark.svg"
     title="Libra Core"
     to="/docs/core/overview"
   />
   <OverlayCard
-    description="Requirements, Configuration, Running a Local Network"
+    description="Requirements, Configuration, Running  a Local Network"
     icon="img/node-operators.svg"
     iconDark="img/node-operators-dark.svg"
     title="Nodes"
     to="/docs/node/overview"
   />
   <OverlayCard
-    description="Develop a wallet for the Libra Payment Network"
+    description="Integration, Reference Wallet"
     icon="img/wallet-app.svg"
     iconDark="img/wallet-app-dark.svg"
     title="Wallets"
     to="/docs/wallet-app/overview"
   />
   <OverlayCard
-    description="Integration, Libra Reference Merchant"
+    description="Integration, Reference Merchant"
     icon="img/docs/merchant-solutions.svg"
     iconDark="img/docs/merchant-solutions-dark.svg"
     title="Merchants"

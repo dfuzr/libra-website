@@ -4,46 +4,270 @@ title: Overview
 sidebar_label: Move
 ---
 
-Welcome to Move, a programming language for implementing custom transaction logic and “smart contracts” on the Libra Blockchain. Move allows developers to write programs that flexibly manage and transfer assets, while providing the security and protections against attacks on those assets.
+The language built for blockchain, with improved asset protections and integrated scarcity
 
-Move takes its cue from [Rust](https://www.rust-lang.org/) by using resource types with move (hence the name) semantics as an explicit representation of digital assets, such as currency.
-
-![Figure 1.1 Move Methods](/img/docs/move-methods.svg)
-<small className="figure">Figure 1.1 Move Methods</small>
-
-## Who is Move for?
-
-Move was designed and created as the programming language for the Libra network. That said, there are two items to note. First, the Libra network mainnet has not yet launched, so Move is still evolving. Second, Move can be used as language for [other blockchain platforms](https://github.com/co-move/comove) (even non-blockchain uses as well).
-
-Given custom Move modules will not be supported at [launch](https://libra.org/white-paper/#whats-next), we are targeting an early Move Developer persona.
-
-
-The early Move Developer is one with some programming experience, who wants to begin understanding the core programming language used to implement custom transaction logic and smart contracts for the Libra Blockchain.
-
-### Hobbyists
-
-Understanding that the capability to create custom modules on the Libra network will not be available at launch, the hobbyist Move Developer is interested in learning the intricacies of the language. She will understand the basic syntax, the standard libraries available, and write example code that can be executed on local Libra nodes. The Move Developer may even want to dig into understanding how the Move Virtual Machine executes the code she writes.
-
-### Core Contributor
-
-Beyond a hobbyist wanting to stay ahead of the curve for the core programming language is someone who may want to [contribute](https://libra.org/en-US/cla-sign/) directly to Move. Whether this includes submitting language improvements or even adding core modules available on the Libra payment network, the core contributor will understand Move at a deep level. Once familiar with Move, the core contributor may want to submit a request to the Libra Association to add new transaction or module types, via the [Libra Improvement Protocol (LIP) process](https://lip.libra.org/).
-
-### Who Move is currently not targeting
-
-Currently, Move is not targeting developers who wish to create custom modules and contracts for use on mainnet. We are also not targeting novice developers who expect a completely polished developer experience even in testing the language.
-
-## Move Architecture
-
-Move has all of the syntax and semantics you would expect from a first-class programming language. However, there is an entire architecture dedicated to creating, using, and executing code based on Move. The diagram below shows the architecture of Move as it pertains to the Libra payment system, from using the source language to script execution. Click on a specific topic of the diagram to be taken to more information about that specific area.
-
-<img src="/img/docs/move-architecture.svg" />
-<small className="figure">Figure 1.2 Move Architecture</small>
-
-## Reference
+### Basics
 
 <CardsWrapper>
-  <CoreReference />
-  <MerchantReference />
-  <WalletReference />
-  <NodeReference />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Introduction to Move"
+    to="https://hackmd.io/OQNXaPKnSLu9CZFf1pXMyw"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Integers"
+    to="docs/node/life-of-a-transaction#validator-component-interactors"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Bool"
+    to="https://hackmd.io/fy5lNWaBRQasaCG37YTuqA"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Address"
+    to="https://hackmd.io/Gtb2XylPRHGpYnybBrwEJg"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Vector"
+    to="https://hackmd.io/-ojrq67DSDeo05_Tzvle4Q"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Signer"
+    to="https://hackmd.io/INmbHY_mQ0mVdQ5ZH8unIA"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="References"
+    to="https://hackmd.io/nPGDBEtZRWmxZa2TX-L4ew"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Tuples"
+    to="https://hackmd.io/g3Yc2YmFSV2zzPub6tVTqg"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Move & Copy"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Borrowing & References"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Reference Safety"
+    to=""
+  />
 </CardsWrapper>
+
+### Primitive Types
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Local Variables and Scopes"
+    to="https://hackmd.io/BmFJYYLPQpiAJPoOKP9iMQ"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Abort & Return"
+    to="https://hackmd.io/PTD95Sf9TrKyFY95fy2CAA"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Conditionals"
+    to="https://hackmd.io/xNer9gtjRQqgku61dqhPEQ"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Loops"
+    to="https://hackmd.io/flJjRYKATxKOC8TN-xKKnw"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Functions"
+    to="https://hackmd.io/667GWMmlSfmQKKpPaGOM-w"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Structs and Resources"
+    to="https://hackmd.io/rwLPiE7WTNqkgoWxHEnpBg"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Constants"
+    to="https://hackmd.io/w_pk_vhZQyW3hc3_2JL_JA"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Generics"
+    to="https://hackmd.io/tchREnSeRviV9pdvIobS-Q"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Modules and Scripts"
+    to="https://hackmd.io/LVdYHUbiQJiEPQrq858eSg"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Modules and Scripts"
+    to="https://hackmd.io/FUX9oI_RQDCqHlur9PzjSw"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Uses & Aliases"
+    to=""
+  />
+</CardsWrapper>
+
+### Ownership
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Structure"
+    to="https://hackmd.io/sAjKEdbFSm2N9o17TjKKwQ"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Move Storage & Execution Model"
+    to="https://hackmd.io/5CrxHeHjRai7NFABv60NNQ"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Operators"
+    to="https://hackmd.io/4Q_sRai3RfK6hJkuWA1kMQ"
+  />
+</CardsWrapper>
+
+### Global Storage
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Intro to Global Storage"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Toy Coin"
+    to="https://hackmd.io/R_MGoH67Tw2p767-laTN1A"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="CrowdBoost"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Escrow"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Role-Based Access Control"
+    to="https://hackmd.io/nym4e5S3Sy2c0XklPHbjew"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title=""
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Encapsulating Data Behavior"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Understanding Type-Indexed Storage"
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Debugging Move in Libra Network"
+    to="https://hackmd.io/MkGJsxg_QQ2yJkjpieGcUQ"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title=""
+    to=""
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Capability Passing"
+    to=""
+  />
+</CardsWrapper>
+
+### Tutorials
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Standard Library"
+    to="https://hackmd.io/dCWzI8YlSgKYk9eAubkEMw"
+  />
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Move Tools"
+    to=""
+  />
+</CardsWrapper>
+
+### Reference
+
+<CardsWrapper>
+  <SimpleCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Keywords"
+    to=""
+  />
+</CardsWrapper>
+
+

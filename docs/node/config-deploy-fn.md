@@ -1,5 +1,5 @@
 ---
 id: config-deploy-fn
 title: Overview
-sidebar_label: Configure & Deploy
+sidebar_label: Configure Public Full Node
 ---

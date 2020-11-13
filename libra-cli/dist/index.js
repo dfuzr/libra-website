@@ -25,20 +25,6 @@ const MANUAL_EXECUTION = 'MANUAL_EXECUTION';
 export default function LibraTerminal(Commands) {
     const PROMPT = '≋Libra> ';
     const GREETINGS = [
-        '\x1B[1;3;35m',
-        '    %%%%%%%%%%(           %%%# ',
-        ' %%%%%%%%%%%%%%%%%%    %%%%%%% ',
-        '%%%%,          %%%%%%%%%%%%    ',
-        '     %%%%%%%%              %   ',
-        '  %%%%%%%%%%%%%%%        %%%%% ',
-        '%%%%%        *%%%%%%%%%%%%%%   ',
-        '                  %%%%%%*      ',
-        '   %%%%%%%%%%%%%          %%%%%',
-        '.%%%%%(     %%%%%%%%%%%%%%%%%  ',
-        ' %%%            %%%%%%%%%%     ',
-        '\x1B[0m',
-        '',
-        '',
         'Welcome to Libra Shell 💁‍♀️',
         'This is a fully local Libra testnet client, running entirely on your browser!',
         'Type ? for help',

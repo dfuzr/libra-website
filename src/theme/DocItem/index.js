@@ -38,6 +38,7 @@ function DocItem(props) {
       hide_title: hideTitle,
       hide_table_of_contents: hideTableOfContents,
       include_marketing_module: includeMarketingModule,
+      small_title: smallTitle,
     },
   } = DocContent;
 
@@ -83,7 +84,9 @@ function DocItem(props) {
                 )}
                 {!hideTitle && (
                   <header>
-                    <h1 className={styles.docTitle}>{title}</h1>
+                    <h1 className={classnames(styles.docTitle, {
+                      [styles.small]: smallTitle,
+                    })}>{title}</h1>
                   </header>
                 )}
                 <div className="markdown">
