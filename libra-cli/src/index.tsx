@@ -21,7 +21,6 @@ export default function LibraTerminal(Commands: typeof React.Component) {
   const GREETINGS = [
     'Welcome to Libra Shell 💁‍♀️',
     'This is a fully local Libra testnet client, running entirely on your browser!',
-    'Type ? for help',
     '',
   ];
   const isLive = true;
