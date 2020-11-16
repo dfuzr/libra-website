@@ -11,17 +11,8 @@ Learn how to build a Wallet on the Libra Network.
   <a href="https://github.com/libra/libra-client-sdk-java" target="_blank">
     <img src="/img/docs/sdk-java.png" />
   </a>
-  <a href="https://github.com/libra/libra-client-sdk-cplusplus" target="_blank">
-    <img src="/img/docs/sdk-c++.png" />
-  </a>
-  <a href="https://github.com/libra/libra-client-sdk-csharp" target="_blank">
-    <img src="/img/docs/sdk-csharp.png" />
-  </a>
   <a href="https://github.com/libra/libra-client-sdk-go" target="_blank">
     <img src="/img/docs/sdk-go.png" />
-  </a>
-  <a href="https://github.com/libra/libra-client-sdk-typescript" target="_blank">
-    <img src="/img/docs/sdk-typescript.png" />
   </a>
   <a href="https://github.com/libra/libra-client-sdk-python" target="_blank">
     <img src="/img/docs/sdk-python.png" />

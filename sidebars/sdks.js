@@ -5,16 +5,6 @@ const Sidebar = [
   category('Languages', [
     {
       type: 'link',
-      href: 'https://github.com/libra/libra-client-sdk-cplusplus',
-      label: 'C++',
-    },
-    {
-      type: 'link',
-      href: 'https://github.com/libra/libra-client-sdk-csharp',
-      label: 'C#',
-    },
-    {
-      type: 'link',
       href: 'https://github.com/libra/libra-client-sdk-go',
       label: 'Go',
     },
@@ -27,11 +17,6 @@ const Sidebar = [
       type: 'link',
       href: 'https://github.com/libra/libra-client-sdk-python',
       label: 'Python',
-    },
-    {
-      type: 'link',
-      href: 'https://github.com/libra/libra-client-sdk-typescript',
-      label: 'TypeScript',
     },
   ]),
   ...getReference(),
